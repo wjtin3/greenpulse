@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <style>
       .page {
-        background-color: rgba(250, 255, 255, 1);
+        background-color: rgba(255, 255, 255, 1);
         position: relative;
         width: 100%;
         height: 100vh;
@@ -633,14 +633,7 @@
         justify-content: center;
       }
 
-      /* 确保页面填充整个视口 */
-      html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-      }
+ 
 
       /* 页面加载动画 */
       @keyframes fadeInUp {
@@ -1255,9 +1248,10 @@
             referrerpolicy="no-referrer"
             src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG259ba8fce4d62e6e41f567e196afc6a9.png"
           />
-          <span class="text_1">GreenPulse</span>
-          <span class="text_2">Home</span> <span class="text_3">Tools</span>
-          <span class="text_4">Knowledge</span>
+          <a class="text_1" href="index.html">GreenPulse</a>
+          <a class="text_2" href="index.html">Home</a>
+          <a class="text_3" href="tools.html">Tools</a>
+          <a class="text_4" href="coming-soon.html">Knowledge</a>
         </div>
       </div>
       <div class="section_3 flex-col">
@@ -1265,7 +1259,7 @@
           <div class="box_2 flex-col">
             <div class="box_3 flex-col">
               <div class="image-wrapper_1 flex-col">
-                <a href="/calculator.html">
+                <a href="calculator.html">
                     <img
                   class="label_1"
                   referrerpolicy="no-referrer"
@@ -1279,7 +1273,7 @@
           <div class="box_4 flex-col">
             <div class="box_5 flex-col">
               <div class="block_1 flex-col"></div>
-              <a href="/household.html">
+              <a href="household.html">
                  <img
                 class="image_2"
                 referrerpolicy="no-referrer"
@@ -1314,7 +1308,7 @@
           <div class="box_8 flex-col">
             <div class="group_3 flex-col">
               <div class="image-wrapper_4 flex-col">
-                <a href="/result.html">
+                <a href="result.html">
                   <img
                     class="label_4"
                     referrerpolicy="no-referrer"
@@ -1392,13 +1386,13 @@
               <span class="text_8">0</span>
               <span class="text_9">unit:&nbsp;km</span>
             </div>
-            <a href="/details.html" class="text_10"
+            <a href="details.html" class="text_10"
               >ADD&nbsp;details&nbsp;TO&nbsp;IMPROVE&nbsp;ACCURACY</a
             >
           </div>
           </div>
           <div class="image-wrapper_5 flex-col">
-            <a href="/newpage.html">
+            <a href="newpage.html">
               <img
               class="label_6"
               referrerpolicy="no-referrer"
@@ -1445,8 +1439,8 @@
             >In&nbsp;order&nbsp;to&nbsp;help&nbsp;everyone&nbsp;understand&nbsp;how&nbsp;to&nbsp;protect&nbsp;the&nbsp;environment.</span
           >
           <div class="text-wrapper_8 flex-col justify-between">
-            <a href="/calculator.html" class="text_14">Travel&nbsp;Calculator</a>
-            <a href="/household.html" class="text_15">Household&nbsp;Calculator</a>
+            <a href="calculator.html" class="text_14">Travel&nbsp;Calculator</a>
+            <a href="household.html" class="text_15">Household&nbsp;Calculator</a>
           </div>
         </div>
       </div>
@@ -1513,8 +1507,7 @@
             } else if (this.textContent === 'Tools') {
               window.location.href = 'tools.html';
             } else if (this.textContent === 'Knowledge') {
-              // 这里可以添加Knowledge页面的跳转逻辑
-              console.log('Knowledge page not implemented yet');
+              window.location.href = 'coming-soon.html';
             }
           });
         });

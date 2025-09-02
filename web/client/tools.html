@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tools</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <style>
       html, body {
         margin: 0;
@@ -28,7 +29,6 @@
 
       .group_1 {
         height: 810px;
-        margin-top: 97px;
         width: 100%;
       }
 
@@ -42,9 +42,8 @@
       .group_2 {
         position: absolute;
         left: 0;
-        top: 97px;
         width: 100%;
-        height: 810px;
+        height: 100vh;
         background: url(img2/2.11.png)
           100% no-repeat;
         background-size: 100% 100%;
@@ -724,19 +723,12 @@
     </style>
   </head>
   <body>
+    <div id="header"></div>
     <div class="page flex-col">
-      <div class="group_1 flex-col"><div class="box_1 flex-col"></div></div>
+      <div class="group_1 flex-col">
+        <div class="box_1 flex-col"></div>
+      </div>
       <div class="group_2 flex-col">
-        <div class="block_1 flex-row">
-          <img
-            class="image_1"
-            referrerpolicy="no-referrer"
-            src="img/dae9de97c16fbc2d0388bbe8a1e084dd.png"
-          />
-          <span class="text_1">GreenPulse</span>
-          <a href="/index.html" class="text_2">Home</a> <a href="/tools.html" class="text_3">Tools</a>
-          <span class="text_4">Knowledge</span>
-        </div>
         <div class="block_2 flex-row">
           <div class="text-wrapper_1 flex-col">
             <span class="text_5">Animation</span>
@@ -792,28 +784,9 @@
             </div>
           </div>
         </div>
-        <div class="block_6 flex-col">
-          <div class="text-wrapper_2 flex-row">
-            <span class="paragraph_1"
-            >GreenPulse&nbsp;website&nbsp;(hereinafter&nbsp;referred&nbsp;to&nbsp;as&nbsp;"this&nbsp;website")&nbsp;places&nbsp;great&nbsp;importance&nbsp;on&nbsp;your&nbsp;privacy&nbsp;rights.&nbsp;We&nbsp;commit&nbsp;to&nbsp;collecting,&nbsp;using,&nbsp;and&nbsp;protecting&nbsp;your&nbsp;personal&nbsp;information&nbsp;only&nbsp;within&nbsp;the&nbsp;scope&nbsp;that&nbsp;is&nbsp;lawful,&nbsp;legitimate,&nbsp;and&nbsp;necessary,&nbsp;in&nbsp;order&nbsp;to&nbsp;provide&nbsp;you&nbsp;with&nbsp;a&nbsp;better&nbsp;service&nbsp;experience.&nbsp;When&nbsp;you&nbsp;use&nbsp;the&nbsp;features&nbsp;of&nbsp;this&nbsp;website&nbsp;(such&nbsp;as&nbsp;the&nbsp;carbon&nbsp;footprint&nbsp;calculator),&nbsp;we&nbsp;may&nbsp;collect&nbsp;relevant&nbsp;data&nbsp;you&nbsp;actively&nbsp;submit,&nbsp;as&nbsp;well&nbsp;as&nbsp;necessary&nbsp;device&nbsp;information,&nbsp;access&nbsp;times,&nbsp;and&nbsp;browsing&nbsp;history.&nbsp;This&nbsp;information&nbsp;is&nbsp;used&nbsp;solely&nbsp;for&nbsp;generating&nbsp;calculation&nbsp;results,&nbsp;optimizing&nbsp;website&nbsp;performance,&nbsp;and&nbsp;improving&nbsp;the&nbsp;overall&nbsp;user&nbsp;experience.&nbsp;We&nbsp;will&nbsp;not&nbsp;sell,&nbsp;rent,&nbsp;or&nbsp;otherwise&nbsp;provide&nbsp;your&nbsp;personal&nbsp;information&nbsp;to&nbsp;any&nbsp;unrelated&nbsp;third&nbsp;parties,&nbsp;unless&nbsp;required&nbsp;by&nbsp;law&nbsp;or&nbsp;with&nbsp;your&nbsp;explicit&nbsp;prior&nbsp;consent.&nbsp;To&nbsp;enhance&nbsp;website&nbsp;functionality,&nbsp;this&nbsp;website&nbsp;may&nbsp;use&nbsp;cookies&nbsp;or&nbsp;similar&nbsp;technologies&nbsp;to&nbsp;remember&nbsp;your&nbsp;preferences&nbsp;and&nbsp;browsing&nbsp;habits.&nbsp;You&nbsp;may&nbsp;choose&nbsp;to&nbsp;disable&nbsp;cookies&nbsp;in&nbsp;your&nbsp;browser,&nbsp;but&nbsp;this&nbsp;may&nbsp;affect&nbsp;the&nbsp;use&nbsp;of&nbsp;certain&nbsp;features.<br /><br />We&nbsp;implement&nbsp;reasonable&nbsp;technical&nbsp;and&nbsp;administrative&nbsp;measures&nbsp;to&nbsp;prevent&nbsp;unauthorized&nbsp;access,&nbsp;disclosure,&nbsp;or&nbsp;loss&nbsp;of&nbsp;your&nbsp;information.&nbsp;Please&nbsp;note&nbsp;that&nbsp;this&nbsp;website's&nbsp;content&nbsp;is&nbsp;intended&nbsp;for&nbsp;public&nbsp;use.&nbsp;If&nbsp;you&nbsp;are&nbsp;under&nbsp;18&nbsp;years&nbsp;of&nbsp;age,&nbsp;please&nbsp;use&nbsp;this&nbsp;website&nbsp;under&nbsp;the&nbsp;guidance&nbsp;of&nbsp;a&nbsp;parent&nbsp;or&nbsp;guardian.&nbsp;This&nbsp;policy&nbsp;may&nbsp;be&nbsp;updated&nbsp;periodically&nbsp;as&nbsp;our&nbsp;services&nbsp;evolve.&nbsp;Revised&nbsp;terms&nbsp;will&nbsp;be&nbsp;posted&nbsp;on&nbsp;this&nbsp;page&nbsp;and&nbsp;take&nbsp;effect&nbsp;upon&nbsp;publication.&nbsp;Your&nbsp;continued&nbsp;use&nbsp;of&nbsp;this&nbsp;website&nbsp;constitutes&nbsp;acceptance&nbsp;of&nbsp;this&nbsp;policy.<br
-          /></span>
-          </div>
-          <div class="block_7 flex-row justify-between">
-            <div class="text-group_1 flex-col justify-between">
-              <span class="text_11">About  GreenPulse</span>
-              <span class="text_12"
-                >In order to help everyone understand<br />how to protect the environment.</span
-              >
-            </div>
-            <div class="text-group_2 flex-col justify-between">
-              <span class="text_13">Quick Link</span>
-              <a  href="/calculator.html" class="text_14">Travel Calculator</a>
-              <a href="/household.html" class="text_15">Household Calculator</a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
+        <div id="footer"></div>
     <!-- World Carbon 弹窗 -->
     <div class="wc-modal-overlay" id="wcModal">
       <div class="wc-modal" role="dialog" aria-modal="true" aria-label="World Carbon Modal">
@@ -870,6 +843,9 @@
         </div>
       </div>
     </div>
+
+    
+    <script src="scripts/loadLayout.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const homeNav = document.querySelector('.text_2');
@@ -905,7 +881,7 @@
         if (calculatorText) {
           calculatorText.style.cursor = 'pointer';
           calculatorText.addEventListener('click', function() {
-            window.location.href = 'Calculator.html';
+            window.location.href = 'calculator.html';
           });
         }
         

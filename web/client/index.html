@@ -91,21 +91,20 @@
         background-color: rgba(249, 250, 236, 1);
         width: 100%;
         height: 756px;
-        margin-top: 787px;
       }
 
       .text_5 {
-        width: 573px;
+        max-width: 573px;
         height: 72px;
         overflow-wrap: break-word;
         color: rgba(84, 84, 84, 1);
         font-size: 48px;
         font-family: Poppins-SemiBold;
         font-weight: normal;
-        text-align: left;
+        text-align: center;
         white-space: nowrap;
         line-height: 48px;
-        margin: 40px 0 0 444px;
+        margin: 40px auto 0;
       }
 
       .block_1 {
@@ -157,6 +156,11 @@
         white-space: nowrap;
         line-height: 36px;
         margin: 0;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);        
       }
 
       .text_7 {
@@ -812,12 +816,17 @@
       }
 
       .box_7 {
-        position: absolute;
-        left: 0;
-        top: 104px;
+        position: relative;
         width: 100%;
         height: 788px;
         overflow: hidden;
+      }
+
+      .box_7 span,
+      .box_7 .text-wrapper_3 {
+        position: relative;  /* ensure text stays above video */
+        z-index: 1;
+        color: white;        /* optional: improves readability */
       }
 
       .video-background {
@@ -828,6 +837,7 @@
         height: 100%;
         object-fit: cover;
         z-index: 0;
+        filter: blur(3px);
       }
 
       .text_18 {
@@ -1046,73 +1056,8 @@
     </style>
   </head>
   <body>
+    <div id="header"></div>
     <div class="page flex-col">
-      <div class="box_1 flex-col">
-        <div class="box_2 flex-row">
-          <img
-            class="image_1"
-            referrerpolicy="no-referrer"
-                         src="img/dae9de97c16fbc2d0388bbe8a1e084dd.png"
-            alt="GreenPulse Logo"
-          />
-          <span class="text_1">GreenPulse</span>
-          <span class="text_2">Home</span> 
-          <span class="text_3">Tools</span>
-          <span class="text_4">Knowledge</span>
-        </div>
-      </div>
-      <div class="box_3 flex-col">
-        <span class="text_5">What Are We Projects？</span>
-        <div class="block_1">
-          <div class="box_4 flex-row">
-            <div class="text-group_1 flex-col justify-between">
-              <span class="text_6">Green Calculator</span>
-            </div>
-          </div>
-          <div class="text-wrapper_1-0 flex-col">
-            <span class="text_8-0">Challenge</span>
-          </div>
-          <div class="text-wrapper_1-1 flex-col">
-            <span class="text_8-1">Map</span>
-          </div>
-          <div class="text-wrapper_1-2 flex-col">
-            <span class="text_8-2">Action</span>
-          </div>
-        </div>
-      </div>
-      <div class="box_5 flex-col">
-        <div class="block_2 flex-col">
-          <div class="text-group_2 flex-col justify-between">
-            <span class="text_9">GreenPulse Aims </span>
-            <span class="text_10"
-              >GreenPulse's mission is to promote carbon reduction knowledge at scale</span
-            >
-          </div>
-          <span class="text_11"
-            >Climate change is an urgent global crisis, driven by human activities such as burning fossil fuels. It leads to rising temperatures, extreme weather events, and sea-level rise, threatening ecosystems and communities worldwide. Aligned with SDG 13: Climate Action, GreenPulse empowers Malaysia's urban youth to take immediate action through simple daily challenges, personalised recommendations, and gamified tools. By turning awareness into action, GreenPulse helps reduce carbon emissions and build sustainable habits—ensuring a livable future for all.</span
-          >
-        </div>
-        <div class="block_3 flex-col">
-          <div class="text-wrapper_2 flex-row">
-            <span class="paragraph_1"
-            >GreenPulse&nbsp;website&nbsp;(hereinafter&nbsp;referred&nbsp;to&nbsp;as&nbsp;"this&nbsp;website")&nbsp;places&nbsp;great&nbsp;importance&nbsp;on&nbsp;your&nbsp;privacy&nbsp;rights.&nbsp;We&nbsp;commit&nbsp;to&nbsp;collecting,&nbsp;using,&nbsp;and&nbsp;protecting&nbsp;your&nbsp;personal&nbsp;information&nbsp;only&nbsp;within&nbsp;the&nbsp;scope&nbsp;that&nbsp;is&nbsp;lawful,&nbsp;legitimate,&nbsp;and&nbsp;necessary,&nbsp;in&nbsp;order&nbsp;to&nbsp;provide&nbsp;you&nbsp;with&nbsp;a&nbsp;better&nbsp;service&nbsp;experience.&nbsp;When&nbsp;you&nbsp;use&nbsp;the&nbsp;features&nbsp;of&nbsp;this&nbsp;website&nbsp;(such&nbsp;as&nbsp;the&nbsp;carbon&nbsp;footprint&nbsp;calculator),&nbsp;we&nbsp;may&nbsp;collect&nbsp;relevant&nbsp;data&nbsp;you&nbsp;actively&nbsp;submit,&nbsp;as&nbsp;well&nbsp;as&nbsp;necessary&nbsp;device&nbsp;information,&nbsp;access&nbsp;times,&nbsp;and&nbsp;browsing&nbsp;history.&nbsp;This&nbsp;information&nbsp;is&nbsp;used&nbsp;solely&nbsp;for&nbsp;generating&nbsp;calculation&nbsp;results,&nbsp;optimizing&nbsp;website&nbsp;performance,&nbsp;and&nbsp;improving&nbsp;the&nbsp;overall&nbsp;user&nbsp;experience.&nbsp;We&nbsp;will&nbsp;not&nbsp;sell,&nbsp;rent,&nbsp;or&nbsp;otherwise&nbsp;provide&nbsp;your&nbsp;personal&nbsp;information&nbsp;to&nbsp;any&nbsp;unrelated&nbsp;third&nbsp;parties,&nbsp;unless&nbsp;required&nbsp;by&nbsp;law&nbsp;or&nbsp;with&nbsp;your&nbsp;explicit&nbsp;prior&nbsp;consent.&nbsp;To&nbsp;enhance&nbsp;website&nbsp;functionality,&nbsp;this&nbsp;website&nbsp;may&nbsp;use&nbsp;cookies&nbsp;or&nbsp;similar&nbsp;technologies&nbsp;to&nbsp;remember&nbsp;your&nbsp;preferences&nbsp;and&nbsp;browsing&nbsp;habits.&nbsp;You&nbsp;may&nbsp;choose&nbsp;to&nbsp;disable&nbsp;cookies&nbsp;in&nbsp;your&nbsp;browser,&nbsp;but&nbsp;this&nbsp;may&nbsp;affect&nbsp;the&nbsp;use&nbsp;of&nbsp;certain&nbsp;features.<br /><br />We&nbsp;implement&nbsp;reasonable&nbsp;technical&nbsp;and&nbsp;administrative&nbsp;measures&nbsp;to&nbsp;prevent&nbsp;unauthorized&nbsp;access,&nbsp;disclosure,&nbsp;or&nbsp;loss&nbsp;of&nbsp;your&nbsp;information.&nbsp;Please&nbsp;note&nbsp;that&nbsp;this&nbsp;website's&nbsp;content&nbsp;is&nbsp;intended&nbsp;for&nbsp;public&nbsp;use.&nbsp;If&nbsp;you&nbsp;are&nbsp;under&nbsp;18&nbsp;years&nbsp;of&nbsp;age,&nbsp;please&nbsp;use&nbsp;this&nbsp;website&nbsp;under&nbsp;the&nbsp;guidance&nbsp;of&nbsp;a&nbsp;parent&nbsp;or&nbsp;guardian.&nbsp;This&nbsp;policy&nbsp;may&nbsp;be&nbsp;updated&nbsp;periodically&nbsp;as&nbsp;our&nbsp;services&nbsp;evolve.&nbsp;Revised&nbsp;terms&nbsp;will&nbsp;be&nbsp;posted&nbsp;on&nbsp;this&nbsp;page&nbsp;and&nbsp;take&nbsp;effect&nbsp;upon&nbsp;publication.&nbsp;Your&nbsp;continued&nbsp;use&nbsp;of&nbsp;this&nbsp;website&nbsp;constitutes&nbsp;acceptance&nbsp;of&nbsp;this&nbsp;policy.<br
-          /></span>
-          </div>
-          <div class="box_6 flex-row justify-between">
-            <div class="text-group_3 flex-col justify-between">
-              <span class="text_13">About  GreenPulse</span>
-              <span class="text_14"
-                >In order to help everyone understand<br />how to protect the environment.</span
-              >
-            </div>
-            <div class="text-group_4 flex-col justify-between">
-              <span class="text_15">Quick Link</span>
-              <a href="/calculator.html" class="text_16">Travel Calculator</a>
-              <a href="/household.html" class="text_17">Household Calculator</a>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="box_7 flex-col">
         <video class="video-background" autoplay muted loop>
           <source src="video/a0099d0177eb312e353339e7a32ee3c5.mp4" type="video/mp4">
@@ -1125,8 +1070,48 @@
           <span class="text_20">Projects</span>
         </div>
       </div>
+      <div class="box_3 flex-col">
+        <span class="text_5">What Are Our Tools?</span>
+        <div class="block_1">
+          <div class="box_4 flex-row">
+            <div class="text-group_1 flex-col justify-between">
+              <span class="text_6">Tools</span>
+            </div>
+          </div>
+          <a href="calculator.html">
+            <div class="text-wrapper_1-2 flex-col">
+              <span class="text_8-2">Calculators</span>
+            </div>
+          </a>
+          <a href="coming-soon.html">
+            <div class="text-wrapper_1-0 flex-col">
+              <span class="text_8-0">Challenge</span>
+            </div>
+          </a>
+          <a href="coming-soon.html">
+            <div class="text-wrapper_1-1 flex-col">
+              <span class="text_8-1">Map</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="box_5 flex-col">
+        <div class="block_2 flex-col">
+          <div class="text-group_2 flex-col justify-between">
+            <span class="text_9">GreenPulse Goals</span>
+            <span class="text_10"
+              >GreenPulse's mission is to promote carbon reduction knowledge at scale</span
+            >
+          </div>
+          <span class="text_11"
+            >Climate change is an urgent global crisis, driven by human activities such as burning fossil fuels. It leads to rising temperatures, extreme weather events, and sea-level rise, threatening ecosystems and communities worldwide. Aligned with SDG 13: Climate Action, GreenPulse empowers Malaysia's urban youth to take immediate action through simple daily challenges, personalised recommendations, and gamified tools. By turning awareness into action, GreenPulse helps reduce carbon emissions and build sustainable habits—ensuring a livable future for all.</span
+          >
+        </div>
+        <div id="footer"></div>
+      </div>
     </div>
 
+    <script src="scripts/loadLayout.js"></script>
     <script>
       // JavaScript functionality
       document.addEventListener('DOMContentLoaded', function() {
