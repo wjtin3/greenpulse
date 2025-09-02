@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Household Calculator - GreenPulse</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <style>
+      .page {
+        background-color: rgba(255, 255, 255, 1);
+        position: relative;
+        width: 1440px;
+        height: 1308px;
+        overflow: hidden;
+      }
+
+      .block_1 {
+        width: 1443px;
+        height: 1308px;
+      }
+
+      .group_1 {
+        width: 1440px;
+        height: 124px;
+      }
+
+      .group_2 {
+        width: 1112px;
+        height: 103px;
+        margin: 17px 0 0 38px;
+      }
+
+      .image_1 {
+        width: 82px;
+        height: 72px;
+      }
+
+      .text_1 {
+        width: 359px;
+        height: 94px;
+        overflow-wrap: break-word;
+        color: rgba(61, 124, 74, 1);
+        font-size: 50px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 50px;
+        margin: 9px 0 0 23px;
+      }
+
+      .text_2 {
+        width: 72px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 36px 0 0 82px;
+      }
+
+      .text_3 {
+        width: 67px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(61, 124, 74, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 36px 0 0 150px;
+      }
+
+      .text_4 {
+        width: 133px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 38px 0 0 144px;
+      }
+
+      .group_3 {
+        background-color: rgba(51, 74, 51, 1);
+        width: 1440px;
+        height: 403px;
+        margin: 905px 0 0 -1440px;
+      }
+
+      .paragraph_1 {
+        width: 1400px;
+        height: 153px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 11px;
+        font-family: Poppins-ExtraLight;
+        font-weight: 250;
+        text-align: left;
+        margin: 16px 0 0 17px;
+      }
+
+      .text-wrapper_1 {
+        width: 607px;
+        height: 36px;
+        margin: 33px 0 0 37px;
+      }
+
+      .text_5 {
+        width: 228px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(229, 171, 109, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .text_6 {
+        width: 129px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(229, 171, 109, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .box_1 {
+        width: 671px;
+        height: 63px;
+        margin: 15px 0 87px 37px;
+      }
+
+      .text_7 {
+        width: 341px;
+        height: 48px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+      }
+
+      .text-wrapper_2 {
+        width: 193px;
+        height: 63px;
+      }
+
+      .text_8 {
+        width: 153px;
+        height: 24px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 20px;
+      }
+
+      .text_9 {
+        width: 193px;
+        height: 24px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 20px;
+        margin-top: 15px;
+      }
+
+      .group_4 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        background-color: rgba(249, 250, 236, 1);
+        position: relative;
+        width: 1440px;
+        height: 783px;
+        margin: 123px 0 0 -1437px;
+      }
+
+      .box_2 {
+        width: 1109px;
+        height: 70px;
+        margin: 45px 0 0 157px;
+      }
+
+      .section_1 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        width: 169px;
+      }
+
+      .block_2 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_1 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_1 {
+        width: 46px;
+        height: 45px;
+        margin: -24px 0 0 32px;
+      }
+
+      .section_2 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .box_3 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG862d7ea8982b43f79a8399d6892c2565.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+        position: relative;
+      }
+
+      .section_3 {
+        border-radius: 50%;
+        width: 118px;
+        height: 24px;
+        margin: 35px 0 0 26px;
+      }
+
+      .image_2 {
+        position: absolute;
+        left: 53px;
+        top: 3px;
+        width: 64px;
+        height: 64px;
+      }
+
+      .section_4 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .box_4 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_2 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_2 {
+        width: 45px;
+        height: 45px;
+        margin: -22px 0 0 36px;
+      }
+
+      .section_5 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .block_3 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_3 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_3 {
+        width: 45px;
+        height: 45px;
+        margin: -22px 0 0 36px;
+      }
+
+      .section_6 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .box_5 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_4 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_4 {
+        width: 45px;
+        height: 45px;
+        margin: -22px 0 0 36px;
+      }
+
+      .text_10 {
+        width: 519px;
+        height: 29px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Inter-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 100px 0 0 443px;
+      }
+
+      .box_6 {
+        background-image: linear-gradient(
+          90deg,
+          rgba(180, 242, 193, 0.8) 0,
+          rgba(111, 226, 134, 0.8) 100%
+        );
+        border-radius: 80px;
+        width: 415px;
+        height: 22px;
+        margin: 93px 0 0 500px;
+      }
+
+      .box_7 {
+        width: 1369px;
+        height: 50px;
+        margin: 9px 0 0 35px;
+      }
+
+      .image-wrapper_5 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        background-image: linear-gradient(
+          180deg,
+          rgba(236, 230, 168, 1) 0,
+          rgba(255, 255, 255, 1) 100%
+        );
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+      }
+
+      .label_5 {
+        width: 30px;
+        height: 30px;
+        margin: 10px 0 0 10px;
+      }
+
+      .text_11 {
+        width: 15px;
+        height: 29px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Inter-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 5px 0 0 407px;
+      }
+
+      .text_12 {
+        width: 27px;
+        height: 29px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Inter-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 5px 0 0 393px;
+      }
+
+      .image-wrapper_6 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        background-image: linear-gradient(
+          180deg,
+          rgba(236, 230, 168, 1) 0,
+          rgba(255, 255, 255, 1) 100%
+        );
+        border-radius: 50%;
+        height: 50px;
+        margin-left: 427px;
+        width: 50px;
+      }
+
+      .label_6 {
+        width: 30px;
+        height: 30px;
+        margin: 10px 0 0 10px;
+      }
+
+      .image-wrapper_7 {
+        width: 1311px;
+        height: 202px;
+        justify-content: space-between;
+        margin: 113px 0 50px 55px;
+      }
+
+      .image_3-0 {
+        width: 300px;
+        height: 202px;
+        margin-right: 37px;
+      }
+
+      .image_3-1 {
+        width: 300px;
+        height: 202px;
+        margin-right: 37px;
+      }
+
+      .image_3-2 {
+        width: 300px;
+        height: 202px;
+        margin-right: 37px;
+      }
+
+      .image_3-3 {
+        width: 300px;
+        height: 202px;
+        margin-right: 37px;
+      }
+
+      .label_7 {
+        position: absolute;
+        left: 690px;
+        top: 325px;
+        width: 45px;
+        height: 45px;
+      }
+
+      /* 通用样式 */
+      .flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flex-row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      /* 页面居中 */
+      body {
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+
+      /* 返回按钮样式 */
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(61, 124, 74, 0.9);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: Inter-Regular;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .back-button:hover {
+        background: rgba(61, 124, 74, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(61, 124, 74, 0.3);
+      }
+
+      /* 下一步按钮样式 */
+      .next-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(61, 124, 74, 0.9);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: Inter-Regular;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .next-button:hover {
+        background: rgba(61, 124, 74, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(61, 124, 74, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="back-button" onclick="goBack()">← 返回</button>
+    <button class="next-button" onclick="goToNext()">下一步 →</button>
+    
+    <div class="page flex-col">
+      <div class="block_1 flex-row">
+        <div class="group_1 flex-col">
+          <div class="group_2 flex-row">
+            <img
+              class="image_1"
+              referrerpolicy="no-referrer"
+              src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG259ba8fce4d62e6e41f567e196afc6a9.png"
+            />
+            <span class="text_1">GreenPulse</span>
+            <a href="/index.html" class="text_2">Home</a> <a href="/tools.html" class="text_3">Tools</span>
+            <a href="/index.html" class="text_4">Knowledge</a>
+          </div>
+        </div>
+        <div class="group_3 flex-col">
+          <span class="paragraph_1"
+            >GreenPulse&nbsp;website&nbsp;(hereinafter&nbsp;referred&nbsp;to&nbsp;as&nbsp;"this&nbsp;website")&nbsp;places&nbsp;great&nbsp;importance&nbsp;on&nbsp;your&nbsp;privacy&nbsp;rights.&nbsp;We&nbsp;commit&nbsp;to&nbsp;collecting,&nbsp;using,&nbsp;and&nbsp;protecting&nbsp;your&nbsp;personal&nbsp;information&nbsp;only&nbsp;within&nbsp;the&nbsp;scope&nbsp;that&nbsp;is&nbsp;lawful,&nbsp;legitimate,&nbsp;and&nbsp;necessary,&nbsp;in&nbsp;order&nbsp;to&nbsp;provide&nbsp;you&nbsp;with&nbsp;a&nbsp;better&nbsp;service&nbsp;experience.&nbsp;When&nbsp;you&nbsp;use&nbsp;the&nbsp;features&nbsp;of&nbsp;this&nbsp;website&nbsp;(such&nbsp;as&nbsp;the&nbsp;carbon&nbsp;footprint&nbsp;calculator),&nbsp;we&nbsp;may&nbsp;collect&nbsp;relevant&nbsp;data&nbsp;you&nbsp;actively&nbsp;submit,&nbsp;as&nbsp;well&nbsp;as&nbsp;necessary&nbsp;device&nbsp;information,&nbsp;access&nbsp;times,&nbsp;and&nbsp;browsing&nbsp;history.&nbsp;This&nbsp;information&nbsp;is&nbsp;used&nbsp;solely&nbsp;for&nbsp;generating&nbsp;calculation&nbsp;results,&nbsp;optimizing&nbsp;website&nbsp;performance,&nbsp;and&nbsp;improving&nbsp;the&nbsp;overall&nbsp;user&nbsp;experience.&nbsp;We&nbsp;will&nbsp;not&nbsp;sell,&nbsp;rent,&nbsp;or&nbsp;otherwise&nbsp;provide&nbsp;your&nbsp;personal&nbsp;information&nbsp;to&nbsp;any&nbsp;unrelated&nbsp;third&nbsp;parties,&nbsp;unless&nbsp;required&nbsp;by&nbsp;law&nbsp;or&nbsp;with&nbsp;your&nbsp;explicit&nbsp;prior&nbsp;consent.&nbsp;To&nbsp;enhance&nbsp;website&nbsp;functionality,&nbsp;this&nbsp;website&nbsp;may&nbsp;use&nbsp;cookies&nbsp;or&nbsp;similar&nbsp;technologies&nbsp;to&nbsp;remember&nbsp;your&nbsp;preferences&nbsp;and&nbsp;browsing&nbsp;habits.&nbsp;You&nbsp;may&nbsp;choose&nbsp;to&nbsp;disable&nbsp;cookies&nbsp;in&nbsp;your&nbsp;browser,&nbsp;but&nbsp;this&nbsp;may&nbsp;affect&nbsp;the&nbsp;use&nbsp;of&nbsp;certain&nbsp;features.<br /><br />We&nbsp;implement&nbsp;reasonable&nbsp;technical&nbsp;and&nbsp;administrative&nbsp;measures&nbsp;to&nbsp;prevent&nbsp;unauthorized&nbsp;access,&nbsp;disclosure,&nbsp;or&nbsp;loss&nbsp;of&nbsp;your&nbsp;information.&nbsp;Please&nbsp;note&nbsp;that&nbsp;this&nbsp;website's&nbsp;content&nbsp;is&nbsp;intended&nbsp;for&nbsp;public&nbsp;use.&nbsp;If&nbsp;you&nbsp;are&nbsp;under&nbsp;18&nbsp;years&nbsp;of&nbsp;age,&nbsp;please&nbsp;use&nbsp;this&nbsp;website&nbsp;under&nbsp;the&nbsp;guidance&nbsp;of&nbsp;a&nbsp;parent&nbsp;or&nbsp;guardian.&nbsp;This&nbsp;policy&nbsp;may&nbsp;be&nbsp;updated&nbsp;periodically&nbsp;as&nbsp;our&nbsp;services&nbsp;evolve.&nbsp;Revised&nbsp;terms&nbsp;will&nbsp;be&nbsp;posted&nbsp;on&nbsp;this&nbsp;page&nbsp;and&nbsp;take&nbsp;effect&nbsp;upon&nbsp;publication.&nbsp;Your&nbsp;continued&nbsp;use&nbsp;of&nbsp;this&nbsp;website&nbsp;constitutes&nbsp;acceptance&nbsp;of&nbsp;this&nbsp;policy.<br
+          /></span>
+          <div class="text-wrapper_1 flex-row justify-between">
+            <span class="text_5">About&nbsp;&nbsp;GreenPulse</span>
+            <span class="text_6">Quick&nbsp;Link</span>
+          </div>
+          <div class="box_1 flex-row justify-between">
+            <span class="text_7"
+              >In&nbsp;order&nbsp;to&nbsp;help&nbsp;everyone&nbsp;understand&nbsp;how&nbsp;to&nbsp;protect&nbsp;the&nbsp;environment.</span
+            >
+            <div class="text-wrapper_2 flex-col justify-between">
+              <a href="/calculator.html" class="text_8">Travel&nbsp;Calculator</a>
+              <a href="/household.html" class="text_9">Household&nbsp;Calculator</a>
+            </div>
+          </div>
+        </div>
+        <div class="group_4 flex-col">
+          <div class="box_2 flex-row justify-between">
+            <div class="section_1 flex-col">
+              <div class="block_2 flex-col">
+                <div class="image-wrapper_1 flex-col">
+                  <a href="/calculator.html">
+                    <img
+                    class="label_1"
+                    referrerpolicy="no-referrer"
+                    src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGb8a17e578f08661cef8be97c39db57f6.png"
+                  />
+                  </a>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="section_2 flex-col">
+              <div class="box_3 flex-col">
+                <div class="section_3 flex-col"></div>
+                <a href="/household.html">
+                   <img
+                  class="image_2"
+                  referrerpolicy="no-referrer"
+                  src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG797113141bf59698f459455033c1f5f9.png"
+                />
+                </a>
+               
+              </div>
+            </div>
+            <div class="section_4 flex-col">
+              <div class="box_4 flex-col">
+                <div class="image-wrapper_2 flex-col">
+                  <img
+                    class="label_2"
+                    referrerpolicy="no-referrer"
+                    src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGbd9fbb2b98c81c976eb8261b2b841451.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="section_5 flex-col">
+              <div class="block_3 flex-col">
+                <div class="image-wrapper_3 flex-col">
+                  <img
+                    class="label_3"
+                    referrerpolicy="no-referrer"
+                    src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG5e1fcf5b89befca8b52354060e23ce1a.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="section_6 flex-col">
+              <div class="box_5 flex-col">
+                <div class="image-wrapper_4 flex-col">
+                  <a href="/result.html">
+                     <img
+                      class="label_4"
+                      referrerpolicy="no-referrer"
+                      src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG5380f19d43c719d142d1737b47a46a8a.png"
+                    />
+                  </a>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="text_10"
+            >1 . How&nbsp;many&nbsp;people&nbsp;are&nbsp;living&nbsp;in&nbsp;your&nbsp;house?</span
+          >
+          <div class="box_6 flex-col"> 
+            <input 
+                    type="range" 
+                    class="gradient-slider" 
+                    min="0" 
+                    max="10" 
+                    value="0" 
+                    step="1"
+                    id="mySlider1"
+                ></div>
+          <div class="box_7 flex-row">
+            <div class="image-wrapper_5 flex-col">
+              <a href="javascript:history.back()">
+                  <img
+                class="label_5"
+                referrerpolicy="no-referrer"
+                src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG4108ddaadf8da043569ebfb2fe43e871.png"
+              />
+              </a>
+            
+            </div>
+            <span class="text_11">0</span> <span class="text_12">10</span>
+            <div class="image-wrapper_6 flex-col">
+              <a href="/utilities.html">
+                <img
+                class="label_6"
+                referrerpolicy="no-referrer"
+                src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG6ba226656a30c6810fd48a78752accc9.png"
+              />
+              </a>
+              
+            </div>
+          </div>
+          <div class="image-wrapper_7 flex-row">
+            <img
+              class="image_3-0"
+              referrerpolicy="no-referrer"
+              src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG2e4acd41d51120d568bc88674e418743.png"
+            />
+            <img
+              class="image_3-1"
+              referrerpolicy="no-referrer"
+              src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd26d654b374bfb9c806c2899afb31e6e.png"
+            />
+            <img
+              class="image_3-2"
+              referrerpolicy="no-referrer"
+              src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG3f4907136b42b2eb95cde1ccb3f9ad14.png"
+            />
+            <img
+              class="image_3-3"
+              referrerpolicy="no-referrer"
+              src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG17fb723e148f51336191fb008a3da7ee.png"
+            />
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+
+      function goToNext() {
+        // 跳转到下一个页面，这里可以根据需要修改
+        window.location.href = 'result.html';
+      }
+
+      const slider1 = document.getElementById("mySlider1");
+      slider1.addEventListener("input", function(event) {
+          const currentValue = event.target.value;
+            // 更新数字显示
+          const numberElement = document.querySelector('.text_11');
+          if (numberElement) {
+            numberElement.textContent = currentValue;
+            numberElement.style.transform = 'scale(1.3)';
+            setTimeout(() => {
+              numberElement.style.transform = 'scale(1)';
+            }, 200);
+          }
+      });
+    </script>
+  </body>
+</html>

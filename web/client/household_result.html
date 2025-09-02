@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Household Result - GreenPulse</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <style>
+      .page {
+        background-color: rgba(255, 255, 255, 1);
+        position: relative;
+        width: 1440px;
+        height: 1300px;
+        overflow: hidden;
+      }
+
+      .group_1 {
+        width: 1440px;
+        height: 115px;
+      }
+
+      .block_1 {
+        width: 1112px;
+        height: 103px;
+        margin: 17px 0 0 38px;
+      }
+
+      .image_1 {
+        width: 82px;
+        height: 72px;
+      }
+
+      .text_1 {
+        width: 359px;
+        height: 94px;
+        overflow-wrap: break-word;
+        color: rgba(61, 124, 74, 1);
+        font-size: 50px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 50px;
+        margin: 9px 0 0 23px;
+      }
+
+      .text_2 {
+        width: 72px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 36px 0 0 82px;
+      }
+
+      .text_3 {
+        width: 67px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(61, 124, 74, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 36px 0 0 150px;
+      }
+
+      .text_4 {
+        width: 133px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 38px 0 0 144px;
+      }
+
+      .group_2 {
+        background-color: rgba(51, 74, 51, 1);
+        width: 1440px;
+        height: 403px;
+        margin-top: 782px;
+      }
+
+      .text_5 {
+        width: 103px;
+        height: 20px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 13px;
+        font-family: Poppins-Thin;
+        font-weight: 100;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 13px;
+        margin: 16px 0 0 17px;
+      }
+
+      .paragraph_1 {
+        width: 1400px;
+        height: 153px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 11px;
+        font-family: Poppins-ExtraLight;
+        font-weight: 250;
+        text-align: left;
+        margin: -12px 0 0 17px;
+      }
+
+      .text-wrapper_1 {
+        width: 607px;
+        height: 36px;
+        margin: 25px 0 0 37px;
+      }
+
+      .text_6 {
+        width: 228px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(229, 171, 109, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .text_7 {
+        width: 129px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(229, 171, 109, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .section_1 {
+        width: 619px;
+        height: 63px;
+        margin: 15px 0 87px 37px;
+      }
+
+      .text_8 {
+        width: 341px;
+        height: 48px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+      }
+
+      .text-wrapper_2 {
+        width: 141px;
+        height: 63px;
+      }
+
+      .text_9 {
+        width: 141px;
+        height: 24px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 20px;
+      }
+
+      .text_10 {
+        width: 40px;
+        height: 24px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 20px;
+        margin-top: 15px;
+      }
+
+      .group_3 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        background-color: rgba(249, 250, 236, 1);
+        height: 783px;
+        width: 1440px;
+        position: absolute;
+        left: 0;
+        top: 114px;
+      }
+
+      .group_4 {
+        width: 1109px;
+        height: 70px;
+        margin: 54px 0 0 160px;
+      }
+
+      .box_1 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        width: 169px;
+      }
+
+      .group_5 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_1 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_1 {
+        width: 46px;
+        height: 45px;
+        margin: -24px 0 0 32px;
+      }
+
+      .box_2 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .group_6 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG862d7ea8982b43f79a8399d6892c2565.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+        position: relative;
+      }
+
+      .box_3 {
+        border-radius: 50%;
+        width: 118px;
+        height: 24px;
+        margin: 35px 0 0 26px;
+      }
+
+      .image_2 {
+        position: absolute;
+        left: 53px;
+        top: 3px;
+        width: 64px;
+        height: 64px;
+      }
+
+      .box_4 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .section_2 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_2 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_2 {
+        width: 45px;
+        height: 45px;
+        margin: -22px 0 0 36px;
+      }
+
+      .box_5 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .group_7 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_3 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_3 {
+        width: 45px;
+        height: 45px;
+        margin: -22px 0 0 36px;
+      }
+
+      .box_6 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .box_7 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_4 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_4 {
+        width: 45px;
+        height: 45px;
+        margin: -22px 0 0 36px;
+      }
+
+      .text-wrapper_3 {
+        width: 328px;
+        height: 48px;
+        margin: 42px 0 0 551px;
+      }
+
+      .text_11 {
+        width: 328px;
+        height: 48px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 32px;
+        font-family: Poppins-Black;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 32px;
+      }
+
+      .text-wrapper_4 {
+        width: 466px;
+        height: 47px;
+        margin: 32px 0 0 487px;
+      }
+
+      .text_12 {
+        width: 466px;
+        height: 47px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Bold;
+        font-weight: 700;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .group_8 {
+        width: 125px;
+        height: 44px;
+        margin: 2px 0 0 654px;
+      }
+
+      .group_9 {
+        background-color: rgba(255, 255, 255, 1);
+        width: 125px;
+        height: 44px;
+      }
+
+      .text-wrapper_5 {
+        width: 499px;
+        height: 36px;
+        margin: 9px 0 0 470px;
+      }
+
+      .text_13 {
+        width: 499px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Bold;
+        font-weight: 700;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .group_10 {
+        width: 125px;
+        height: 44px;
+        margin: 18px 0 0 654px;
+      }
+
+      .section_3 {
+        background-color: rgba(255, 255, 255, 1);
+        width: 125px;
+        height: 44px;
+      }
+
+      .image-wrapper_5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .image_3 {
+        width: 92px;
+        height: 92px;
+      }
+
+      .image_4 {
+        width: 92px;
+        height: 92px;
+      }
+
+      .text-wrapper_6 {
+        width: 789px;
+        height: 36px;
+        margin: 11px 0 0 310px;
+      }
+
+      .text_14 {
+        width: 789px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Bold;
+        font-weight: 700;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .group_11 {
+        width: 169px;
+        height: 70px;
+        margin: 32px 0 74px 635px;
+      }
+
+      .section_4 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        width: 169px;
+        position: relative;
+      }
+
+      .section_5 {
+        background-color: rgba(211, 160, 129, 1);
+        border-radius: 50%;
+        width: 118px;
+        height: 24px;
+        margin: 35px 0 0 26px;
+      }
+
+      .section_6 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 169px;
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGa17af1800d57790ee851c1dc98da2d1a.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .group_12 {
+        width: 45px;
+        height: 45px;
+        margin: 13px 0 0 62px;
+      }
+
+      .text_15 {
+        position: absolute;
+        left: 37px;
+        top: 18px;
+        width: 96px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(226, 129, 129, 1);
+        font-size: 24px;
+        font-family: Poppins-Bold;
+        font-weight: 700;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .image-wrapper_6 {
+        height: 459px;
+        width: 688px;
+        position: absolute;
+        left: -172px;
+        top: 369px;
+      }
+
+      .image_5 {
+        /* width: 92px;
+        height: 92px;
+        margin: 99px 0 0 734px; */
+      }
+
+      /* 通用样式 */
+      .flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flex-row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      /* 页面居中 */
+      body {
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+
+      /* 返回按钮样式 */
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(61, 124, 74, 0.9);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: Inter-Regular;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .back-button:hover {
+        background: rgba(61, 124, 74, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(61, 124, 74, 0.3);
+      }
+
+      /* 下一步按钮样式 */
+      .next-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(61, 124, 74, 0.9);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: Inter-Regular;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .next-button:hover {
+        background: rgba(61, 124, 74, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(61, 124, 74, 0.3);
+      }
+
+      /* details按钮点击效果 */
+      .section_4 {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .section_4:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="back-button" onclick="goBack()">← 返回</button>
+    <button class="next-button" onclick="goToNext()">下一步 →</button>
+    
+    <div class="page flex-col justify-between">
+      <div class="group_1 flex-col">
+        <div class="block_1 flex-row">
+          <img
+            class="image_1"
+            referrerpolicy="no-referrer"
+            src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG259ba8fce4d62e6e41f567e196afc6a9.png"
+          />
+          <span class="text_1">GreenPulse</span>
+          <a href="/index.html" class="text_2">Home</a> <a href="/tools.html" class="text_3">Tools</a>
+          <span class="text_4">Knowledge</span>
+        </div>
+      </div>
+      <div class="group_2 flex-col">
+        <span class="text_5"></span>
+        <span class="paragraph_1"
+          >GreenPulse&nbsp;website&nbsp;(hereinafter&nbsp;referred&nbsp;to&nbsp;as&nbsp;"this&nbsp;website")&nbsp;places&nbsp;great&nbsp;importance&nbsp;on&nbsp;your&nbsp;privacy&nbsp;rights.&nbsp;We&nbsp;commit&nbsp;to&nbsp;collecting,&nbsp;using,&nbsp;and&nbsp;protecting&nbsp;your&nbsp;personal&nbsp;information&nbsp;only&nbsp;within&nbsp;the&nbsp;scope&nbsp;that&nbsp;is&nbsp;lawful,&nbsp;legitimate,&nbsp;and&nbsp;necessary,&nbsp;in&nbsp;order&nbsp;to&nbsp;provide&nbsp;you&nbsp;with&nbsp;a&nbsp;better&nbsp;service&nbsp;experience.&nbsp;When&nbsp;you&nbsp;use&nbsp;the&nbsp;features&nbsp;of&nbsp;this&nbsp;website&nbsp;(such&nbsp;as&nbsp;the&nbsp;carbon&nbsp;footprint&nbsp;calculator),&nbsp;we&nbsp;may&nbsp;collect&nbsp;relevant&nbsp;data&nbsp;you&nbsp;actively&nbsp;submit,&nbsp;as&nbsp;well&nbsp;as&nbsp;necessary&nbsp;device&nbsp;information,&nbsp;access&nbsp;times,&nbsp;and&nbsp;browsing&nbsp;history.&nbsp;This&nbsp;information&nbsp;is&nbsp;used&nbsp;solely&nbsp;for&nbsp;generating&nbsp;calculation&nbsp;results,&nbsp;optimizing&nbsp;website&nbsp;performance,&nbsp;and&nbsp;improving&nbsp;the&nbsp;overall&nbsp;user&nbsp;experience.&nbsp;We&nbsp;will&nbsp;not&nbsp;sell,&nbsp;rent,&nbsp;or&nbsp;otherwise&nbsp;provide&nbsp;your&nbsp;personal&nbsp;information&nbsp;to&nbsp;any&nbsp;unrelated&nbsp;third&nbsp;parties,&nbsp;unless&nbsp;required&nbsp;by&nbsp;law&nbsp;or&nbsp;with&nbsp;your&nbsp;explicit&nbsp;prior&nbsp;consent.&nbsp;To&nbsp;enhance&nbsp;website&nbsp;functionality,&nbsp;this&nbsp;website&nbsp;may&nbsp;use&nbsp;cookies&nbsp;or&nbsp;similar&nbsp;technologies&nbsp;to&nbsp;remember&nbsp;your&nbsp;preferences&nbsp;and&nbsp;browsing&nbsp;habits.&nbsp;You&nbsp;may&nbsp;choose&nbsp;to&nbsp;disable&nbsp;cookies&nbsp;in&nbsp;your&nbsp;browser,&nbsp;but&nbsp;this&nbsp;may&nbsp;affect&nbsp;the&nbsp;use&nbsp;of&nbsp;certain&nbsp;features.<br /><br />We&nbsp;implement&nbsp;reasonable&nbsp;technical&nbsp;and&nbsp;administrative&nbsp;measures&nbsp;to&nbsp;prevent&nbsp;unauthorized&nbsp;access,&nbsp;disclosure,&nbsp;or&nbsp;loss&nbsp;of&nbsp;your&nbsp;information.&nbsp;Please&nbsp;note&nbsp;that&nbsp;this&nbsp;website's&nbsp;content&nbsp;is&nbsp;intended&nbsp;for&nbsp;public&nbsp;use.&nbsp;If&nbsp;you&nbsp;are&nbsp;under&nbsp;18&nbsp;years&nbsp;of&nbsp;age,&nbsp;please&nbsp;use&nbsp;this&nbsp;website&nbsp;under&nbsp;the&nbsp;guidance&nbsp;of&nbsp;a&nbsp;parent&nbsp;or&nbsp;guardian.&nbsp;This&nbsp;policy&nbsp;may&nbsp;be&nbsp;updated&nbsp;periodically&nbsp;as&nbsp;our&nbsp;services&nbsp;evolve.&nbsp;Revised&nbsp;terms&nbsp;will&nbsp;be&nbsp;posted&nbsp;on&nbsp;this&nbsp;page&nbsp;and&nbsp;take&nbsp;effect&nbsp;upon&nbsp;publication.&nbsp;Your&nbsp;continued&nbsp;use&nbsp;of&nbsp;this&nbsp;website&nbsp;constitutes&nbsp;acceptance&nbsp;of&nbsp;this&nbsp;policy.<br
+        /></span>
+        <div class="text-wrapper_1 flex-row justify-between">
+          <span class="text_6">About&nbsp;&nbsp;GreenPulse</span>
+          <span class="text_7">Quick&nbsp;Link</span>
+        </div>
+        <div class="section_1 flex-row justify-between">
+          <span class="text_8"
+            >In&nbsp;order&nbsp;to&nbsp;help&nbsp;everyone&nbsp;understand&nbsp;how&nbsp;to&nbsp;protect&nbsp;the&nbsp;environment.</span
+          >
+          <div class="text-wrapper_2 flex-col justify-between">
+            <a href="/calculator.html" > <span class="text_9">Travel Calculator</span></a>
+            <a href="/household.html" > <span class="text_10">Household Calculator</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="group_3 flex-col">
+        <div class="group_4 flex-row justify-between">
+          <div class="box_1 flex-col">
+            <div class="group_5 flex-col">
+              <div class="image-wrapper_1 flex-col">
+                <a href="/calculator.html">
+                    <img
+                  class="label_1"
+                  referrerpolicy="no-referrer"
+                  src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGb8a17e578f08661cef8be97c39db57f6.png"
+                />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="box_2 flex-col">
+            <div class="group_6 flex-col">
+              <div class="box_3 flex-col"></div>
+              <a href="/household.html">
+                 <img
+                class="image_2"
+                referrerpolicy="no-referrer"
+                src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG797113141bf59698f459455033c1f5f9.png"
+              />
+              </a>
+            </div>
+          </div>
+          <div class="box_4 flex-col">
+            <div class="section_2 flex-col">
+              <div class="image-wrapper_2 flex-col">
+                <img
+                  class="label_2"
+                  referrerpolicy="no-referrer"
+                  src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGbd9fbb2b98c81c976eb8261b2b841451.png"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="box_5 flex-col">
+            <div class="group_7 flex-col">
+              <div class="image-wrapper_3 flex-col">
+                <img
+                  class="label_3"
+                  referrerpolicy="no-referrer"
+                  src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG5e1fcf5b89befca8b52354060e23ce1a.png"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="box_6 flex-col">
+            <div class="box_7 flex-col">
+              <div class="image-wrapper_4 flex-col">
+                <a href="/result.html">
+                  <img
+                    class="label_4"
+                    referrerpolicy="no-referrer"
+                    src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG5380f19d43c719d142d1737b47a46a8a.png"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-wrapper_3 flex-row">
+          <span class="text_11">RESULT&nbsp;-&nbsp;Household</span>
+        </div>
+      
+        <div class="text-wrapper_5 flex-row">
+          <span class="text_13"
+            >If&nbsp;everyone&nbsp;lived&nbsp;like&nbsp;you,&nbsp;we&nbsp;would&nbsp;need</span
+          >
+        </div>
+        <div class="group_10 flex-row">
+          <div class="section_3 flex-col"></div>
+        </div>
+        <div class="image-wrapper_5 flex-row">
+           <img
+            class="image_5"
+            referrerpolicy="no-referrer"
+            src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGdaf978382374dc7320e036e93b35bb9d.png"
+          />
+          <img
+            class="image_3"
+            referrerpolicy="no-referrer"
+            src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGdaf978382374dc7320e036e93b35bb9d.png"
+          />
+          <img
+            class="image_4"
+            referrerpolicy="no-referrer"
+            src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGdaf978382374dc7320e036e93b35bb9d.png"
+          />
+        </div>
+        <div class="text-wrapper_6 flex-row">
+          <span class="text_14"
+            >Why&nbsp;can't&nbsp;I&nbsp;get&nbsp;my&nbsp;Footprint&nbsp;score&nbsp;within&nbsp;the&nbsp;means&nbsp;of&nbsp;one&nbsp;tree?</span
+          >
+        </div>
+        <div class="group_11 flex-row">
+          <div class="section_4 flex-col" onclick="goTodetails()">
+            <div class="section_5 flex-col"></div>
+            <div class="section_6 flex-row">
+              <div class="group_12 flex-col"></div>
+              <span class="text_15">details</span>
+            </div>
+          </div>
+        </div>
+        <div class="image-wrapper_6 flex-col">
+         
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+
+      function goToNext() {
+        // 跳转到下一个页面，这里可以根据需要修改
+        window.location.href = '/waste.html';
+      }
+
+      function goTodetails() {
+        // 点击details按钮跳转到详情页面
+        window.location.href = '/details.html';
+      }
+    </script>
+  </body>
+</html>
