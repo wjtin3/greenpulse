@@ -415,7 +415,7 @@
         margin: 9px 0 0 470px;
       }
 
-      .text_13 {
+      .text_13, .text_trees_needed, .text_saplings {
         width: 499px;
         height: 36px;
         overflow-wrap: break-word;
@@ -426,6 +426,7 @@
         text-align: left;
         white-space: nowrap;
         line-height: 24px;
+        padding-top: 10px;
       }
 
       .box_5 {
@@ -447,7 +448,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 10px;
+        margin-top: 30px;
         margin-bottom: 10px;
       }
 
@@ -620,11 +621,18 @@
         </div>
       
         <div class="text-wrapper_5 flex-row">
-          <span class="text_13"
-            >If&nbsp;everyone&nbsp;lived&nbsp;like&nbsp;you,&nbsp;we&nbsp;would&nbsp;need</span
-          >
+          <span class="text_13"></span>
         </div>
         <div class="box_5 flex-row"><div class="block_5 flex-col" id="footprint-value"></div></div>
+        <div class="text-wrapper_5 flex-row">
+          <span class="text_trees_needed"></span>
+        </div> 
+        <div class="box_5 flex-row"><div class="block_5 flex-col" id="trees-value"></div></div>      
+        <div class="text-wrapper_5 flex-row">
+          <span class="text_saplings">
+            tree saplings for 10 years to absorb this amount of CO₂.
+          </span>
+        </div>        
         <div class="image-wrapper_5 flex-row">
           <img
             class="image_5"
@@ -642,6 +650,7 @@
             src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGdaf978382374dc7320e036e93b35bb9d.png"
           />
         </div>
+
         <div class="text-wrapper_6 flex-row">
           <span class="text_14"
             >Why&nbsp;can't&nbsp;I&nbsp;get&nbsp;my&nbsp;Footprint&nbsp;score&nbsp;within&nbsp;the&nbsp;means&nbsp;of&nbsp;one&nbsp;tree?</span
@@ -681,7 +690,7 @@
         const result = window.calculatorUtils.calculateTotalFootprint();
         
         // 更新UI显示地球数量
-        updateEarthsDisplay(result.earthsNeeded);
+        updateTreesDisplay(result.treesNeeded);
         
         // 显示详细的碳足迹组成
         displayFootprintDetails(result);
@@ -726,8 +735,8 @@
         }
       }
       
-            // 更新地球图标显示
-      function updateEarthsDisplay(count) {
+      // 更新地球图标显示
+      function updateTreesDisplay(count) {
         // 获取地球图标容器
         const container = document.querySelector('.image-wrapper_5');
         if (!container) return;
@@ -750,7 +759,11 @@
         // 更新文本显示
         const textElement = document.querySelector('.text_13');
         if (textElement) {
-          textElement.textContent = `If everyone lived like you, we would need`;
+          textElement.textContent = `Your total carbon footprint for this category is`;
+        }        
+        const textElement1 = document.querySelector('.text_trees_needed');
+        if (textElement1) {
+          textElement1.textContent = `You would need to plant approximately`;
         }
         
         // 更新footprint-value显示碳足迹数值
@@ -773,9 +786,33 @@
           
           // 显示碳足迹值（四舍五入到两位小数）
           const footprintValue = parseFloat(totalFootprint).toFixed(2);
-          valueDisplay.textContent = `${footprintValue} kg CO₂`;
+          valueDisplay.textContent = `${footprintValue}`;
           
           footprintElement.appendChild(valueDisplay);
+        }        
+        
+        const treesElement = document.getElementById('trees-value');
+        if (treesElement) {
+          // 获取总碳足迹值
+          const treesNeeded = localStorage.getItem('trees_needed') || '0';
+          
+          // 清空之前的内容
+          treesElement.innerHTML = '';
+          
+          // 创建显示元素
+          const valueDisplay = document.createElement('div');
+          valueDisplay.style.fontSize = '24px';
+          valueDisplay.style.fontWeight = 'bold';
+          valueDisplay.style.color = '#3D7C4A';
+          valueDisplay.style.textAlign = 'center';
+          valueDisplay.style.padding = '10px';
+          valueDisplay.style.fontFamily = 'Poppins-Bold';
+          
+          // 显示碳足迹值（四舍五入到两位小数）
+          const treesValue = parseFloat(treesNeeded).toFixed(2);
+          valueDisplay.textContent = `${treesValue}`;
+          
+          treesElement.appendChild(valueDisplay);
         }
       }
     </script>

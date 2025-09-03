@@ -1367,6 +1367,9 @@
     <script src="scripts/loadLayout.js"></script>
     <script src="scripts/calculator.js"></script>
     <script>
+      // Clear storage temporary
+      localStorage.clear();
+
       // Load the navigation buttons
       fetch("./components/navigation_buttons.html")
         .then(res => res.text())

@@ -156,7 +156,7 @@ function calculatePublicTransportFootprint(distances) {
   
   // 使用平均公共交通排放系数 (0.12597 kg CO2e/pkm)
   if (publicTransport1 > 0) {
-    totalEmission += publicTransport1 * 0.12597;
+    totalEmission += publicTransport1 * 0.10385;
   }
   
   if (publicTransport2 > 0) {
@@ -166,22 +166,11 @@ function calculatePublicTransportFootprint(distances) {
   return totalEmission;
 }
 
-// 计算总碳足迹并转换为"地球数量"
-function calculateEarthsNeeded(totalEmission) {
-  // 根据碳排放量计算所需地球数量
-  // 全球人均碳排放量约为4.7吨CO2/年
-  // 我们假设一周的碳排放量乘以52周得到年排放量
-  const annualEmission = totalEmission * 52; // 从周排放转为年排放 (kg CO2)
+function calculateTreesNeeded(totalEmission) {
+  // Tree saplings growing for 10 years needed to offset the total emission
+  const treesNeeded = totalEmission / 60.5;
   
-  // 将kg转换为吨
-  const annualEmissionTons = annualEmission / 1000;
-  
-  // 计算地球数量：个人年排放量 / 可持续人均排放量
-  // 可持续人均排放量约为2吨CO2/年
-  const earthsNeeded = annualEmissionTons / 2;
-  
-  // 确保至少返回1个地球
-  return Math.max(1, Math.round(earthsNeeded));
+  return Math.max(1, Math.round(treesNeeded));
 }
 
 // 计算总碳足迹
@@ -221,11 +210,11 @@ function calculateTotalFootprint() {
   const totalFootprint = carFootprint + motorcycleFootprint + publicTransportFootprint;
   
   // 将总碳足迹转换为"地球数量"
-  const earthsNeeded = calculateEarthsNeeded(totalFootprint);
+  const treesNeeded = calculateTreesNeeded(totalFootprint);
   
   // 保存结果
   localStorage.setItem('total_footprint', totalFootprint.toFixed(2));
-  localStorage.setItem('earths_needed', earthsNeeded);
+  localStorage.setItem('trees_needed', treesNeeded);
   
   // 保存各部分碳足迹
   localStorage.setItem('car_footprint', carFootprint.toFixed(2));
@@ -234,7 +223,7 @@ function calculateTotalFootprint() {
   
   return {
     totalFootprint,
-    earthsNeeded,
+    treesNeeded,
     carFootprint,
     motorcycleFootprint,
     publicTransportFootprint
