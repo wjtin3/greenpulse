@@ -186,3 +186,10 @@ a{
     background: rgba(61, 124, 74, 0.3);
     color: rgba(0, 0, 0, 1);
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}

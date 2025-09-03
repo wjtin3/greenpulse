@@ -16,6 +16,14 @@ async function loadLayout() {
       if (!footerResponse.ok) throw new Error("Failed to load footer.html");
       footerEl.innerHTML = await footerResponse.text();
     }
+
+    // Load calculator navigation
+    const calcNavEl = document.getElementById("calc_nav");
+    if (calcNavEl) {
+      const calcNavResponse = await fetch("calculator_nav.html");
+      if (!calcNavResponse.ok) throw new Error("Failed to load calculator_nav.html");
+      calcNavEl.innerHTML = await calcNavResponse.text();
+    }
   } catch (err) {
     console.error("Error loading layout:", err);
   }
