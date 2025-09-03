@@ -1365,6 +1365,7 @@
     </div>
 
     <script src="scripts/loadLayout.js"></script>
+    <script src="scripts/calculator.js"></script>
     <script>
       // Load the navigation buttons
       fetch("./components/navigation_buttons.html")
@@ -1483,27 +1484,29 @@
           });
         });
         
-        const slider1 = document.getElementById("mySlider");
+              const slider1 = document.getElementById("mySlider");
 
-        // 监听滑动时的实时值变化（input 事件）
-        slider1.addEventListener("input", function(event) {
-            const currentValue = event.target.value;
-             // 更新数字显示
-            const numberElement = this.closest('.group_6, .box_19').querySelector('.text_6, .text_8');
-            if (numberElement) {
-              numberElement.textContent = currentValue;
-              numberElement.style.transform = 'scale(1.3)';
-              setTimeout(() => {
-                numberElement.style.transform = 'scale(1)';
-              }, 200);
-            }
-        });
+      // 监听滑动时的实时值变化（input 事件）
+      slider1.addEventListener("input", function(event) {
+          const currentValue = event.target.value;
+           // 更新数字显示
+          const numberElement = this.closest('.group_6, .box_19').querySelector('.text_6, .text_8');
+          if (numberElement) {
+            numberElement.textContent = currentValue;
+            numberElement.style.transform = 'scale(1.3)';
+            setTimeout(() => {
+              numberElement.style.transform = 'scale(1)';
+            }, 200);
+          }
+      });
 
-        // 监听滑动结束后的最终值（change 事件）
-        slider1.addEventListener("change", function(event) {
-            const finalValue = event.target.value;
-            console.log("滑动结束，最终值：", finalValue);
-        });
+      // 监听滑动结束后的最终值（change 事件）
+      slider1.addEventListener("change", function(event) {
+          const finalValue = event.target.value;
+          console.log("滑动结束，最终值：", finalValue);
+          // 保存汽车距离值
+          window.calculatorUtils.saveSliderValues('car_distance_1', finalValue);
+      });
 
         const slider2 = document.getElementById("mySlider1");
 
@@ -1525,6 +1528,8 @@
         slider2.addEventListener("change", function(event) {
             const finalValue = event.target.value;
             console.log("滑动结束，最终值：", finalValue);
+            // 保存摩托车距离值
+            window.calculatorUtils.saveSliderValues('motorcycle_distance_1', finalValue);
         });
         
         // 数字输入框效果

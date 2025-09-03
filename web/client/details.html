@@ -1219,6 +1219,7 @@
       </div>
     </div>
 
+    <script src="scripts/calculator.js"></script>
     <script>
       function goBack() {
         window.history.back();
@@ -1303,6 +1304,22 @@
                 setTimeout(() => {
                   numberElement.style.transform = 'scale(1)';
                 }, 200);
+              }
+          });
+          
+          // 添加change事件监听器保存值
+          slider1List[i].addEventListener("change", function(event) {
+              const finalValue = event.target.value;
+              let rowNum = parseInt(event.target.getAttribute("row"));
+              // 获取车辆大小和燃料类型
+              const sizeSelect = document.getElementById(`sizeSelect${rowNum}`);
+              const fuelSelect = document.getElementById(`fuelSelect${rowNum}`);
+              
+              if (sizeSelect && fuelSelect) {
+                // 保存距离、大小和燃料类型
+                window.calculatorUtils.saveSliderValues(`car_distance_${rowNum}`, finalValue);
+                localStorage.setItem(`car_size_${rowNum}`, sizeSelect.value);
+                localStorage.setItem(`car_fuel_${rowNum}`, fuelSelect.value);
               }
           });
         }
@@ -1393,6 +1410,20 @@
                 setTimeout(() => {
                   numberElement.style.transform = 'scale(1)';
                 }, 200);
+              }
+          });
+          
+          // 添加change事件监听器保存值
+          slider1List[i].addEventListener("change", function(event) {
+              const finalValue = event.target.value;
+              let rowNum = parseInt(event.target.getAttribute("row"));
+              // 获取摩托车大小
+              const sizeSelect = document.getElementById(`sizeSelectMotor${rowNum}`);
+              
+              if (sizeSelect) {
+                // 保存距离和大小
+                window.calculatorUtils.saveSliderValues(`motorcycle_distance_${rowNum}`, finalValue);
+                localStorage.setItem(`motorcycle_size_${rowNum}`, sizeSelect.value);
               }
           });
         }

@@ -743,6 +743,7 @@
   </div>
 
   <script src="scripts/loadLayout.js"></script>
+  <script src="scripts/calculator.js"></script>
   <script>
       // Load the navigation buttons
       fetch("./components/navigation_buttons.html")
@@ -784,6 +785,12 @@
         }, 200);
       }
     });
+    
+    slider1.addEventListener("change", function (event) {
+      const finalValue = event.target.value;
+      // 保存公共交通距离1
+      window.calculatorUtils.saveSliderValues('public_transport_distance_1', finalValue);
+    });
 
     const slider2 = document.getElementById("mySlider2");
     slider2.addEventListener("input", function (event) {
@@ -797,6 +804,12 @@
           numberElement.style.transform = 'scale(1)';
         }, 200);
       }
+    });
+    
+    slider2.addEventListener("change", function (event) {
+      const finalValue = event.target.value;
+      // 保存公共交通距离2
+      window.calculatorUtils.saveSliderValues('public_transport_distance_2', finalValue);
     });
   </script>
 </body>

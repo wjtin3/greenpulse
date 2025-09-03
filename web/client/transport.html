@@ -905,6 +905,7 @@
     </div>
 
     <script src="scripts/loadLayout.js"></script>
+    <script src="scripts/calculator.js"></script>
     <script>
       function goBack() {
         window.history.back();
@@ -923,6 +924,12 @@
             }, 200);
           }
       });
+      
+      slider1.addEventListener("change", function(event) {
+          const finalValue = event.target.value;
+          // 保存LRT距离
+          window.calculatorUtils.saveSliderValues('lrt_distance', finalValue);
+      });
 
       const slider2 = document.getElementById("mySlider2");
       slider2.addEventListener("input", function(event) {
@@ -936,6 +943,12 @@
               numberElement.style.transform = 'scale(1)';
             }, 200);
           }
+      });
+      
+      slider2.addEventListener("change", function(event) {
+          const finalValue = event.target.value;
+          // 保存MRT距离
+          window.calculatorUtils.saveSliderValues('mrt_distance', finalValue);
       });
 
       const slider3 = document.getElementById("mySlider3");
@@ -951,6 +964,12 @@
             }, 200);
           }
       });
+      
+      slider3.addEventListener("change", function(event) {
+          const finalValue = event.target.value;
+          // 保存KTM距离
+          window.calculatorUtils.saveSliderValues('ktm_distance', finalValue);
+      });
 
       const slider4 = document.getElementById("mySlider4");
       slider4.addEventListener("input", function(event) {
@@ -965,6 +984,12 @@
             }, 200);
           }
       });
+      
+      slider4.addEventListener("change", function(event) {
+          const finalValue = event.target.value;
+          // 保存Monorail距离
+          window.calculatorUtils.saveSliderValues('monorail_distance', finalValue);
+      });
 
       const slider5 = document.getElementById("mySlider5");
       slider5.addEventListener("input", function(event) {
@@ -978,6 +1003,12 @@
               numberElement.style.transform = 'scale(1)';
             }, 200);
           }
+      });
+      
+      slider5.addEventListener("change", function(event) {
+          const finalValue = event.target.value;
+          // 保存Bus距离
+          window.calculatorUtils.saveSliderValues('bus_distance', finalValue);
       });
     </script>
   </body>
