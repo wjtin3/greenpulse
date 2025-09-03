@@ -4,7 +4,7 @@ async function loadLayout() {
     // Load header
     const headerEl = document.getElementById("header");
     if (headerEl) {
-      const headerResponse = await fetch("header.html");
+      const headerResponse = await fetch("components/header.html");
       if (!headerResponse.ok) throw new Error("Failed to load header.html");
       headerEl.innerHTML = await headerResponse.text();
     }
@@ -12,7 +12,7 @@ async function loadLayout() {
     // Load footer
     const footerEl = document.getElementById("footer");
     if (footerEl) {
-      const footerResponse = await fetch("footer.html");
+      const footerResponse = await fetch("components/footer.html");
       if (!footerResponse.ok) throw new Error("Failed to load footer.html");
       footerEl.innerHTML = await footerResponse.text();
     }
@@ -20,7 +20,7 @@ async function loadLayout() {
     // Load calculator navigation
     const calcNavEl = document.getElementById("calc_nav");
     if (calcNavEl) {
-      const calcNavResponse = await fetch("calculator_nav.html");
+      const calcNavResponse = await fetch("components/calculator_nav.html");
       if (!calcNavResponse.ok) throw new Error("Failed to load calculator_nav.html");
       calcNavEl.innerHTML = await calcNavResponse.text();
     }

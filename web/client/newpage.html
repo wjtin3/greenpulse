@@ -316,7 +316,7 @@
     .group_15 {
       width: 1369px;
       height: 182px;
-      margin: 15px 0 0 38px;
+      margin: 15px 0 0 63px;
     }
 
     .image-wrapper_5 {
@@ -656,6 +656,14 @@
         background: linear-gradient(180deg, rgba(61, 124, 74, 1), rgba(51, 104, 64, 1));
     }
 
+    .block_3, .block_4 {
+      animation: slideGlow 2s ease-in-out infinite;
+      transition: all 0.3s ease;
+    }
+
+    .image-wrapper_5, .image-wrapper_6 {
+        animation: breathe 3s ease-in-out infinite;
+    }
   </style>
 </head>
 
@@ -667,8 +675,10 @@
         <div class="group_4 flex-row">
           <div id="calc_nav"></div>
         </div>
-        <div style="display: flex;justify-content: center;">
-          <span class="text_5">2.&nbsp;How&nbsp;far&nbsp;do&nbsp;you&nbsp;travel&nbsp;per&nbsp;week&nbsp;by&nbsp;public&nbsp;transportation?</span>
+        <div style="display: flex;justify-content: center;align-items: center; text-align: center;">
+          <span class="text_5">
+            2.&nbsp;How&nbsp;far&nbsp;do&nbsp;you&nbsp;travel&nbsp;per&nbsp;week&nbsp;by&nbsp;public&nbsp;transportation?
+          </span>
         </div>
           <div class="group_13 flex-row justify-between">
           <img class="image_3" referrerpolicy="no-referrer"
@@ -684,13 +694,15 @@
           </div>
         </div>
         <div class="group_15 flex-row">
+          <div id="button-container"></div>
+          <!--
           <div class="image-wrapper_5 flex-col">
             <a href="calculator.html">
               <img class="label_5" referrerpolicy="no-referrer"
               src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG4108ddaadf8da043569ebfb2fe43e871.png" />
             </a>
-            
           </div>
+          -->
           <div class="group_16 flex-col justify-center">
             <img class="image_3" referrerpolicy="no-referrer" src="/img/train.png" />
           </div>
@@ -706,13 +718,14 @@
             <a href="transport.html" class="text_10"
               id="detailsButton">ADD&nbsp;DETAILS&nbsp;TO&nbsp;IMPROVE&nbsp;ACCURACY</a>
           </div>
+          <!--
           <div class="image-wrapper_6 flex-col">
             <a href="result.html">
               <img class="label_6" referrerpolicy="no-referrer"
                 src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG6ba226656a30c6810fd48a78752accc9.png" />
             </a>
-
           </div>
+          -->
         </div>
         <div class="image-wrapper_7 flex-row">
           <img class="image_4-0" referrerpolicy="no-referrer"
@@ -731,6 +744,22 @@
 
   <script src="scripts/loadLayout.js"></script>
   <script>
+      // Load the navigation buttons
+      fetch("./components/navigation_buttons.html")
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById("button-container");
+          container.innerHTML = html;
+
+          // Use querySelector on the container to ensure you find the newly added elements
+          const leftBtn = container.querySelector("#dynamicLinkLeft");
+          const rightBtn = container.querySelector("#dynamicLinkRight");
+
+          if (leftBtn) leftBtn.href = "calculator.html";
+          if (rightBtn) rightBtn.href = "result.html";
+        })
+        .catch(err => console.error("Failed to load navigation buttons:", err));
+
     // 详情按钮点击事件
     document.addEventListener('DOMContentLoaded', function () {
       const detailsButton = document.getElementById('detailsButton');

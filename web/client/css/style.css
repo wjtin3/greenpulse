@@ -193,3 +193,25 @@ html, body {
   width: 100%;
   overflow-x: hidden; /* prevent horizontal scroll */
 }
+
+/* 滑块动态效果 */
+@keyframes slideGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(61, 124, 74, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(61, 124, 74, 0.6), 0 0 30px rgba(61, 124, 74, 0.4);
+    }
+}
+
+/* 呼吸效果 */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.9;
+    }
+}

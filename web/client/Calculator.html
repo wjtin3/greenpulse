@@ -275,6 +275,7 @@
         justify-content: center;
         width: 100%;
         height: 79px;
+        margin-left: 20px;
       }
 
       .car-img {
@@ -377,7 +378,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: 90px;
       }
 
       .mtc-image {
@@ -1259,7 +1259,6 @@
           >1.&nbsp;How&nbsp;far&nbsp;do&nbsp;you&nbsp;drive&nbsp;in&nbsp;a&nbsp;week?</span
         >
         </div>
-        
         <div class="box_17">
           <img
             class="car-img"
@@ -1285,6 +1284,7 @@
           </div>
         </div>
         <div class="box_18 flex-row">
+          <div id="button-container"></div>
           <!--
           <div class="image-wrapper_5 flex-col">
             <a href="javascript:history.back()">
@@ -1296,7 +1296,7 @@
             </a>
           </div>
           --> 
-          <div style="flex:1;display: flex;align-items: center;justify-content: center;margin-right: 46px;">
+          <div style="display: flex;align-items: center;justify-content: center;margin:0 auto; width:auto;">
             <div class="box_12 flex-col justify-center">
             <img
               class="mtc-image"
@@ -1304,28 +1304,29 @@
               src="img2/mtc.png"
               alt="MTC Image"
             />
-          </div>
-          <div class="box_19 flex-col">
-            <div class="box_14 flex-col">
-              <input 
-                    type="range" 
-                    class="gradient-slider" 
-                    min="0" 
-                    max="800" 
-                    value="0" 
-                    step="1"
-                    id="mySlider1"
-                >
             </div>
-            <div class="text-wrapper_6 flex-row justify-between">
-              <span class="text_8">0</span>
-              <span class="text_9">unit:&nbsp;km</span>
+            <div class="box_19 flex-col">
+              <div class="box_14 flex-col">
+                <input 
+                      type="range" 
+                      class="gradient-slider" 
+                      min="0" 
+                      max="800" 
+                      value="0" 
+                      step="1"
+                      id="mySlider1"
+                  >
+              </div>
+              <div class="text-wrapper_6 flex-row justify-between">
+                <span class="text_8">0</span>
+                <span class="text_9">unit:&nbsp;km</span>
+              </div>
+              <a href="details.html" class="text_10"
+                >ADD&nbsp;DETAILS&nbsp;TO&nbsp;IMPROVE&nbsp;ACCURACY</a
+              >
             </div>
-            <a href="details.html" class="text_10"
-              >ADD&nbsp;DETAILS&nbsp;TO&nbsp;IMPROVE&nbsp;ACCURACY</a
-            >
           </div>
-          </div>
+          <!--
           <div class="image-wrapper_5 flex-col">
             <a href="newpage.html">
               <img
@@ -1334,8 +1335,8 @@
               src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG6ba226656a30c6810fd48a78752accc9.png"
             />
             </a>
-            
           </div>
+          -->
         </div>
         <div class="image-wrapper_8 flex-row">
           <img
@@ -1359,13 +1360,28 @@
             src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG62d4e579ca3354df0c55c8fc4ecbd4e6.png"
           />
         </div>
-      
-      </div>
+      </div>            
       <div id="footer"></div>
     </div>
 
     <script src="scripts/loadLayout.js"></script>
     <script>
+      // Load the navigation buttons
+      fetch("./components/navigation_buttons.html")
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById("button-container");
+          container.innerHTML = html;
+
+          // Use querySelector on the container to ensure you find the newly added elements
+          const leftBtn = container.querySelector(".left-button");
+          const rightBtn = container.querySelector("#dynamicLinkRight");
+
+          if (leftBtn) leftBtn.style.display = "none";
+          if (rightBtn) rightBtn.href = "newpage.html";
+        })
+        .catch(err => console.error("Failed to load navigation buttons:", err));
+
       // JavaScript functionality
       document.addEventListener('DOMContentLoaded', function() {
         // 添加点击波纹效果
@@ -1390,7 +1406,7 @@
         }
 
         // 为所有可点击元素添加波纹效果
-        const clickableElements = document.querySelectorAll('.box_2, .box_4, .box_6, .box_7, .box_8, .image-wrapper_5, .image-wrapper_6, .image_4-0, .image_4-1, .image_4-2, .image_4-3, .text_2, .text_3, .text_4, .text_1, .image_1');
+        const clickableElements = document.querySelectorAll('.image-wrapperNav, .box_2, .box_4, .box_6, .box_7, .box_8, .image-wrapper_5, .image-wrapper_6, .image_4-0, .image_4-1, .image_4-2, .image_4-3, .text_2, .text_3, .text_4, .text_1, .image_1');
         clickableElements.forEach(element => {
           element.addEventListener('click', createRipple);
         });
