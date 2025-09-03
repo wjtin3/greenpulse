@@ -31,7 +31,9 @@
       .text-wrapper_1 {
         width: 420px;
         height: 18px;
-        margin: 23px 0 0 216px;
+        margin: 23px auto;
+        justify-content: flex-start;
+        padding-left: 20px;
       }
 
       .text_1 {
@@ -45,7 +47,7 @@
         text-align: left;
         white-space: nowrap;
         line-height: 15px;
-        margin-left: 100px;
+        margin-left: -100px;
       }
 
       .text_2 {
@@ -59,6 +61,7 @@
         text-align: left;
         white-space: nowrap;
         line-height: 15px;
+        margin-left: 200px;
       }
 
       .box_1 {
@@ -769,12 +772,11 @@
   <body>    
     <div class="page flex-col">
       <div class="main-container">
-        <div class="text-wrapper_1 flex-row justify-between">
-          <span class="text_1">Type</span> 
-          <span class="text_2">Distance</span>
-        </div>
+          <div class="text-wrapper_1 flex-row">
+            <span class="text_1">Type</span> 
+            <span class="text_2">Distance</span>
+          </div>
         <div class="box_1 flex-row">
-          <div class="text-wrapper_2 flex-col"><span class="text_3">1</span></div>
           <div class="group_1 flex-col"></div>
           <div class="text-wrapper_3 flex-col">
             <span class="text_4">LRT</span>
@@ -798,8 +800,6 @@
           </div>
         </div>
         <div class="box_3 flex-row">
-          <div class="text-wrapper_5 flex-col">
-            <span class="text_7">2</span></div>
           <div class="text-wrapper_6 flex-col">
             <span class="text_8">MRT</span>
           </div>
@@ -822,9 +822,6 @@
           </div>
         </div>
         <div class="box_3 flex-row">
-          <div class="text-wrapper_5 flex-col">
-            <span class="text_7">3</span>
-          </div>
           <div class="text-wrapper_6 flex-col">
             <span class="text_8">KTM</span>
           </div>
@@ -846,8 +843,6 @@
           </div>
         </div>
         <div class="box_3 flex-row">
-          <div class="text-wrapper_5 flex-col">
-            <span class="text_7">4</span></div>
           <div class="text-wrapper_6 flex-col">
             <span class="text_8">Monorail</span>
           </div>
@@ -870,8 +865,6 @@
           </div>
         </div>
         <div class="box_3 flex-row">
-          <div class="text-wrapper_5 flex-col">
-            <span class="text_7">5</span></div>
           <div class="text-wrapper_6 flex-col">
             <span class="text_8">Bus</span>
           </div>
