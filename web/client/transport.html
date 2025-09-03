@@ -605,7 +605,7 @@
         border-radius: 80px;
         position: absolute;
         left: 359px;
-        top: 262px;
+        top: 212px;
         width: 474px;
         height: 14px;
       }
@@ -707,19 +707,56 @@
             background-repeat: no-repeat; /* 背景图片不重复 */
             background-position: center; /* 背景图片居中显示 */
         }
+
+      /* Button container */
+      .popup-buttons {
+        display: flex;
+        justify-content: center; /* center horizontally */
+        gap: 20px;               /* space between buttons */
+        margin-top: 20px;        /* some space above */
+      }
+
+      /* Shared button styles */
+      .cancel-button,
+      .submit-button {
+        display: flex;
+        align-items: center;   /* center text vertically */
+        justify-content: center;
+        width: 120px;
+        height: 40px;
+        border: 1px solid;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .cancel-button a,
+      .submit-button a {
+        color: inherit;          /* inherit parent color */
+        text-decoration: none;   /* remove underline */
+      }
+
+      /* Optional hover effect */
+      .cancel-button a:hover,
+      .submit-button a:hover {
+        opacity: 0.8;
+      }
+
+      /* Individual colors */
+      .cancel-button {
+        color: orange; 
+        border: 1px solid orange;
+      }
+
+      .submit-button {
+        color: green;
+        border: 1px solid green;
+      }
     </style>
   </head>
-  <body>
-    <button class="back-button" onclick="goBack()">← 返回</button>
-    
+  <body>    
     <div class="page flex-col">
-      <div class="image-wrapper_1 flex-row">
-        <img
-          class="label_1"
-          referrerpolicy="no-referrer"
-          src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG90fa3b2492d15c58e80e8b0d9fb2b820.png"
-        />
-      </div>
       <div class="text-wrapper_1 flex-row justify-between">
         <span class="text_1">Type</span> <span class="text_2">Distance</span>
       </div>
@@ -843,19 +880,19 @@
           step="1"
           id="mySlider3">
       </div>
-      <div style="display: flex;position: absolute;right: 10px;bottom: 10px;width: 100px;
-        height: 30px;
-        border: 1px solid;
-        border-radius: 30px;
-        justify-content: center;
-        cursor: pointer;
-        color: orange;">
-        <a style="color: orange;" href="result.html ">Submit</a>
+      <div class="popup-buttons">
+        <div class="cancel-button">
+          <a href="newpage.html">Cancel</a>
+        </div>  
+        <div class="submit-button">
+          <a href="result.html">Submit</a>
+        </div>
       </div>
      
     
     </div>
 
+    <script src="scripts/loadLayout.js"></script>
     <script>
       function goBack() {
         window.history.back();
