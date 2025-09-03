@@ -1,12 +1,12 @@
 <div class="header_1">
   <!-- Left side: logo + brand -->
   <div class="nav-left">
-    <img
-      class="image_1"
-      referrerpolicy="no-referrer"
-      src="img/dae9de97c16fbc2d0388bbe8a1e084dd.png"
-      alt="GreenPulse Logo"
-    />
+      <img
+        class="image_1"
+        referrerpolicy="no-referrer"
+        src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG259ba8fce4d62e6e41f567e196afc6a9.png"
+        alt="GreenPulse Logo"
+      />
     <a class="header_text_1" href="index.html">GreenPulse</a>
   </div>
 
@@ -27,6 +27,19 @@
   height: 10vh;
   padding: 0 20px;
   position: relative;
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);  
+}
+
+/* 页面加载动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .nav-left {
@@ -34,6 +47,7 @@
   align-items: center;
   gap: 10px;
 }
+
 
 .header_image_1 {
   height: 50px; /* adjust as needed */
@@ -70,12 +84,33 @@
   align-items: center; /* ensures vertical centering */
 }
 
+/* 文字打字机效果 */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.header_text_1 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 2s steps(40, end) 0.5s both;
+}
+
+/* 标题交互动效 */
+.header_text_1 {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
 .header_text_2 {
-  width: 74px;
-  height: 36px;
-  overflow-wrap: break-word;
-  color: rgba(61, 124, 74, 1);
-  font-size: 24px;
+    height: 36px;
+    overflow-wrap: break-word;
+    color: rgba(61, 124, 74, 1);
+    font-size: 24px;
     font-family: Poppins-ExtraBold;
     font-weight: normal;
     text-align: left;
@@ -85,7 +120,6 @@
 }
 
 .header_text_3 {
-    width: 63px;
     height: 36px;
     overflow-wrap: break-word;
     color: rgba(0, 0, 0, 1);
@@ -99,7 +133,6 @@
 }
 
 .header_text_4 {
-    width: 133px;
     height: 36px;
     overflow-wrap: break-word;
     color: rgba(0, 0, 0, 1);
@@ -110,5 +143,77 @@
     white-space: nowrap;
     line-height: 24px;
     margin: 38px 0 0 148px;
+}
+
+/* 导航栏交互动效 */
+.header_text_2, .header_text_3, .header_text_4 {
+  transition: slideInLeft 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  cursor: pointer;
+}
+
+.header_text_2:hover, .header_text_3:hover, .header_text_4:hover {
+  color: rgba(61, 124, 74, 1);
+  transform: translateY(-2px);
+  text-shadow: 0 4px 8px rgba(61, 124, 74, 0.3);
+}
+
+.header_text_2::after, .header_text_3::after, .header_text_4::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(61, 124, 74, 1), rgba(51, 104, 64, 1));
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(-50%);
+  border-radius: 1px;
+}
+
+.header_text_2:hover::after, .header_text_3:hover::after, .header_text_4:hover::after {
+  width: 100%;
+}
+
+.header_text_2, .header_text_3, .header_text_4, .header_text_1, .header_image_1 {
+  position: relative;
+}
+
+/* 旋转光晕效果 */
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.image_1 {
+    animation: rotateGlow 20s linear infinite;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 </style>

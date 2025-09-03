@@ -831,7 +831,7 @@
             width: 29px;
             height: 29px;
             margin-top: -7px;
-            background-image: url('/img/slider.png');
+            background-image: url('../img/slider.png');
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 2px 8px transparent;
@@ -856,7 +856,7 @@
             width: 36px;
             height: 37px;
             margin-top: -7px;
-            background-image: url('/img/slider.png');
+            background-image: url('../img/slider.png');
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 2px 8px transparent;
@@ -865,12 +865,99 @@
             background-repeat: no-repeat; /* 背景图片不重复 */
             background-position: center; /* 背景图片居中显示 */
         }
+
+      /* Popup background */
+      .popup {
+        display: none; /* hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Popup box */
+      .popup-content {
+        background: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        text-align: center;
+        font-family: Poppins, sans-serif;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      /* OK button */
+      .popup-content button {
+        margin-top: 10px;
+        padding: 6px 14px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(61, 124, 74, 1);
+        color: white;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .popup-content button:hover {
+        background: rgba(51, 104, 64, 1);
+      }
+      
+      /* Button container */
+      .popup-buttons {
+        display: flex;
+        justify-content: center; /* center horizontally */
+        gap: 20px;               /* space between buttons */
+        margin-top: 20px;        /* some space above */
+      }
+
+      /* Shared button styles */
+      .cancel-button,
+      .submit-button {
+        display: flex;
+        align-items: center;   /* center text vertically */
+        justify-content: center;
+        width: 120px;
+        height: 40px;
+        border: 1px solid;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .cancel-button a,
+      .submit-button a {
+        color: inherit;          /* inherit parent color */
+        text-decoration: none;   /* remove underline */
+      }
+
+      /* Optional hover effect */
+      .cancel-button a:hover,
+      .submit-button a:hover {
+        opacity: 0.8;
+      }
+
+      /* Individual colors */
+      .cancel-button {
+        color: orange; 
+        border: 1px solid orange;
+      }
+
+      .submit-button {
+        color: green;
+        border: 1px solid green;
+      }
+
+
     </style>
   </head>
-  <body>
-    <button class="back-button" onclick="goBack()">← 返回</button>
-    
+  <body>    
     <div class="page flex-col">
+      <!--
       <div class="image-wrapper_1 flex-col">
         <img
           class="label_1"
@@ -878,6 +965,7 @@
           src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG90fa3b2492d15c58e80e8b0d9fb2b820.png"
         />
       </div>
+      -->
       <div class="block_1 flex-col justify-end">
         <div class="group_1 flex-row">
           <img
@@ -888,7 +976,9 @@
           <span class="text_1">Size</span> <span class="text_2">Fuel</span>
           <span class="text_3">Distance</span>
           <div class="section_1 flex-col">
-            <div  ><img id="g2AddRow"  style="width: 38px;height: 38px;" src="/img/add.png"></div>
+            <div>
+              <img id="g2AddRow" style="width: 38px;height: 38px;" src="../img/add.png">
+            </div>
           </div>
         </div>
         <div class="group_2 flex-row">
@@ -898,10 +988,10 @@
           <div class="group_3 flex-col justify-between">
             <div class="image-wrapper_2 flex-col">
                <div class="select-container">
-                  <select class="custom-select" id="sizeSelect">
-                      <option value="small">small</option>
-                      <option value="medium" selected>medium</option>
-                      <option value="large">large</option>
+                  <select class="custom-select" id="sizeSelect1">
+                      <option value="small">Small</option>
+                      <option value="medium" selected>Medium</option>
+                      <option value="large">Large</option>
                   </select>
               </div>
             </div>
@@ -909,12 +999,12 @@
           </div>
           <div class="image-wrapper_3 flex-col">
             <div class="select-container">
-                <select class="custom-select" id="fuelSelect">
-                    <option value="diesel">diesel</option>
-                    <option value="petrol" selected>petrol</option>
-                    <option value="hybrid">hybrid</option>
-                    <option value="hybrid">Plug-in Hybrid Electric Vehicle</option>
-                    <option value="hybrid">Battery Electric Vehicle</option>
+                <select class="custom-select" id="fuelSelect1">
+                    <option value="diesel">Diesel</option>
+                    <option value="petrol" selected>Petrol</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="phev">Plug-in Hybrid Electric Vehicle</option>
+                    <option value="bev">Battery Electric Vehicle</option>
                 </select>
             </div>
           </div>
@@ -935,7 +1025,7 @@
               <span class="text_6">unit:&nbsp;km</span>
             </div>
           </div>
-          <div class="group2-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">delete</div>
+          <div class="group2-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
         </div>
         <div class="group_2 flex-row">
           <div class="text-wrapper_3 flex-col">
@@ -943,21 +1033,21 @@
           </div>
           <div class="image-wrapper_4 flex-col">
              <div class="select-container">
-                  <select class="custom-select" id="sizeSelect">
+                  <select class="custom-select" id="sizeSelect2">
                       <option value="small">small</option>
-                      <option value="medium" selected>medium</option>
-                      <option value="large">large</option>
+                      <option value="medium" selected>Medium</option>
+                      <option value="large">Large</option>
                   </select>
               </div>
           </div>
           <div class="image-wrapper_5 flex-col">
              <div class="select-container">
-                <select class="custom-select" id="fuelSelect">
-                    <option value="diesel">diesel</option>
-                    <option value="petrol" selected>petrol</option>
-                    <option value="hybrid">hybrid</option>
-                    <option value="hybrid">Plug-in Hybrid Electric Vehicle</option>
-                    <option value="hybrid">Battery Electric Vehicle</option>
+                <select class="custom-select" id="fuelSelect2">
+                    <option value="diesel">Diesel</option>
+                    <option value="petrol" selected>Petrol</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="phev">Plug-in Hybrid Electric Vehicle</option>
+                    <option value="bev">Battery Electric Vehicle</option>
                 </select>
             </div>
           </div>
@@ -978,7 +1068,7 @@
               <span class="text_9">unit:&nbsp;km</span>
             </div>
           </div>
-          <div class="group2-delete" row="2" style="color: darkgray;font-size: 12px;cursor: pointer;">delete</div>
+          <div class="group2-delete" row="2" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
         </div>
         <div class="group_2 flex-row">
           <div class="text-wrapper_5 flex-col">
@@ -986,21 +1076,21 @@
           </div>
           <div class="image-wrapper_6 flex-col">
              <div class="select-container">
-                  <select class="custom-select" id="sizeSelect">
-                      <option value="small">small</option>
-                      <option value="medium" selected>medium</option>
-                      <option value="large">large</option>
+                  <select class="custom-select" id="sizeSelect3">
+                      <option value="small">Small</option>
+                      <option value="medium" selected>Medium</option>
+                      <option value="large">Large</option>
                   </select>
               </div>
           </div>
           <div class="image-wrapper_7 flex-col">
              <div class="select-container">
-                <select class="custom-select" id="fuelSelect">
-                    <option value="diesel">diesel</option>
-                    <option value="petrol" selected>petrol</option>
-                    <option value="hybrid">hybrid</option>
-                    <option value="hybrid">Plug-in Hybrid Electric Vehicle</option>
-                    <option value="hybrid">Battery Electric Vehicle</option>
+                <select class="custom-select" id="fuelSelect3">
+                    <option value="diesel">Diesel</option>
+                    <option value="petrol" selected>Petrol</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="phev">Plug-in Hybrid Electric Vehicle</option>
+                    <option value="bev">Battery Electric Vehicle</option>
                 </select>
             </div>
           </div>
@@ -1022,7 +1112,7 @@
               <span class="text_12">unit:&nbsp;km</span>
             </div>
           </div>
-          <div class="group2-delete" row="3" style="color: darkgray;font-size: 12px;cursor: pointer;">delete</div>
+          <div class="group2-delete" row="3" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
         </div>
         
       </div>
@@ -1040,7 +1130,9 @@
           </div>
           <div class="group_13 flex-col"></div>
           <div class="group_14 flex-col">
-            <div><img id="section4AddRow"  style="width: 38px;height: 38px;" src="/img/add.png"></div>
+            <div>
+              <img id="section4AddRow" style="width: 38px;height: 38px;" src="../img/add.png">
+            </div>
           </div>
         </div>
         <div class="section_4 flex-row">
@@ -1049,10 +1141,10 @@
           </div>
           <div class="image-wrapper_8 flex-col">
              <div class="select-container">
-                  <select class="custom-select" id="sizeSelect">
-                      <option value="small">small</option>
-                      <option value="medium" selected>medium</option>
-                      <option value="large">large</option>
+                  <select class="custom-select" id="sizeSelectMotor1">
+                      <option value="small">Small</option>
+                      <option value="medium" selected>Medium</option>
+                      <option value="large">Large</option>
                   </select>
               </div>
           </div>
@@ -1073,7 +1165,7 @@
               <span class="text_17">unit:&nbsp;km</span>
             </div>
           </div>
-          <div class="section4-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">delete</div>
+          <div class="section4-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
         </div>
         <div class="section_4 flex-row">
           <div class="text-wrapper_8 flex-col">
@@ -1081,10 +1173,10 @@
           </div>
           <div class="image-wrapper_9 flex-col">
              <div class="select-container">
-                  <select class="custom-select" id="sizeSelect">
-                      <option value="small">small</option>
-                      <option value="medium" selected>medium</option>
-                      <option value="large">large</option>
+                  <select class="custom-select" id="sizeSelectMotor2">
+                      <option value="small">Small</option>
+                      <option value="medium" selected>Medium</option>
+                      <option value="large">Large</option>
                   </select>
               </div>
           </div>
@@ -1105,18 +1197,17 @@
               <span class="text_20">unit:&nbsp;km</span>
             </div>
           </div>
-          <div class="section4-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">delete</div>
+          <div class="section4-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
         </div>
 
       </div>
-      <div style="display: flex;position: absolute;right: 10px;bottom: 10px;width: 100px;
-        height: 30px;
-        border: 1px solid;
-        border-radius: 30px;
-        justify-content: center;
-        cursor: pointer;
-        color: orange;">
-        <a style="color: orange;" href="newpage.html ">Submit</a>
+      <div class="popup-buttons">
+        <div class="cancel-button">
+          <a href="calculator.html">Cancel</a>
+        </div>  
+        <div class="submit-button">
+          <a href="newpage.html">Submit</a>
+        </div>
       </div>
     </div>
 
@@ -1126,13 +1217,21 @@
       }
 
       document.getElementById("g2AddRow").onclick = function() {
-          g2AddRow()
+          g2AddRow();
           addSlider1Events();
           deleteGroup2Events();
       };
       
       function g2AddRow(){
-        let row = document.querySelectorAll(".group_2").length+1;
+        const maxRows = 5;
+        let currentRows = document.querySelectorAll(".group_2").length;
+
+        if (currentRows >= maxRows) {
+            showPopup("You can only add up to " + maxRows + " rows.");
+            return;
+        }
+
+        let row = currentRows + 1;
         const group2 = document.createElement('div');
         group2.className = 'group_2 flex-row'; 
         let html = `<div class="text-wrapper_3 flex-col">
@@ -1140,21 +1239,21 @@
           </div>
           <div class="image-wrapper_4 flex-col">
              <div class="select-container">
-                  <select class="custom-select" id="sizeSelect">
-                      <option value="small">small</option>
-                      <option value="medium" selected>medium</option>
-                      <option value="large">large</option>
+                  <select class="custom-select" id="sizeSelect${row}">
+                      <option value="small">Small</option>
+                      <option value="medium" selected>Medium</option>
+                      <option value="large">Large</option>
                   </select>
               </div>
           </div>
           <div class="image-wrapper_5 flex-col">
              <div class="select-container">
-                <select class="custom-select" id="fuelSelect">
-                    <option value="diesel">diesel</option>
-                    <option value="petrol" selected>petrol</option>
-                    <option value="hybrid">hybrid</option>
-                    <option value="hybrid">Plug-in Hybrid Electric Vehicle</option>
-                    <option value="hybrid">Battery Electric Vehicle</option>
+                <select class="custom-select" id="fuelSelect${row}">
+                    <option value="diesel">Diesel</option>
+                    <option value="petrol" selected>Petrol</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="phev">Plug-in Hybrid Electric Vehicle</option>
+                    <option value="bev">Battery Electric Vehicle</option>
                 </select>
             </div>
           </div>
@@ -1175,11 +1274,10 @@
               <span class="text_9">unit:&nbsp;km</span>
             </div>
           </div>
-          <div class="group2-delete" row="${row}" style="color: darkgray;font-size: 12px;cursor: pointer;">delete</div>
+          <div class="group2-delete" row="${row}" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
           `
         group2.innerHTML = html
         document.querySelector(".block_1").appendChild(group2);
-
       }
 
       function addSlider1Events(){
@@ -1215,18 +1313,26 @@
         }
       }
 
-      addSlider1Events()
-      deleteGroup2Events()
+      addSlider1Events();
+      deleteGroup2Events();
       
 
       document.getElementById("section4AddRow").onclick = function() {
-          section4AddRow()
+          section4AddRow();
           addSlider2Events();
           deleteSection4Events();
       };
       
-      function section4AddRow(){
-        let row = document.querySelectorAll(".section_4").length+1;
+      function section4AddRow(){        
+        const maxMotorRows = 5;
+        let currentRows = document.querySelectorAll(".section_4").length;
+
+        if (currentRows >= maxMotorRows) {
+            showPopup("You can only add up to " + maxMotorRows + " rows.");
+            return;
+        }
+
+        let row = currentRows + 1;
         const section4 = document.createElement('div');
         section4.className = 'section_4 flex-row'; 
         let html = `<div class="text-wrapper_8 flex-col">
@@ -1234,10 +1340,10 @@
           </div>
           <div class="image-wrapper_9 flex-col">
              <div class="select-container">
-                  <select class="custom-select" id="sizeSelect">
-                      <option value="small">small</option>
-                      <option value="medium" selected>medium</option>
-                      <option value="large">large</option>
+                  <select class="custom-select" id="sizeSelectMotor${row}">
+                      <option value="small">Small</option>
+                      <option value="medium" selected>Medium</option>
+                      <option value="large">Large</option>
                   </select>
               </div>
           </div>
@@ -1258,7 +1364,7 @@
               <span class="text_20">unit:&nbsp;km</span>
             </div>
           </div>
-          <div class="section4-delete" row="${row}" style="color: darkgray;font-size: 12px;cursor: pointer;">delete</div>
+          <div class="section4-delete" row="${row}" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
           `
         section4.innerHTML = html
         document.querySelector(".block_4").appendChild(section4);
@@ -1300,6 +1406,23 @@
       addSlider2Events();
       deleteSection4Events();
 
+      // Show popup
+      function showPopup(message) {
+        document.getElementById("popup").style.display = "flex";
+      }
+
+      // Close popup
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
     </script>
+
+    <!-- Popup for row limit -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <p>You can only add up to 5 rows.</p>
+        <button onclick="closePopup()">OK</button>
+      </div>
+    </div>
   </body>
 </html>
