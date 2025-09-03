@@ -8,13 +8,12 @@
     <style>
       .page {
         background-image: linear-gradient(
-          180deg,
-          rgba(237, 237, 237, 1) 0,
-          rgba(242, 246, 219, 1) 100%
+          90deg,
+          rgba(248, 244, 208, 1) 0,
+          rgba(226, 252, 214, 1) 100%
         );
         position: relative;
-        width: 977px;
-        min-height: 522px;
+        min-height: 100vh;
         overflow: hidden;
       }
 
@@ -30,15 +29,14 @@
       }
 
       .block_1 {
-        background-image: linear-gradient(
-          90deg,
-          rgba(248, 244, 208, 1) 0,
-          rgba(226, 252, 214, 1) 100%
-        );
-        width: 886px;
+        width: 95%;
+        max-width: 1200px;
         position: relative;
-        margin: -1px 0 0 29px;
+        margin: 0 auto;
         padding-bottom: 10px;
+        display: flex;           /* make it flex */
+        flex-direction: column;  
+        align-items: center;     /* center children horizontally */
       }
 
       .group_1 {
@@ -481,14 +479,14 @@
       }
 
       .block_4 {
-        background-image: linear-gradient(
-          90deg,
-          rgba(248, 244, 208, 1) 0,
-          rgba(226, 252, 214, 1) 100%
-        );
-        width: 886px;
+        width: 95%;
+        max-width: 1200px;
         position: relative;
-        margin: 31px 0 36px 29px;
+        margin: 0 auto;
+        padding-bottom: 10px;
+        display: flex;           /* make it flex */
+        flex-direction: column;  
+        align-items: center;     /* center children horizontally */
       }
 
       .section_3 {
@@ -808,7 +806,6 @@
       /* 页面居中 */
       body {
         margin: 0;
-        padding: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -952,7 +949,16 @@
         border: 1px solid green;
       }
 
-
+      .main-container {
+        width: 95%;
+        position: fixed;              /* Fix to viewport */
+        top: 50%;                     /* Move to vertical center */
+        left: 50%;                    /* Move to horizontal center */
+        transform: translate(-50%, -50%); /* Center exactly */
+        padding: 30px;                /* Optional spacing */
+        max-height: 90vh;             /* Prevent overflow */
+        overflow-y: auto;             /* Scroll inside if too tall */
+      }
     </style>
   </head>
   <body>    
@@ -966,247 +972,249 @@
         />
       </div>
       -->
-      <div class="block_1 flex-col justify-end">
-        <div class="group_1 flex-row">
-          <img
-            class="label_2"
-            referrerpolicy="no-referrer"
-            src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG6ef8ae79b2be51ec8a6bc3ec97480654.png"
-          />
-          <span class="text_1">Size</span> <span class="text_2">Fuel</span>
-          <span class="text_3">Distance</span>
-          <div class="section_1 flex-col">
-            <div>
-              <img id="g2AddRow" style="width: 38px;height: 38px;" src="../img/add.png">
+      <div class="main-container">
+        <div class="block_1 flex-col justify-end">
+          <div class="group_1 flex-row">
+            <img
+              class="label_2"
+              referrerpolicy="no-referrer"
+              src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG6ef8ae79b2be51ec8a6bc3ec97480654.png"
+            />
+            <span class="text_1">Size</span> <span class="text_2">Fuel</span>
+            <span class="text_3">Distance</span>
+            <div class="section_1 flex-col">
+              <div>
+                <img id="g2AddRow" style="width: 38px;height: 38px;" src="../img/add.png">
+              </div>
             </div>
           </div>
-        </div>
-        <div class="group_2 flex-row">
-          <div class="text-wrapper_1 flex-col">
-            <span class="text_4">1</span>
-          </div>
-          <div class="group_3 flex-col justify-between">
-            <div class="image-wrapper_2 flex-col">
-               <div class="select-container">
-                  <select class="custom-select" id="sizeSelect1">
-                      <option value="small">Small</option>
-                      <option value="medium" selected>Medium</option>
-                      <option value="large">Large</option>
+          <div class="group_2 flex-row">
+            <div class="text-wrapper_1 flex-col">
+              <span class="text_4">1</span>
+            </div>
+            <div class="group_3 flex-col justify-between">
+              <div class="image-wrapper_2 flex-col">
+                <div class="select-container">
+                    <select class="custom-select" id="sizeSelect1">
+                        <option value="small">Small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+              </div>
+              <div class="box_2 flex-col"></div>
+            </div>
+            <div class="image-wrapper_3 flex-col">
+              <div class="select-container">
+                  <select class="custom-select" id="fuelSelect1">
+                      <option value="diesel">Diesel</option>
+                      <option value="petrol" selected>Petrol</option>
+                      <option value="hybrid">Hybrid</option>
+                      <option value="phev">Plug-in Hybrid Electric Vehicle</option>
+                      <option value="bev">Battery Electric Vehicle</option>
                   </select>
               </div>
             </div>
-            <div class="box_2 flex-col"></div>
-          </div>
-          <div class="image-wrapper_3 flex-col">
-            <div class="select-container">
-                <select class="custom-select" id="fuelSelect1">
-                    <option value="diesel">Diesel</option>
-                    <option value="petrol" selected>Petrol</option>
-                    <option value="hybrid">Hybrid</option>
-                    <option value="phev">Plug-in Hybrid Electric Vehicle</option>
-                    <option value="bev">Battery Electric Vehicle</option>
-                </select>
-            </div>
-          </div>
-          <div class=" group_4 flex-col justify-between small-slider">
-            <div class="block_2 flex-col">
-               <input 
-                    type="range" 
-                    class="mySlider1 gradient-slider" 
-                    min="0" 
-                    max="800" 
-                    value="0" 
-                    step="1"
-                    row="1"
-                >
-            </div>
-            <div class="text-wrapper_2 flex-row justify-between">
-              <span class="text_5">0</span>
-              <span class="text_6">unit:&nbsp;km</span>
-            </div>
-          </div>
-          <div class="group2-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
-        </div>
-        <div class="group_2 flex-row">
-          <div class="text-wrapper_3 flex-col">
-            <span class="text_4">2</span>
-          </div>
-          <div class="image-wrapper_4 flex-col">
-             <div class="select-container">
-                  <select class="custom-select" id="sizeSelect2">
-                      <option value="small">small</option>
-                      <option value="medium" selected>Medium</option>
-                      <option value="large">Large</option>
-                  </select>
-              </div>
-          </div>
-          <div class="image-wrapper_5 flex-col">
-             <div class="select-container">
-                <select class="custom-select" id="fuelSelect2">
-                    <option value="diesel">Diesel</option>
-                    <option value="petrol" selected>Petrol</option>
-                    <option value="hybrid">Hybrid</option>
-                    <option value="phev">Plug-in Hybrid Electric Vehicle</option>
-                    <option value="bev">Battery Electric Vehicle</option>
-                </select>
-            </div>
-          </div>
-          <div class="box_3 flex-col justify-between small-slider">
-            <div class="block_3 flex-col">
-               <input 
-                    type="range" 
-                    class="mySlider1 gradient-slider" 
-                    min="0" 
-                    max="800" 
-                    value="0" 
-                    step="1"
-                    row="2"
-                >
-            </div>
-            <div class="text-wrapper_4 flex-row justify-between">
-              <span class="text_5">0</span>
-              <span class="text_9">unit:&nbsp;km</span>
-            </div>
-          </div>
-          <div class="group2-delete" row="2" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
-        </div>
-        <div class="group_2 flex-row">
-          <div class="text-wrapper_5 flex-col">
-            <span class="text_4">3</span>
-          </div>
-          <div class="image-wrapper_6 flex-col">
-             <div class="select-container">
-                  <select class="custom-select" id="sizeSelect3">
-                      <option value="small">Small</option>
-                      <option value="medium" selected>Medium</option>
-                      <option value="large">Large</option>
-                  </select>
-              </div>
-          </div>
-          <div class="image-wrapper_7 flex-col">
-             <div class="select-container">
-                <select class="custom-select" id="fuelSelect3">
-                    <option value="diesel">Diesel</option>
-                    <option value="petrol" selected>Petrol</option>
-                    <option value="hybrid">Hybrid</option>
-                    <option value="phev">Plug-in Hybrid Electric Vehicle</option>
-                    <option value="bev">Battery Electric Vehicle</option>
-                </select>
-            </div>
-          </div>
-          <div class="group_7 flex-col justify-between small-slider">
-            <div class="group_8 flex-col">
-               <input 
-                    type="range" 
-                    class="mySlider1 gradient-slider" 
-                    min="0" 
-                    max="800" 
-                    value="0" 
-                    step="1"
-                    row="3"
-                >
-            </div>
-            <div class="group_9 flex-row">
-              <span class="text_5">0</span>
-              <div class="section_2 flex-col"></div>
-              <span class="text_12">unit:&nbsp;km</span>
-            </div>
-          </div>
-          <div class="group2-delete" row="3" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
-        </div>
-        
-      </div>
-      <div class="block_4 flex-col">
-        <div class="section_3 flex-row">
-          <img
-            class="image_1"
-            referrerpolicy="no-referrer"
-            src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG8caeacf0d0793c206f021276a53781d0.png"
-          />
-          <span class="text_13">Size</span>
-          <div class="group_11 flex-col justify-between">
-            <div class="group_12 flex-col"></div>
-            <span class="text_14">Distance</span>
-          </div>
-          <div class="group_13 flex-col"></div>
-          <div class="group_14 flex-col">
-            <div>
-              <img id="section4AddRow" style="width: 38px;height: 38px;" src="../img/add.png">
-            </div>
-          </div>
-        </div>
-        <div class="section_4 flex-row">
-          <div class="text-wrapper_6 flex-col">
-            <span class="text_15">1</span>
-          </div>
-          <div class="image-wrapper_8 flex-col">
-             <div class="select-container">
-                  <select class="custom-select" id="sizeSelectMotor1">
-                      <option value="small">Small</option>
-                      <option value="medium" selected>Medium</option>
-                      <option value="large">Large</option>
-                  </select>
-              </div>
-          </div>
-          <div class="section_5 flex-col justify-between big-slider">
-            <div class="section_6 flex-col">
-               <input 
-                    type="range" 
-                    class="mySlider2 gradient-slider" 
-                    min="0" 
-                    max="800" 
-                    value="0" 
-                    step="1"
-                    row="1"
-                >
-            </div>
-            <div class="text-wrapper_7 flex-row justify-between">
-              <span class="text_16">0</span>
-              <span class="text_17">unit:&nbsp;km</span>
-            </div>
-          </div>
-          <div class="section4-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
-        </div>
-        <div class="section_4 flex-row">
-          <div class="text-wrapper_8 flex-col">
-            <span class="text_15">2</span>
-          </div>
-          <div class="image-wrapper_9 flex-col">
-             <div class="select-container">
-                  <select class="custom-select" id="sizeSelectMotor2">
-                      <option value="small">Small</option>
-                      <option value="medium" selected>Medium</option>
-                      <option value="large">Large</option>
-                  </select>
-              </div>
-          </div>
-          <div class="group_15 flex-col justify-between big-slider">
-            <div class="group_16 flex-col">
+            <div class=" group_4 flex-col justify-between small-slider">
+              <div class="block_2 flex-col">
                 <input 
-                    type="range" 
-                    class="mySlider2 gradient-slider" 
-                    min="0" 
-                    max="800" 
-                    value="0" 
-                    step="1"
-                    row="2"
-                >
+                      type="range" 
+                      class="mySlider1 gradient-slider" 
+                      min="0" 
+                      max="800" 
+                      value="0" 
+                      step="1"
+                      row="1"
+                  >
+              </div>
+              <div class="text-wrapper_2 flex-row justify-between">
+                <span class="text_5">0</span>
+                <span class="text_6">unit:&nbsp;km</span>
+              </div>
             </div>
-            <div class="text-wrapper_9 flex-row justify-between">
-              <span class="text_16">0</span>
-              <span class="text_20">unit:&nbsp;km</span>
+            <div class="group2-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
+          </div>
+          <div class="group_2 flex-row">
+            <div class="text-wrapper_3 flex-col">
+              <span class="text_4">2</span>
+            </div>
+            <div class="image-wrapper_4 flex-col">
+              <div class="select-container">
+                    <select class="custom-select" id="sizeSelect2">
+                        <option value="small">small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+            </div>
+            <div class="image-wrapper_5 flex-col">
+              <div class="select-container">
+                  <select class="custom-select" id="fuelSelect2">
+                      <option value="diesel">Diesel</option>
+                      <option value="petrol" selected>Petrol</option>
+                      <option value="hybrid">Hybrid</option>
+                      <option value="phev">Plug-in Hybrid Electric Vehicle</option>
+                      <option value="bev">Battery Electric Vehicle</option>
+                  </select>
+              </div>
+            </div>
+            <div class="box_3 flex-col justify-between small-slider">
+              <div class="block_3 flex-col">
+                <input 
+                      type="range" 
+                      class="mySlider1 gradient-slider" 
+                      min="0" 
+                      max="800" 
+                      value="0" 
+                      step="1"
+                      row="2"
+                  >
+              </div>
+              <div class="text-wrapper_4 flex-row justify-between">
+                <span class="text_5">0</span>
+                <span class="text_9">unit:&nbsp;km</span>
+              </div>
+            </div>
+            <div class="group2-delete" row="2" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
+          </div>
+          <div class="group_2 flex-row">
+            <div class="text-wrapper_5 flex-col">
+              <span class="text_4">3</span>
+            </div>
+            <div class="image-wrapper_6 flex-col">
+              <div class="select-container">
+                    <select class="custom-select" id="sizeSelect3">
+                        <option value="small">Small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+            </div>
+            <div class="image-wrapper_7 flex-col">
+              <div class="select-container">
+                  <select class="custom-select" id="fuelSelect3">
+                      <option value="diesel">Diesel</option>
+                      <option value="petrol" selected>Petrol</option>
+                      <option value="hybrid">Hybrid</option>
+                      <option value="phev">Plug-in Hybrid Electric Vehicle</option>
+                      <option value="bev">Battery Electric Vehicle</option>
+                  </select>
+              </div>
+            </div>
+            <div class="group_7 flex-col justify-between small-slider">
+              <div class="group_8 flex-col">
+                <input 
+                      type="range" 
+                      class="mySlider1 gradient-slider" 
+                      min="0" 
+                      max="800" 
+                      value="0" 
+                      step="1"
+                      row="3"
+                  >
+              </div>
+              <div class="group_9 flex-row">
+                <span class="text_5">0</span>
+                <div class="section_2 flex-col"></div>
+                <span class="text_12">unit:&nbsp;km</span>
+              </div>
+            </div>
+            <div class="group2-delete" row="3" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
+          </div>
+          
+        </div>
+        <div class="block_4 flex-col">
+          <div class="section_3 flex-row">
+            <img
+              class="image_1"
+              referrerpolicy="no-referrer"
+              src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG8caeacf0d0793c206f021276a53781d0.png"
+            />
+            <span class="text_13">Size</span>
+            <div class="group_11 flex-col justify-between">
+              <div class="group_12 flex-col"></div>
+              <span class="text_14">Distance</span>
+            </div>
+            <div class="group_13 flex-col"></div>
+            <div class="group_14 flex-col">
+              <div>
+                <img id="section4AddRow" style="width: 38px;height: 38px;" src="../img/add.png">
+              </div>
             </div>
           </div>
-          <div class="section4-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
-        </div>
+          <div class="section_4 flex-row">
+            <div class="text-wrapper_6 flex-col">
+              <span class="text_15">1</span>
+            </div>
+            <div class="image-wrapper_8 flex-col">
+              <div class="select-container">
+                    <select class="custom-select" id="sizeSelectMotor1">
+                        <option value="small">Small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section_5 flex-col justify-between big-slider">
+              <div class="section_6 flex-col">
+                <input 
+                      type="range" 
+                      class="mySlider2 gradient-slider" 
+                      min="0" 
+                      max="800" 
+                      value="0" 
+                      step="1"
+                      row="1"
+                  >
+              </div>
+              <div class="text-wrapper_7 flex-row justify-between">
+                <span class="text_16">0</span>
+                <span class="text_17">unit:&nbsp;km</span>
+              </div>
+            </div>
+            <div class="section4-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
+          </div>
+          <div class="section_4 flex-row">
+            <div class="text-wrapper_8 flex-col">
+              <span class="text_15">2</span>
+            </div>
+            <div class="image-wrapper_9 flex-col">
+              <div class="select-container">
+                    <select class="custom-select" id="sizeSelectMotor2">
+                        <option value="small">Small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+            </div>
+            <div class="group_15 flex-col justify-between big-slider">
+              <div class="group_16 flex-col">
+                  <input 
+                      type="range" 
+                      class="mySlider2 gradient-slider" 
+                      min="0" 
+                      max="800" 
+                      value="0" 
+                      step="1"
+                      row="2"
+                  >
+              </div>
+              <div class="text-wrapper_9 flex-row justify-between">
+                <span class="text_16">0</span>
+                <span class="text_20">unit:&nbsp;km</span>
+              </div>
+            </div>
+            <div class="section4-delete" row="1" style="color: darkgray;font-size: 12px;cursor: pointer;">Delete</div>
+          </div>
 
-      </div>
-      <div class="popup-buttons">
-        <div class="cancel-button">
-          <a href="calculator.html">Cancel</a>
-        </div>  
-        <div class="submit-button">
-          <a href="newpage.html">Submit</a>
+        </div>
+        <div class="popup-buttons">
+          <div class="cancel-button">
+            <a href="calculator.html">Cancel</a>
+          </div>  
+          <div class="submit-button">
+            <a href="newpage.html">Submit</a>
+          </div>
         </div>
       </div>
     </div>
