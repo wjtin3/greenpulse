@@ -1,0 +1,31 @@
+id,transport_mode,type,fuel,unit,emission factor (kg CO2e),description
+,Car,small,diesel,km,0.14340,Up to a 1.7-litre engine
+,Car,small,petrol,km,0.14308,Up to a 1.4-litre engine
+,Car,small,hybrid,km,0.11413,Vehicle models of a similar size to market segment A or B (https://en.wikipedia.org/wiki/Car_classification)
+,Car,small,PHEV,km,0.03008,Vehicle models of a similar size to market segment A or B (https://en.wikipedia.org/wiki/Car_classification)
+,Car,small,BEV,km,0.00000,Vehicle models of a similar size to market segment A or B (https://en.wikipedia.org/wiki/Car_classification)
+,Car,medium,diesel,km,0.17174,From 1.7-litre to 2.0-litre engine		
+,Car,medium,petrol,km,0.17474,From 1.4-litre to 2.0-litre engine		
+,Car,medium,hybrid,km,0.11724,Vehicle models of a similar size to market segment C (https://en.wikipedia.org/wiki/Car_classification)
+,Car,medium,PHEV,km,0.07789,Vehicle models of a similar size to market segment C (https://en.wikipedia.org/wiki/Car_classification)
+,Car,medium,BEV,km,0.00000,Vehicle models of a similar size to market segment C (https://en.wikipedia.org/wiki/Car_classification)
+,Car,large,diesel,km,0.21007,2.0-litre engine and above
+,Car,large,petrol,km,0.26828,2.0-litre engine and above
+,Car,large,hybrid,km,0.15650,Vehicle models of a similar size to market segment D (https://en.wikipedia.org/wiki/Car_classification)
+,Car,large,PHEV,km,0.10033,Vehicle models of a similar size to market segment D (https://en.wikipedia.org/wiki/Car_classification)
+,Car,large,BEV,km,0.00000,Vehicle models of a similar size to market segment D (https://en.wikipedia.org/wiki/Car_classification)
+,Car,average,diesel,km,0.17304,Average emissions for this fuel type
+,Car,average,petrol,km,0.16272,Average emissions for this fuel type
+,Car,average,hybrid,km,0.12825,Average emissions for this fuel type
+,Car,average,PHEV,km,0.09167,Average emissions for this fuel type
+,Car,average,BEV,km,0.00000,Battery EVs have no carbon emissions
+,Motorbike,small,petrol,km,0.08319,Mopeds/scooters up to 125cc.
+,Motorbike,medium,petrol,km,0.10107,125cc to 500cc
+,Motorbike,large,petrol,km,0.13252,500cc and above
+,Motorbike,average,petrol,km,0.11367,Average emissions for motorcycles
+,Bus,Bus,diesel,pkm,0.10385,Emissions for each passenger per km
+,Train,MRT,electric,pkm,0.12694,Emissions for each passenger per km
+,Train,LRT,electric,pkm,0.10449,Emissions for each passenger per km
+,Train,Monorail,electric,pkm,0.09211,Emissions for each passenger per km
+,Train,KTM,electric,pkm,0.18034,Emissions for each passenger per km
+,Train,Average train,electric,pkm,0.12597,Emissions for each passenger per km

@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      /* 隐藏滚动条但保留滚动功能 */
+      body::-webkit-scrollbar { width: 0; background: transparent; }
+      body::-webkit-scrollbar-thumb { background: transparent; }
+      body::-webkit-scrollbar-track { background: transparent; }
+      body { scrollbar-width: none; -ms-overflow-style: none; }
+      .page {
+        background-color: rgba(255, 255, 255, 1);
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      .group_1 {
+        height: 810px;
+        width: 100%;
+      }
+
+      .box_1 {
+        background-color: rgba(217, 217, 217, 1);
+        width: 354px;
+        height: 494px;
+        margin-top: 256px;
+      }
+
+      .group_2 {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;  
+        min-height: 100vh;
+        background: url(img2/2.11.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .block_1 {
+        width: 1112px;
+        height: 103px;
+        margin: -80px 0 0 38px;
+      }
+
+      .image_1 {
+        width: 82px;
+        height: 72px;
+      }
+
+      .text_1 {
+        width: 359px;
+        height: 94px;
+        overflow-wrap: break-word;
+        color: rgba(61, 124, 74, 1);
+        font-size: 50px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 50px;
+        margin: 9px 0 0 23px;
+      }
+
+      .text_2 {
+        width: 72px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 36px 0 0 82px;
+      }
+
+      .text_3 {
+        width: 67px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(61, 124, 74, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 36px 0 0 150px;
+      }
+
+      .text_4 {
+        width: 133px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 38px 0 0 144px;
+      }
+
+      .block_2 {
+        width: 199px;
+        height: 107px;
+        margin: 15px 0 0 1111px;
+      }
+
+      .text-wrapper_1 {
+        height: 32px;
+        border: 1px solid rgba(42, 211, 34, 1);
+        margin-top: 75px;
+        width: 102px;
+        border-left: none;
+        border-top: none;
+      }
+
+      .text_5 {
+        width: 57px;
+        height: 15px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 12px;
+        font-family: Inter-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 12px;
+        margin: 13px 0 0 8px;
+      }
+
+      .image_2 {
+        width: 100px;
+        height: 100px;
+        margin-left: -3px;
+        border-radius: 50%;
+        object-fit: cover;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid rgba(61, 124, 74, 0.6);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+        animation: pulseGlow 2.4s ease-in-out infinite;
+      }
+
+      .block_3 {
+        width: 1195px;
+        height: 230px;
+        margin: 67px 0 0 96px;
+      }
+
+      .image_3 {
+        width: 130px;
+        height: 130px;
+        margin-top: 97px;
+        border-radius: 50%;
+        object-fit: cover;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid rgba(61, 124, 74, 0.6);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+        animation: pulseGlow 2.4s ease-in-out infinite;
+      }
+
+      .box_2 {
+        width: 164px;
+        height: 169px;
+        margin: 61px 0 0 -5px;
+      }
+
+      .text_6 {
+        width: 78px;
+        height: 15px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 12px;
+        font-family: Inter-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 12px;
+        margin-left: 39px;
+      }
+
+      .block_4 {
+        width: 132px;
+        height: 56px;
+        border: 1px solid rgba(61, 124, 74, 1);
+        margin-top: 6px;
+        border-right: none;
+        border-bottom: none;
+      }
+
+      .text_7 {
+        width: 95px;
+        height: 15px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 12px;
+        font-family: Inter-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 12px;
+        margin: 77px 0 0 69px;
+      }
+
+      .box_3 {
+        position: relative;
+        width: 102px;
+        height: 32px;
+        margin: 50px 0 0 704px;
+      }
+
+      .text_8 {
+        width: 58px;
+        height: 15px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 12px;
+        font-family: Inter-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 12px;
+        margin: 12px 0 0 10px;
+      }
+
+      .box_4 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 102px;
+        height: 32px;
+        border: 1px solid rgba(42, 211, 34, 1);
+        border-left: none;
+        border-top: none;
+      }
+
+      .image_4 {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid rgba(61, 124, 74, 0.6);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+        animation: pulseGlow 2.4s ease-in-out infinite;
+      }
+
+      .block_5 {
+        width: 492px;
+        height: 307px;
+        margin: 1px 0 0 -100px;
+      }
+
+      .image_5 {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid rgba(61, 124, 74, 0.6);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+        animation: pulseGlow 2.4s ease-in-out infinite;
+      }
+
+      .group_3 {
+        width: 277px;
+        height: 303px;
+        margin-top: 4px;
+      }
+
+      .box_5 {
+        width: 132px;
+        height: 56px;
+        border: 1px solid rgba(95, 193, 114, 1);
+        margin-left: 145px;
+        border-right: none;
+        border-bottom: none;
+      }
+
+      .image_6 {
+        width: 100px;
+        height: 100px;
+        margin: -10px 0 0 61px;
+        border-radius: 50%;
+        object-fit: cover;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid rgba(61, 124, 74, 0.6);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+        animation: pulseGlow 2.4s ease-in-out infinite;
+      }
+
+      .text_9 {
+        width: 91px;
+        height: 15px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 12px;
+        font-family: Inter-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 12px;
+        margin: 17px 0 0 139px;
+      }
+
+      .box_6 {
+        width: 232px;
+        height: 117px;
+        margin-top: 8px;
+      }
+
+      .image_7 {
+        width: 100px;
+        height: 100px;
+        margin-top: 17px;
+        border-radius: 50%;
+        object-fit: cover;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid rgba(61, 124, 74, 0.6);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+        animation: pulseGlow 2.4s ease-in-out infinite;
+      }
+
+      /* 悬停与按下的按钮反馈 */
+      .image_2:hover,
+      .image_3:hover,
+      .image_4:hover,
+      .image_5:hover,
+      .image_6:hover,
+      .image_7:hover {
+        transform: translateY(-4px) scale(1.06);
+        box-shadow: 0 14px 28px rgba(61, 124, 74, 0.35), 0 8px 16px rgba(0, 0, 0, 0.25);
+        filter: brightness(1.05);
+      }
+
+      .image_2:active,
+      .image_3:active,
+      .image_4:active,
+      .image_5:active,
+      .image_6:active,
+      .image_7:active {
+        transform: translateY(0) scale(0.96);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      }
+
+      /* 呼吸式阴影与轻微缩放动画 */
+      @keyframes pulseGlow {
+        0% {
+          transform: translateY(0) scale(1);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(61, 124, 74, 0.25);
+        }
+        50% {
+          transform: translateY(-2px) scale(1.03);
+          box-shadow: 0 12px 28px rgba(61, 124, 74, 0.35), 0 0 24px 6px rgba(61, 124, 74, 0.25);
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(61, 124, 74, 0.25);
+        }
+      }
+
+      .group_4 {
+        width: 132px;
+        height: 56px;
+        border: 1px solid rgba(95, 193, 114, 1);
+        border-right: none;
+        border-bottom: none;
+      }
+
+      .block_6 {
+        background-color: rgba(51, 74, 51, 1);
+        height: 403px;
+        width: 100%;
+        margin: 58px 0 401px 0;
+      }
+
+      .text-wrapper_2 {
+        width: 103px;
+        height: 20px;
+        margin: 16px 0 0 17px;
+      }
+
+      .paragraph_1 {
+        width: 1402px;
+        height: 153px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 11px;
+        font-family: Poppins-ExtraLight;
+        font-weight: 250;
+        text-align: left;
+        margin: 16px 0 0 17px;
+      }
+
+      .block_7 {
+        width: 619px;
+        height: 114px;
+        margin: 166px 0 87px 37px;
+      }
+
+      .text-group_1 {
+        width: 341px;
+        height: 99px;
+      }
+
+      .text_11 {
+        width: 228px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(229, 171, 109, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .text_12 {
+        width: 400px;
+        height: 48px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        margin-top: 15px;
+      }
+
+      .text-group_2 {
+        width: 141px;
+        height: 114px;
+      }
+
+      .text_13 {
+        width: 129px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(229, 171, 109, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .text_14 {
+        width: 141px;
+        height: 24px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 20px;
+        margin-top: 15px;
+      }
+
+      .text_15 {
+        width: 40px;
+        height: 24px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 20px;
+        margin-top: 15px;
+      }
+
+      .flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flex-row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      /* World Carbon 弹窗样式 */
+      .wc-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .wc-modal {
+        position: relative;
+        width: 650px;
+        height: 307px;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        background: transparent;
+        transform: scale(1.45);
+        transform-origin: center;
+      }
+
+      /* 打开弹窗时让页面内容虚化 */
+      .modal-blur {
+        filter: blur(6px) brightness(0.9);
+        transition: filter 0.2s ease;
+      }
+
+      .wc-image-wrapper_1 {
+        width: 617px;
+        height: 343px;
+        margin: -17px 0 0 1px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .wc-image_1 { width: 280px; height: 272px; }
+      .wc-image_2 { width: 280px; height: 271px; margin-top: 72px; }
+
+      .wc-box_1 {
+        position: absolute;
+        left: 59px;
+        top: 35px;
+        width: 506px;
+        height: 236px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGc978efeb88d2d6139db6d96b672219e7.png) 100% no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .wc-group_1 {
+        width: 471px;
+        height: 27px;
+        margin: 8px 0 0 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .wc-text_1 {
+        width: 368px;
+        height: 23px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 15px;
+        font-family: Poppins-ExtraBold;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 15px;
+        margin-top: 4px;
+      }
+
+      .wc-label_1 { width: 21px; height: 21px; cursor: pointer; }
+
+      .wc-group_2 { width: 474px; height: 162px; margin: 16px 0 23px 22px; display: flex; }
+
+      .wc-text_2 {
+        width: 300px;
+        height: 162px;
+        overflow-wrap: break-word;
+        word-break: keep-all;
+        hyphens: none;
+        color: rgba(255, 255, 255, 1);
+        font-size: 12px;
+        font-family: Poppins-Regular;
+        text-align: left;
+        line-height: 1.4;
+      }
+
+      .wc-image_3 { width: 191px; height: 107px; margin: 23px 0 0 -4px; }
+
+      /* 让 World Carbon 文本可点击 */
+      .text_6 { cursor: pointer; }
+
+      /* Malaysia Carbon 弹窗样式 */
+      .mc-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .mc-modal { position: relative; width: 650px; height: 307px; overflow: hidden; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.35); background: transparent; transform: scale(1.45); transform-origin: center; }
+      .mc-image-wrapper_1 { width: 617px; height: 343px; margin: -17px 0 0 1px; display: flex; justify-content: space-between; }
+      .mc-image_1 { width: 280px; height: 272px; }
+      .mc-image_2 { width: 280px; height: 271px; margin-top: 72px; }
+      .mc-block_1 { position: absolute; left: 59px; top: 35px; width: 506px; height: 236px; background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGc978efeb88d2d6139db6d96b672219e7.png) 100% no-repeat; background-size: 100% 100%; }
+      .mc-block_2 { width: 471px; height: 27px; margin: 8px 0 0 22px; display: flex; justify-content: space-between; align-items: center; }
+      .mc-text_1 { width: 383px; height: 23px; color: #fff; font-size: 15px; font-family: Poppins-ExtraBold; white-space: nowrap; line-height: 15px; text-align: left; margin-top: 4px; }
+      .mc-label_1 { width: 21px; height: 21px; cursor: pointer; }
+      .mc-block_3 { width: 507px; height: 180px; margin: 9px 0 12px 22px; display: flex; }
+      .mc-paragraph_1 { 
+        width: 300px; 
+        height: 180px; 
+        color: #fff; 
+        font-size: 12px; 
+        font-family: Poppins-Regular; 
+        text-align: left; 
+        overflow-wrap: break-word; 
+        word-break: keep-all;
+        hyphens: none;
+        line-height: 1.4;
+      }
+      .mc-image_3 { width: 231px; height: 130px; margin: 10px 0 0 -11px; }
+      /* 让 Malaysia Carbon 文本可点击 */
+      .text_7 { cursor: pointer; }
+
+      /* Climate Change 弹窗样式 */
+      .cc-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .cc-modal { position: relative; width: 650px; height: 307px; overflow: hidden; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.35); background: transparent; transform: scale(1.45); transform-origin: center; }
+      
+      /* 小屏幕下适配缩放，避免超出视口 */
+      @media (max-width: 1440px) {
+        .wc-modal, .mc-modal, .cc-modal { transform: scale(1.35); }
+      }
+      @media (max-width: 1280px) {
+        .wc-modal, .mc-modal, .cc-modal { transform: scale(1.25); }
+      }
+      @media (max-width: 768px) {
+        .wc-modal, .mc-modal, .cc-modal { transform: scale(1.05); }
+      }
+      .cc-image-wrapper_1 { width: 617px; height: 343px; margin: -17px 0 0 1px; display: flex; justify-content: space-between; }
+      .cc-image_1 { width: 280px; height: 272px; }
+      .cc-image_2 { width: 280px; height: 271px; margin-top: 72px; }
+      .cc-box_1 { position: absolute; left: 59px; top: 35px; width: 506px; height: 236px; background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGc978efeb88d2d6139db6d96b672219e7.png) 100% no-repeat; background-size: 100% 100%; display: flex; justify-content: flex-end; }
+      .cc-text-wrapper_1 { width: 287px; height: 194px; margin: 12px 0 0 22px; display: flex; flex-direction: column; justify-content: space-between; }
+      .cc-text_1 { width: 185px; height: 23px; color: #fff; font-size: 15px; font-family: Poppins-ExtraBold; line-height: 15px; white-space: nowrap; text-align: left; }
+      .cc-text_2 { 
+        width: 300px; 
+        height: 162px; 
+        color: #fff; 
+        font-size: 12px; 
+        font-family: Poppins-Regular; 
+        text-align: left; 
+        margin-top: 9px; 
+        overflow-wrap: break-word; 
+        word-break: keep-all;
+        hyphens: none;
+        line-height: 1.4;
+      }
+      .cc-image-wrapper_2 { height: 220px; background: url("/img/c2.png") 100% no-repeat; background-size: 100% 100%; width: 220px; margin: 9px 0 0 -23px; }
+      .cc-label_1 { width: 21px; height: 21px; margin: -1px 0 0 186px; cursor: pointer; }
+      /* 让 Climate Change 文本可点击 */
+      .text_9 { cursor: pointer; }
+      .nowrap { white-space: nowrap; }
+
+      /* 动效：入场与悬停（参考首页） */
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes slideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+      @keyframes scaleIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+
+      /* 顶部区域入场动画 */
+      .block_1 { animation: fadeInUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+      .block_3 { animation: slideInLeft 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.15s both; }
+      .block_5 { animation: scaleIn 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s both; }
+
+      /* 导航交互动效 */
+      .text_2, .text_3, .text_4 { transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); position: relative; cursor: pointer; }
+      .text_2:hover, .text_3:hover, .text_4:hover { color: rgba(61,124,74,1); transform: translateY(-2px); text-shadow: 0 4px 8px rgba(61,124,74,0.3); }
+      .text_2::after, .text_3::after, .text_4::after { content: ''; position: absolute; bottom: -5px; left: 50%; width: 0; height: 2px; background: linear-gradient(90deg, rgba(61,124,74,1), rgba(51,104,64,1)); transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); transform: translateX(-50%); border-radius: 1px; }
+      .text_2:hover::after, .text_3:hover::after, .text_4:hover::after { width: 100%; }
+
+      /* Logo 与标题 */
+      .image_1 { transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); cursor: pointer; }
+      .image_1:hover { transform: scale(1.1) rotate(5deg); filter: drop-shadow(0 8px 16px rgba(61,124,74,0.4)); }
+      .text_1 { transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); cursor: pointer; }
+      .text_1:hover { transform: scale(1.05); text-shadow: 0 4px 12px rgba(61,124,74,0.5); }
+
+      /* 点击波纹效果 */
+      .ripple { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.6); transform: scale(0); animation: ripple-animation 0.6s linear; pointer-events: none; }
+      @keyframes ripple-animation { to { transform: scale(4); opacity: 0; } }
+      .image_2, .image_3, .image_4, .image_5, .image_6, .image_7, .text_2, .text_3, .text_4 { position: relative; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="page flex-col">
+      <div class="group_1 flex-col">
+        <div class="box_1 flex-col"></div>
+      </div>
+      <div class="group_2 flex-col">
+        <div class="block_2 flex-row">
+          <div class="text-wrapper_1 flex-col">
+            <span class="text_5">Animation</span>
+          </div>
+          <img tabindex="0"
+            class="image_2"
+            referrerpolicy="no-referrer"
+            src="img2/2.2.png"
+          />
+        </div>
+        <div class="block_3 flex-row">
+          <img tabindex="0"
+            class="image_3"
+            referrerpolicy="no-referrer"
+            src="img2/2.10.png"
+          />
+          <div class="box_2 flex-col">
+            <span class="text_6">World&nbsp;Carbon</span>
+            <div class="block_4 flex-col"></div>
+            <span class="text_7">Malaysia&nbsp;Carbon</span>
+          </div>
+          <div class="box_3 flex-row">
+            <span class="text_8">Calculator</span>
+            <div class="box_4 flex-col"></div>
+          </div>
+          <img tabindex="0"
+            class="image_4"
+            referrerpolicy="no-referrer"
+            src="img2/2.3.png"
+          />
+        </div>
+        <div class="block_5 flex-row justify-between">
+          <img tabindex="0"
+            class="image_5"
+            referrerpolicy="no-referrer"
+            src="img2/2.10.png"
+          />
+          <div class="group_3 flex-col">
+            <div class="box_5 flex-col"></div>
+            <img tabindex="0"
+              class="image_6"
+              referrerpolicy="no-referrer"
+              src="img2/2.9.png"
+            />
+            <span class="text_9">Climate&nbsp;Change</span>
+            <div class="box_6 flex-row justify-between">
+              <img tabindex="0"
+                class="image_7"
+                referrerpolicy="no-referrer"
+                src="img2\2.8.png"
+              />
+              <div class="group_4 flex-col"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div id="footer"></div>
+    <!-- World Carbon 弹窗 -->
+    <div class="wc-modal-overlay" id="wcModal">
+      <div class="wc-modal" role="dialog" aria-modal="true" aria-label="World Carbon Modal">
+        <div class="wc-image-wrapper_1">
+          <img class="wc-image_1" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG24717d64f560906051ece72a5004a9da.png" />
+          <img class="wc-image_2" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG18aaac1a32164a55b7e62c5d8e6b34aa.png" />
+        </div>
+        <div class="wc-box_1">
+          <div class="wc-group_1">
+            <span class="wc-text_1">World&nbsp;per&nbsp;capita&nbsp;carbon&nbsp;footprint:&nbsp;4760kg/year</span>
+            <img class="wc-label_1" id="wcClose" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG90fa3b2492d15c58e80e8b0d9fb2b820.png" />
+          </div>
+          <div class="wc-group_2">
+            <span class="wc-text_2">The global per capita carbon footprint is typically measured as the amount of carbon dioxide emitted per person per year. According to data from the World Bank and the Global Carbon Project, the global average per capita carbon emissions in recent years has been around <span class="nowrap">4.5–5</span> tons of carbon dioxide equivalent per year, but this varies significantly between countries.</span>
+            <img class="wc-image_3" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGf9506c176e705af80995f6ef0ce34180.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Malaysia Carbon 弹窗 -->
+    <div class="mc-modal-overlay" id="mcModal">
+      <div class="mc-modal" role="dialog" aria-modal="true" aria-label="Malaysia Carbon Modal">
+        <div class="mc-image-wrapper_1">
+          <img class="mc-image_1" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG24717d64f560906051ece72a5004a9da.png" />
+          <img class="mc-image_2" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG18aaac1a32164a55b7e62c5d8e6b34aa.png" />
+        </div>
+        <div class="mc-block_1">
+          <div class="mc-block_2">
+            <span class="mc-text_1">Malasia&nbsp;per&nbsp;capita&nbsp;carbon&nbsp;footprint:&nbsp;8220kg/year</span>
+            <img class="mc-label_1" id="mcClose" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG90fa3b2492d15c58e80e8b0d9fb2b820.png" />
+          </div>
+          <div class="mc-block_3">
+            <span class="mc-paragraph_1">In Malaysia, each person produces an average of approximately 8 tons of carbon dioxide emissions annually. This figure is significantly higher than the global average of 4.7 tons. Malaysia's per capita emissions are also relatively high compared to neighboring countries.<br />Key factors include reliance on fossil fuel-based power generation, high car usage, and emissions from industrial activities.</span>
+            <img class="mc-image_3" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG82e3ae98ac60d0a59ad9abbd1664787b.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Climate Change 弹窗 -->
+    <div class="cc-modal-overlay" id="ccModal">
+      <div class="cc-modal" role="dialog" aria-modal="true" aria-label="Climate Change Modal">
+        <div class="cc-image-wrapper_1">
+          <img class="cc-image_1" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG24717d64f560906051ece72a5004a9da.png" />
+          <img class="cc-image_2" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG18aaac1a32164a55b7e62c5d8e6b34aa.png" />
+        </div>
+        <div class="cc-box_1">
+          <div class="cc-text-wrapper_1">
+            <span class="cc-text_1">Climate&nbsp;change&nbsp;targets</span>
+            <span class="cc-text_2">To combat climate change, the Paris Agreement sets a goal of limiting global temperature rise to <span class="nowrap">1.5–2°C</span>. To achieve this goal, the global per capita carbon footprint must fall below approximately 2 tons per year by around 2050, more than halving the current global average of 4.7 tons per year. For some high‑emitting countries, this means reducing per capita carbon emissions by 70–90%.</span>
+          </div>
+          <div class="cc-image-wrapper_2">
+            <img class="cc-label_1" id="ccClose" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG90fa3b2492d15c58e80e8b0d9fb2b820.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="scripts/loadLayout.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const homeNav = document.querySelector('.text_2');
+        if (homeNav) {
+          homeNav.style.cursor = 'pointer';
+          homeNav.addEventListener('click', function() {
+            window.location.href = 'index.html';
+          });
+        }
+
+        // 点击波纹效果绑定
+        function createRipple(event) {
+          const target = event.currentTarget;
+          const ripple = document.createElement('span');
+          const rect = target.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = event.clientX - rect.left - size / 2;
+          const y = event.clientY - rect.top - size / 2;
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = x + 'px';
+          ripple.style.top = y + 'px';
+          ripple.classList.add('ripple');
+          target.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 600);
+        }
+        const clickable = document.querySelectorAll('.image_2, .image_3, .image_4, .image_5, .image_6, .image_7, .text_2, .text_3, .text_4');
+        clickable.forEach(el => el.addEventListener('click', createRipple));
+
+        // 添加Calculator文本和图片的点击事件，跳转到Calculator.html
+        const calculatorText = document.querySelector('.text_8');
+        const calculatorImage = document.querySelector('.image_4');
+        
+        if (calculatorText) {
+          calculatorText.style.cursor = 'pointer';
+          calculatorText.addEventListener('click', function() {
+            window.location.href = 'calculator.html';
+          });
+        }
+        
+        if (calculatorImage) {
+          calculatorImage.style.cursor = 'pointer';
+          calculatorImage.addEventListener('click', function() {
+            window.location.href = 'calculator.html';
+          });
+        }
+
+        // World Carbon 弹窗逻辑
+        const wcModal = document.getElementById('wcModal');
+        const wcClose = document.getElementById('wcClose');
+        const worldText = document.querySelector('.text_6');
+        const worldImg = document.querySelector('.image_3');
+
+        const pageRoot = document.querySelector('.page');
+
+        function openWcModal() {
+          if (wcModal) wcModal.style.display = 'flex';
+          if (pageRoot) pageRoot.classList.add('modal-blur');
+        }
+        function closeWcModal() {
+          if (wcModal) wcModal.style.display = 'none';
+          if (pageRoot) pageRoot.classList.remove('modal-blur');
+        }
+        if (worldText) worldText.addEventListener('click', openWcModal);
+        if (worldImg) worldImg.addEventListener('click', openWcModal);
+        if (wcClose) wcClose.addEventListener('click', closeWcModal);
+        if (wcModal) wcModal.addEventListener('click', function(e){ if (e.target === wcModal) closeWcModal(); });
+
+        // Malaysia Carbon 弹窗逻辑
+        const mcModal = document.getElementById('mcModal');
+        const mcClose = document.getElementById('mcClose');
+        const malaysiaText = document.querySelector('.text_7');
+        const malaysiaImg = document.querySelector('.image_5');
+        const malaysiaImg2 = document.querySelector('.image_6');
+
+        function openMcModal() { if (mcModal) { mcModal.style.display = 'flex'; if (pageRoot) pageRoot.classList.add('modal-blur'); } }
+        function closeMcModal() { if (mcModal) { mcModal.style.display = 'none'; if (pageRoot) pageRoot.classList.remove('modal-blur'); } }
+        if (malaysiaText) malaysiaText.addEventListener('click', openMcModal);
+        if (malaysiaImg) malaysiaImg.addEventListener('click', openMcModal);
+        if (malaysiaImg2) malaysiaImg2.addEventListener('click', openMcModal);
+        if (mcClose) mcClose.addEventListener('click', closeMcModal);
+        if (mcModal) mcModal.addEventListener('click', function(e){ if (e.target === mcModal) closeMcModal(); });
+
+        // Climate Change 弹窗逻辑
+        const ccModal = document.getElementById('ccModal');
+        const ccClose = document.getElementById('ccClose');
+        const ccText = document.querySelector('.text_9');
+        const ccImg = document.querySelector('.image_7');
+        function openCcModal(){ if (ccModal) { ccModal.style.display = 'flex'; if (pageRoot) pageRoot.classList.add('modal-blur'); } }
+        function closeCcModal(){ if (ccModal) { ccModal.style.display = 'none'; if (pageRoot) pageRoot.classList.remove('modal-blur'); } }
+        if (ccText) ccText.addEventListener('click', openCcModal);
+        if (ccImg) ccImg.addEventListener('click', openCcModal);
+        if (ccClose) ccClose.addEventListener('click', closeCcModal);
+        if (ccModal) ccModal.addEventListener('click', function(e){ if (e.target === ccModal) closeCcModal(); });
+      });
+    </script>
+  </body>
+
+</html>
+
+

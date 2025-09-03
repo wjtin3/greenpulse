@@ -1,0 +1,5 @@
+category,region,unit,kg CO2e,description
+Electricity,Peninsular,kWh,0.774,Average emission factor for electricity in Peninsular Malaysia
+Electricity,Sabah,kWh,0.525,Average emission factor for electricity in Sabah
+Electricity,Sarawak,kWh,0.199,Average emission factor for electricity in Sarawak
+Water,Malaysia,m³,0.344,Average emission factor for water in Malaysia

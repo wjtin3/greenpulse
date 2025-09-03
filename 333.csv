@@ -1,0 +1,7 @@
+Waste type,unit,kg CO2e,Description
+Household residual waste,kg,0.497242,Emission factor for household residual waste disposal
+Electrical items,kg,0.008983,"Fridges and Freezers, Batteries ..."
+Metal,kg,0.008983,"Aluminium cans, Foil, Mixed cans, Scrap metal, Steel cans ..."
+Plastic,kg,0.008983,Emission factor for plastic recycling/disposal
+Paper,kg,1.164489,Emission factor for paper recycling/disposal
+Average household,kg,32.2466,Average household emission per person daily

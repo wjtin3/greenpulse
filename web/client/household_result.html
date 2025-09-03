@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Household Result - GreenPulse</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <style>
+      .page {
+        background-color: rgba(255, 255, 255, 1);
+        position: relative;
+        width: 100%;
+        height: 1300px;
+        overflow: hidden;
+      }
+
+      .group_1 {
+        width: 1440px;
+        height: 115px;
+      }
+
+      .block_1 {
+        width: 1112px;
+        height: 103px;
+        margin: 17px 0 0 38px;
+      }
+
+      .image_1 {
+        width: 82px;
+        height: 72px;
+      }
+
+      .text_1 {
+        width: 359px;
+        height: 94px;
+        overflow-wrap: break-word;
+        color: rgba(61, 124, 74, 1);
+        font-size: 50px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 50px;
+        margin: 9px 0 0 23px;
+      }
+
+      .text_2 {
+        width: 72px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 36px 0 0 82px;
+      }
+
+      .text_3 {
+        width: 67px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(61, 124, 74, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 36px 0 0 150px;
+      }
+
+      .text_4 {
+        width: 133px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 38px 0 0 144px;
+      }
+
+      .group_2 {
+        background-color: rgba(51, 74, 51, 1);
+        width: 1440px;
+        height: 403px;
+        margin-top: 782px;
+      }
+
+      .text_5 {
+        width: 103px;
+        height: 20px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 13px;
+        font-family: Poppins-Thin;
+        font-weight: 100;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 13px;
+        margin: 16px 0 0 17px;
+      }
+
+      .paragraph_1 {
+        width: 1400px;
+        height: 153px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 11px;
+        font-family: Poppins-ExtraLight;
+        font-weight: 250;
+        text-align: left;
+        margin: -12px 0 0 17px;
+      }
+
+      .text-wrapper_1 {
+        width: 607px;
+        height: 36px;
+        margin: 25px 0 0 37px;
+      }
+
+      .text_6 {
+        width: 228px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(229, 171, 109, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .text_7 {
+        width: 129px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(229, 171, 109, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .section_1 {
+        width: 619px;
+        height: 63px;
+        margin: 15px 0 87px 37px;
+      }
+
+      .text_8 {
+        width: 341px;
+        height: 48px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+      }
+
+      .text-wrapper_2 {
+        width: 141px;
+        height: 63px;
+      }
+
+      .text_9 {
+        width: 141px;
+        height: 24px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 20px;
+      }
+
+      .text_10 {
+        width: 40px;
+        height: 24px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 20px;
+        margin-top: 15px;
+      }
+
+      .group_3 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        background-color: rgba(249, 250, 236, 1);
+        height: 783px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 114px;
+      }
+
+      .group_4 {
+        width: 1109px;
+        height: 70px;
+        margin: 54px 0 0 160px;
+      }
+
+      .box_1 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        width: 169px;
+      }
+
+      .group_5 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_1 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_1 {
+        width: 46px;
+        height: 45px;
+        margin: -24px 0 0 32px;
+      }
+
+      .box_2 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .group_6 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG862d7ea8982b43f79a8399d6892c2565.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+        position: relative;
+      }
+
+      .box_3 {
+        border-radius: 50%;
+        width: 118px;
+        height: 24px;
+        margin: 35px 0 0 26px;
+      }
+
+      .image_2 {
+        position: absolute;
+        left: 53px;
+        top: 3px;
+        width: 64px;
+        height: 64px;
+      }
+
+      .box_4 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .section_2 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_2 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_2 {
+        width: 45px;
+        height: 45px;
+        margin: -22px 0 0 36px;
+      }
+
+      .box_5 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .group_7 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_3 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_3 {
+        width: 45px;
+        height: 45px;
+        margin: -22px 0 0 36px;
+      }
+
+      .box_6 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        margin-left: 66px;
+        width: 169px;
+      }
+
+      .box_7 {
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGd0f56da870bd0468226d45d82628a599.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+        width: 169px;
+      }
+
+      .image-wrapper_4 {
+        border-radius: 50%;
+        height: 24px;
+        width: 118px;
+        margin: 35px 0 0 26px;
+      }
+
+      .label_4 {
+        width: 45px;
+        height: 45px;
+        margin: -22px 0 0 36px;
+      }
+
+      .text-wrapper_3 {
+        width: 328px;
+        height: 48px;
+        margin: 42px 0 0 551px;
+      }
+
+      .text_11 {
+        width: 328px;
+        height: 48px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 32px;
+        font-family: Poppins-Black;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 32px;
+      }
+
+      .text-wrapper_4 {
+        width: 466px;
+        height: 47px;
+        margin: 32px 0 0 487px;
+      }
+
+      .text_12 {
+        width: 466px;
+        height: 47px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Bold;
+        font-weight: 700;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .group_8 {
+        width: 125px;
+        height: 44px;
+        margin: 2px 0 0 654px;
+      }
+
+      .group_9 {
+        background-color: rgba(255, 255, 255, 1);
+        width: 125px;
+        height: 44px;
+      }
+
+      .text-wrapper_5 {
+        width: 499px;
+        height: 36px;
+        margin: 9px 0 0 470px;
+      }
+
+      .text_13, .text_trees_needed, .text_saplings {
+        width: 499px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Bold;
+        font-weight: 700;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        padding-top: 10px;
+      }
+
+      .group_10 {
+        width: 125px;
+        height: 44px;
+        margin: 18px 0 0 654px;
+      }
+
+      .section_3 {
+        background-color: rgba(255, 255, 255, 1);
+        width: 125px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image-wrapper_5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .image_3 {
+        width: 92px;
+        height: 92px;
+      }
+
+      .image_4 {
+        width: 92px;
+        height: 92px;
+      }
+
+      .text-wrapper_6 {
+        width: 789px;
+        height: 36px;
+        margin: 11px 0 0 310px;
+      }
+
+      .text_14 {
+        width: 789px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Bold;
+        font-weight: 700;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .group_11 {
+        width: 169px;
+        height: 70px;
+        margin: 32px 0 74px 635px;
+      }
+
+      .section_4 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: 70px;
+        width: 169px;
+        position: relative;
+      }
+
+      .section_5 {
+        background-color: rgba(211, 160, 129, 1);
+        border-radius: 50%;
+        width: 118px;
+        height: 24px;
+        margin: 35px 0 0 26px;
+      }
+
+      .section_6 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 169px;
+        height: 70px;
+        background: url(https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGa17af1800d57790ee851c1dc98da2d1a.png)
+          100% no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .group_12 {
+        width: 45px;
+        height: 45px;
+        margin: 13px 0 0 62px;
+      }
+
+      .text_15 {
+        position: absolute;
+        left: 37px;
+        top: 18px;
+        width: 96px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(226, 129, 129, 1);
+        font-size: 24px;
+        font-family: Poppins-Bold;
+        font-weight: 700;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .image-wrapper_6 {
+        height: 459px;
+        width: 688px;
+        position: absolute;
+        left: -172px;
+        top: 369px;
+      }
+
+      .image_5 {
+        width: 92px;
+        height: 92px;
+      }
+
+      /* 通用样式 */
+      .flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flex-row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      /* 页面居中 */
+      body {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+
+      /* 返回按钮样式 */
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(61, 124, 74, 0.9);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: Inter-Regular;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .back-button:hover {
+        background: rgba(61, 124, 74, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(61, 124, 74, 0.3);
+      }
+
+      /* 下一步按钮样式 */
+      .next-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(61, 124, 74, 0.9);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: Inter-Regular;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .next-button:hover {
+        background: rgba(61, 124, 74, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(61, 124, 74, 0.3);
+      }
+
+      /* details按钮点击效果 */
+      .section_4 {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .section_4:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>    
+    <div class="page flex-col justify-between">
+      <div class="group_1 flex-col">
+        <div id="header"></div>
+      </div>
+      <div class="group_3 flex-col">
+        <div id="calc_nav"></div>
+        <div class="text-wrapper_3 flex-row">
+          <span class="text_11">RESULT&nbsp;-&nbsp;Household</span>
+        </div>
+      
+        <div class="text-wrapper_5 flex-row">
+          <span class="text_13">Your total carbon footprint for this category is</span>
+        </div>
+        <div class="group_10 flex-row">
+          <div class="section_3 flex-col" id="footprint-value">
+          </div>
+        </div>
+        <div class="text-wrapper_5 flex-row">
+          <span class="text_trees_needed">You would need to plant approximately</span>
+        </div> 
+        <div class="group_10 flex-row">
+          <div class="section_3 flex-col" id="trees-value">
+          </div>
+        </div>      
+        <div class="text-wrapper_5 flex-row">
+          <span class="text_saplings">
+            tree saplings for 10 years to absorb this amount of CO₂.
+          </span>
+        </div>
+        <div class="image-wrapper_5 flex-row">
+          <!-- 树木图标将通过JavaScript动态添加 -->
+        </div>
+        <div class="text-wrapper_6 flex-row">
+          <span class="text_14"
+            >Why&nbsp;can't&nbsp;I&nbsp;get&nbsp;my&nbsp;Footprint&nbsp;score&nbsp;within&nbsp;the&nbsp;means&nbsp;of&nbsp;one&nbsp;tree?</span
+          >
+        </div>
+        <div class="group_11 flex-row">
+          <div class="section_4 flex-col" onclick="goTodetails()">
+            <div class="section_5 flex-col"></div>
+            <div class="section_6 flex-row">
+              <div class="group_12 flex-col"></div>
+              <span class="text_15">Details</span>
+            </div>
+          </div>
+        </div>
+        <div class="image-wrapper_6 flex-col">
+         
+        </div>
+      </div>
+      <div id="footer"></div>
+    </div>
+
+    <script src="scripts/loadLayout.js"></script>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+
+      function goToNext() {
+        // 跳转到下一个页面，这里可以根据需要修改
+        window.location.href = 'waste.html';
+      }
+
+      function goTodetails() {
+        // 点击details按钮跳转到详情页面
+        window.location.href = 'coming-soon.html';
+      }
+      
+      // 从URL获取参数
+      function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+      
+      // 页面加载后计算碳足迹并显示结果
+      window.onload = function() {
+        // 获取各个页面的滑块值
+        const peopleCount = parseInt(getParameterByName('people') || 0);
+        const waterUsage = parseInt(getParameterByName('water') || 0);
+        const electricityUsage = parseInt(getParameterByName('electricity') || 0);
+        const wasteAmount = parseInt(getParameterByName('waste') || 0);
+        
+        // 计算碳足迹 - 使用CSV文件中的排放因子
+        // 人口因子：每人每天32.2466 kg CO2e (来自CSV文件)
+        // 水使用因子：每立方米0.344 kg CO2e (来自CSV文件)
+        // 电力因子：每千瓦时0.774 kg CO2e (来自CSV文件，使用马来西亚半岛的值)
+        // 垃圾因子：每公斤0.497242 kg CO2e (来自CSV文件，家庭垃圾)
+        
+        // 如果家庭人数为0，则默认为1人
+        const actualPeopleCount = peopleCount > 0 ? peopleCount : 1;
+        
+        // 计算每个人的碳足迹
+        const peopleFactor = 32.2466 / actualPeopleCount; // 平均每人每天的排放量
+        const waterFactor = waterUsage * 0.344;
+        const electricityFactor = electricityUsage * 0.774;
+        const wasteFactor = wasteAmount * 0.497242;
+        
+        // 总碳足迹 (kg CO2e)
+        const totalCO2 = peopleFactor + waterFactor + electricityFactor + wasteFactor;
+        
+        // 假设一棵树每年可以吸收约21.77 kg CO2e
+        const treesNeeded = totalCO2 / 21.77;
+        
+        // 至少显示1棵树
+        const finalTreesCount = Math.max(1, Math.round(treesNeeded));
+        
+        // 更新碳足迹值显示
+        updateFootprintDisplay(totalCO2.toFixed(2), treesNeeded.toFixed(2));
+        
+        // 更新树木图标显示
+        updateTreesDisplay(finalTreesCount);
+        
+        // 显示详细的碳足迹组成
+        displayFootprintDetails(peopleCount, waterUsage, electricityUsage, wasteAmount, totalCO2);
+      };
+      
+      // 更新碳足迹值显示
+      function updateFootprintDisplay(footprintValue, treesValue) {
+        // 更新footprint-value显示碳足迹数值
+        const footprintElement = document.getElementById('footprint-value');
+        if (footprintElement) {
+          // 清空之前的内容
+          footprintElement.innerHTML = '';
+          
+          // 创建显示元素
+          const valueDisplay = document.createElement('div');
+          valueDisplay.style.fontSize = '24px';
+          valueDisplay.style.fontWeight = 'bold';
+          valueDisplay.style.color = '#3D7C4A';
+          valueDisplay.style.textAlign = 'center';
+          valueDisplay.style.padding = '10px';
+          valueDisplay.style.fontFamily = 'Poppins-Bold';
+          
+          // 显示碳足迹值
+          valueDisplay.textContent = `${footprintValue} kg CO₂`;
+          
+          footprintElement.appendChild(valueDisplay);
+        }
+        
+        // 更新trees-value显示需要的树木数量
+        const treesElement = document.getElementById('trees-value');
+        if (treesElement) {
+          // 清空之前的内容
+          treesElement.innerHTML = '';
+          
+          // 创建显示元素
+          const valueDisplay = document.createElement('div');
+          valueDisplay.style.fontSize = '24px';
+          valueDisplay.style.fontWeight = 'bold';
+          valueDisplay.style.color = '#3D7C4A';
+          valueDisplay.style.textAlign = 'center';
+          valueDisplay.style.padding = '10px';
+          valueDisplay.style.fontFamily = 'Poppins-Bold';
+          
+          // 显示树木数量
+          valueDisplay.textContent = treesValue;
+          
+          treesElement.appendChild(valueDisplay);
+        }
+      }
+      
+      // 更新树木图标显示
+      function updateTreesDisplay(count) {
+        // 获取树木图标容器
+        const container = document.querySelector('.image-wrapper_5');
+        if (!container) return;
+        
+        // 清空容器
+        container.innerHTML = '';
+        
+        // 限制最大显示数量为5个树
+        const displayCount = Math.min(count, 5);
+        
+        // 添加树木图标
+        for (let i = 0; i < displayCount; i++) {
+          const img = document.createElement('img');
+          img.className = 'image_3';
+          img.setAttribute('referrerpolicy', 'no-referrer');
+          img.src = 'https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGdaf978382374dc7320e036e93b35bb9d.png';
+          container.appendChild(img);
+        }
+      }
+      
+      // 显示详细的碳足迹组成
+      function displayFootprintDetails(peopleCount, waterUsage, electricityUsage, wasteAmount, totalCO2) {
+        // 计算各部分排放量
+        const actualPeopleCount = peopleCount > 0 ? peopleCount : 1;
+        const peopleCO2 = 32.2466 / actualPeopleCount;
+        const waterCO2 = waterUsage * 0.344;
+        const electricityCO2 = electricityUsage * 0.774;
+        const wasteCO2 = wasteAmount * 0.497242;
+        
+        // 计算各部分占比
+        const peoplePercentage = totalCO2 > 0 ? (peopleCO2 / totalCO2 * 100).toFixed(1) : 0;
+        const waterPercentage = totalCO2 > 0 ? (waterCO2 / totalCO2 * 100).toFixed(1) : 0;
+        const electricityPercentage = totalCO2 > 0 ? (electricityCO2 / totalCO2 * 100).toFixed(1) : 0;
+        const wastePercentage = totalCO2 > 0 ? (wasteCO2 / totalCO2 * 100).toFixed(1) : 0;
+        
+        // 更新文本显示
+        const detailsElement = document.querySelector('.text_14');
+        if (detailsElement) {
+          let detailsText = `Your carbon footprint breakdown: `;
+          
+          if (peopleCount > 0) {
+            detailsText += `Household (${peoplePercentage}%), `;
+          }
+          
+          if (waterUsage > 0) {
+            detailsText += `Water (${waterPercentage}%), `;
+          }
+          
+          if (electricityUsage > 0) {
+            detailsText += `Electricity (${electricityPercentage}%), `;
+          }
+          
+          if (wasteAmount > 0) {
+            detailsText += `Waste (${wastePercentage}%)`;
+          }
+          
+          // 移除末尾多余的逗号和空格
+          detailsText = detailsText.replace(/, $/, '');
+          
+          detailsElement.textContent = detailsText;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenPulse - Climate Action Platform</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <style>
+      /* CSS Styles */
+      .page {
+        background-color: rgba(255, 255, 255, 1);
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      .box_1 {
+        width: 100%;
+        height: 105px;
+      }
+
+      .box_2 {
+        width: 1112px;
+        height: 103px;
+        margin: 17px 0 0 38px;
+      }
+
+      .image_1 {
+        width: 82px;
+        height: 72px;
+      }
+
+      .text_1 {
+        width: 359px;
+        height: 94px;
+        overflow-wrap: break-word;
+        color: rgba(61, 124, 74, 1);
+        font-size: 50px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 50px;
+        margin: 9px 0 0 23px;
+      }
+
+      .text_2 {
+        width: 74px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(61, 124, 74, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 36px 0 0 82px;
+      }
+
+      .text_3 {
+        width: 63px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 36px 0 0 148px;
+      }
+
+      .text_4 {
+        width: 133px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 38px 0 0 148px;
+      }
+
+      .box_3 {
+        background-color: rgba(249, 250, 236, 1);
+        width: 100%;
+        height: 756px;
+      }
+
+      .text_5 {
+        max-width: 573px;
+        height: 72px;
+        overflow-wrap: break-word;
+        color: rgba(84, 84, 84, 1);
+        font-size: 48px;
+        font-family: Poppins-SemiBold;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 48px;
+        margin: 40px auto 0;
+      }
+
+      .block_1 {
+        width: 100%;
+        height: 588px;
+        margin: 15px 0 41px 0;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .box_4 {
+        width: 545px;
+        height: 588px;
+        background: url(img/20250828012720_201_39.png)
+          center center no-repeat;
+        background-size: 100% 100% !important;
+        background-position: center;
+        flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .text-group_1 {
+        width: 200px;
+        height: 54px;
+        text-align: center;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .text_6 {
+        width: 200px;
+        height: 54px;
+        overflow-wrap: break-word;
+        color: rgba(255, 250, 250, 1);
+        font-size: 36px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 36px;
+        margin: 0;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);        
+      }
+
+      .text_7 {
+        width: 200px;
+        height: 48px;
+        overflow-wrap: break-word;
+        color: rgba(255, 250, 250, 1);
+        font-size: 16px;
+        font-family: Poppins-Light;
+        font-weight: 300;
+        text-align: center;
+        margin: 0;
+      }
+
+      .list_1 {
+        width: 800px;
+        height: 588px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .text-wrapper_1-0 {
+        height: 588px;
+        background-size: 100% 100% !important;
+        background-position: center;
+        width: 220px;
+        background: url(img/cc5b624313158b20ed2e213df06085e4.png)
+          center center no-repeat;
+        flex-shrink: 0;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .text_8-0 {
+        width: 193px;
+        height: 54px;
+        overflow-wrap: break-word;
+        color: rgba(255, 250, 250, 1);
+        font-size: 36px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 36px;
+        margin: 0;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .text-wrapper_1-1 {
+        height: 588px;
+        background-size: 100% 100% !important;
+        background-position: center;
+        width: 220px;
+        background: url(img/be2f4cda66017d950c085488fb6fcd13.png)
+          center center no-repeat;
+        flex-shrink: 0;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .text_8-1 {
+        width: 193px;
+        height: 54px;
+        overflow-wrap: break-word;
+        color: rgba(255, 250, 250, 1);
+        font-size: 36px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 36px;
+        margin: 0;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .text-wrapper_1-2 {
+        height: 588px;
+        background-size: 100% 100% !important;
+        background-position: center;
+        width: 220px;
+        background: url(img/5c365991be7e143a3e1dafc05969f448.png)
+          center center no-repeat;
+        flex-shrink: 0;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .text_8-2 {
+        width: 193px;
+        height: 54px;
+        overflow-wrap: break-word;
+        color: rgba(255, 250, 250, 1);
+        font-size: 36px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 36px;
+        margin: 0;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* 悬停效果 - 使用JavaScript控制，确保所有图片都能正确响应 */
+      .box_4:hover {
+        width: 545px;
+      }
+
+      .text-wrapper_1-0:hover {
+        width: 545px;
+      }
+
+      .text-wrapper_1-1:hover {
+        width: 545px;
+      }
+
+      .text-wrapper_1-2:hover {
+        width: 545px;
+      }
+
+      /* 强制图片完全填充，消除留白 */
+      .text-wrapper_1-0,
+      .text-wrapper_1-1,
+      .text-wrapper_1-2,
+      .box_4 {
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+        background-origin: border-box !important;
+        background-clip: border-box !important;
+      }
+
+      /* 确保容器没有背景色 */
+      .text-wrapper_1-0,
+      .text-wrapper_1-1,
+      .text-wrapper_1-2,
+      .box_4 {
+        background-color: transparent !important;
+      }
+
+      /* 导航栏交互动效 */
+      .text_2, .text_3, .text_4 {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        cursor: pointer;
+      }
+
+      .text_2:hover, .text_3:hover, .text_4:hover {
+        color: rgba(61, 124, 74, 1);
+        transform: translateY(-2px);
+        text-shadow: 0 4px 8px rgba(61, 124, 74, 0.3);
+      }
+
+      .text_2::after, .text_3::after, .text_4::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(61, 124, 74, 1), rgba(51, 104, 64, 1));
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform: translateX(-50%);
+        border-radius: 1px;
+      }
+
+      .text_2:hover::after, .text_3:hover::after, .text_4:hover::after {
+        width: 100%;
+      }
+
+      /* Logo交互动效 */
+      .image_1 {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        cursor: pointer;
+      }
+
+      .image_1:hover {
+        transform: scale(1.1) rotate(5deg);
+        filter: drop-shadow(0 8px 16px rgba(61, 124, 74, 0.4));
+      }
+
+      /* 标题交互动效 */
+      .text_1 {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        cursor: pointer;
+      }
+
+      .text_1:hover {
+        transform: scale(1.05);
+        text-shadow: 0 4px 12px rgba(61, 124, 74, 0.5);
+      }
+
+      /* 项目卡片交互动效增强 */
+      .text-wrapper_1-0,
+      .text-wrapper_1-1,
+      .text-wrapper_1-2,
+      .box_4 {
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        cursor: pointer;
+      }
+
+      .text-wrapper_1-0:hover,
+      .text-wrapper_1-1:hover,
+      .text-wrapper_1-2:hover,
+      .box_4:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 
+          0 20px 40px rgba(0, 0, 0, 0.2),
+          0 15px 30px rgba(0, 0, 0, 0.15),
+          0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* 卡片文字保持静态，只垂直居中 */
+      .text_6, .text_8-0, .text_8-1, .text_8-2 {
+        transition: none;
+        transform: translate(-50%, -50%) !important;
+      }
+
+      /* 移除文字悬停效果，保持静态 */
+      .text-wrapper_1-0:hover .text_8-0,
+      .text-wrapper_1-1:hover .text_8-1,
+      .text-wrapper_1-2:hover .text_8-2,
+      .box_4:hover .text_6 {
+        transform: translate(-50%, -50%) !important;
+        text-shadow: none;
+      }
+
+      /* 页面标题交互动效 */
+      .text_5 {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        cursor: pointer;
+      }
+
+      .text_5:hover {
+        transform: scale(1.02);
+        text-shadow: 0 4px 12px rgba(84, 84, 84, 0.3);
+      }
+
+      /* 目标描述交互动效 */
+      .text_9, .text_10 {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .text_9:hover, .text_10:hover {
+        transform: translateX(10px);
+        color: rgba(61, 124, 74, 1);
+      }
+
+      /* 描述文字交互动效 */
+      .text_11 {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .text_11:hover {
+        transform: scale(1.01);
+        color: rgba(61, 124, 74, 0.8);
+      }
+
+      /* 底部链接交互动效 */
+      .text_13, .text_15 {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        cursor: pointer;
+      }
+
+      .text_13:hover, .text_15:hover {
+        color: rgba(255, 255, 255, 1);
+        transform: translateX(5px);
+      }
+
+      .text_14, .text_16, .text_17 {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        cursor: pointer;
+      }
+
+      .text_14:hover, .text_16:hover, .text_17:hover {
+        color: rgba(229, 171, 109, 1);
+        transform: translateX(5px);
+      }
+
+      /* 视频背景文字交互动效 */
+      .text_18, .text_19 {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        cursor: pointer;
+      }
+
+      .text_18:hover, .text_19:hover {
+        transform: scale(1.05);
+        text-shadow: 
+          0 4px 12px rgba(0, 0, 0, 0.5),
+          0 8px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      /* 项目按钮交互动效增强 */
+      .text-wrapper_3 {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        cursor: pointer;
+      }
+
+      .text-wrapper_3:hover {
+        background: linear-gradient(145deg, rgba(81, 144, 94, 1), rgba(71, 124, 84, 1));
+        transform: translateY(-12px) scale(1.12);
+        box-shadow: 
+          0 25px 50px rgba(61, 124, 74, 0.5),
+          0 20px 40px rgba(61, 124, 74, 0.4),
+          0 15px 30px rgba(61, 124, 74, 0.3),
+          0 10px 20px rgba(61, 124, 74, 0.2);
+      }
+
+      .text-wrapper_3:hover .text_20 {
+        transform: scale(1.1);
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      /* 页面加载动画 */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* 应用加载动画 */
+      .box_1 {
+        animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .text_5 {
+        animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+      }
+
+      .box_4 {
+        animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+      }
+
+      .text-wrapper_1-0 {
+        animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+      }
+
+      .text-wrapper_1-1 {
+        animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
+      }
+
+      .text-wrapper_1-2 {
+        animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.7s both;
+      }
+
+      .text_9 {
+        animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s both;
+      }
+
+      .text-wrapper_3 {
+        animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+      }
+
+      /* 滚动条美化 */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: rgba(249, 250, 236, 0.5);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, rgba(61, 124, 74, 0.8), rgba(51, 104, 64, 0.8));
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, rgba(61, 124, 74, 1), rgba(51, 104, 64, 1));
+      }
+
+      /* 选择文本美化 */
+      ::selection {
+        background: rgba(61, 124, 74, 0.3);
+        color: rgba(0, 0, 0, 1);
+      }
+
+      ::-moz-selection {
+        background: rgba(61, 124, 74, 0.3);
+        color: rgba(0, 0, 0, 1);
+      }
+
+      /* 波纹效果样式 */
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+      }
+
+      @keyframes ripple-animation {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+
+      /* 确保可点击元素有相对定位 */
+      .text-wrapper_1-0,
+      .text-wrapper_1-1,
+      .text-wrapper_1-2,
+      .box_4,
+      .text-wrapper_3,
+      .text_2,
+      .text_3,
+      .text_4 {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .box_5 {
+        width: 100%;
+        height: 822px;
+        margin-bottom: 1px;
+      }
+
+      .block_2 {
+        background-color: rgba(249, 250, 236, 1);
+        width: 100%;
+        height: 418px;
+      }
+
+      .text-group_2 {
+        width: 1181px;
+        height: 129px;
+        margin: 19px auto 0 auto;
+      }
+
+      .text_9 {
+        width: 413px;
+        height: 72px;
+        overflow-wrap: break-word;
+        color: rgba(84, 84, 84, 1);
+        font-size: 48px;
+        font-family: Poppins-SemiBold;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 48px;
+        margin: 0 auto;
+      }
+
+      .text_10 {
+        width: 1181px;
+        height: 48px;
+        overflow-wrap: break-word;
+        color: rgba(121, 119, 119, 1);
+        font-size: 32px;
+        font-family: Poppins-SemiBold;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 32px;
+        margin-top: 9px;
+      }
+
+      .text_11 {
+        width: 1322px;
+        height: 150px;
+        overflow-wrap: break-word;
+        color: rgba(169, 166, 166, 1);
+        font-size: 20px;
+        font-family: Poppins-SemiBold;
+        font-weight: normal;
+        text-align: center;
+        margin: 51px auto 69px auto;
+      }
+
+      .block_3 {
+        background-color: rgba(51, 74, 51, 1);
+        height: 403px;
+        margin-bottom: 1px;
+        width: 100%;
+      }
+
+      .text-wrapper_2 {
+        width: 103px;
+        height: 20px;
+        margin: 16px 0 0 17px;
+      }
+
+      .text_12 {
+        width: 103px;
+        height: 20px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 13px;
+        font-family: Poppins-Thin;
+        font-weight: 100;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 13px;
+      }
+
+      .paragraph_1 {
+        width: 1402px;
+        height: 153px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 11px;
+        font-family: Poppins-ExtraLight;
+        font-weight: 250;
+        text-align: left;
+        margin: 16px 0 0 17px;
+      }
+
+      .box_6 {
+        width: 619px;
+        height: 114px;
+        margin: 166px 0 87px 37px;
+      }
+
+      .text-group_3 {
+        width: 341px;
+        height: 99px;
+      }
+
+      .text_13 {
+        width: 228px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(229, 171, 109, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .text_14 {
+        width: 400px;
+        height: 48px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        margin-top: 15px;
+      }
+
+      .text-group_4 {
+        width: 141px;
+        height: 114px;
+      }
+
+      .text_15 {
+        width: 129px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(229, 171, 109, 1);
+        font-size: 24px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      .text_16 {
+        width: 141px;
+        height: 24px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 20px;
+        margin-top: 15px;
+      }
+
+      .text_17 {
+        width: 40px;
+        height: 24px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        font-family: Poly-Regular;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+        line-height: 20px;
+        margin-top: 15px;
+      }
+
+      .box_7 {
+        position: relative;
+        width: 100%;
+        height: 788px;
+        overflow: hidden;
+      }
+
+      .box_7 span,
+      .box_7 .text-wrapper_3 {
+        position: relative;  /* ensure text stays above video */
+        z-index: 1;
+        color: white;        /* optional: improves readability */
+      }
+
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      .text_18 {
+        width: 100%;
+        max-width: 884px;
+        height: 96px;
+        overflow-wrap: break-word;
+        color: rgba(255, 250, 250, 1);
+        font-size: 64px;
+        font-family: Poppins-ExtraBold;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 64px;
+        margin: 309px auto 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .text_19 {
+        width: 100%;
+        max-width: 839px;
+        height: 36px;
+        overflow-wrap: break-word;
+        color: rgba(255, 254, 254, 1);
+        font-size: 24px;
+        font-family: Poppins-Regular;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 24px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .text-wrapper_3 {
+        background: linear-gradient(145deg, rgba(61, 124, 74, 1), rgba(51, 104, 64, 1));
+        height: 168px;
+        width: 168px;
+        margin: 56px auto 123px auto;
+        position: relative;
+        z-index: 1;
+        border-radius: 50%;
+        box-shadow: 
+          0 8px 16px rgba(0, 0, 0, 0.3),
+          0 4px 8px rgba(0, 0, 0, 0.2),
+          inset 0 2px 4px rgba(255, 255, 255, 0.15);
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+      }
+
+      .text_20 {
+        width: 128px;
+        height: 39px;
+        overflow-wrap: break-word;
+        color: rgba(255, 255, 255, 1);
+        font-size: 32px;
+        font-family: Inter-Semi Bold;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 32px;
+        margin: 0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Utility Classes */
+      .flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flex-row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      /* Hover Effects */
+      .text-wrapper_3:hover {
+        background: linear-gradient(145deg, rgba(81, 144, 94, 1), rgba(71, 124, 84, 1));
+        transform: translateY(-8px) scale(1.08);
+        box-shadow: 
+          0 20px 40px rgba(61, 124, 74, 0.4),
+          0 15px 30px rgba(61, 124, 74, 0.3),
+          0 10px 20px rgba(61, 124, 74, 0.2),
+          0 5px 10px rgba(61, 124, 74, 0.1),
+          0 2px 4px rgba(0, 0, 0, 0.2),
+          inset 0 2px 4px rgba(255, 255, 255, 0.3);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+
+
+      .text-wrapper_3:active {
+        transform: translateY(-4px) scale(0.95);
+        box-shadow: 
+          0 10px 20px rgba(61, 124, 74, 0.3),
+          0 5px 10px rgba(61, 124, 74, 0.2),
+          0 2px 4px rgba(0, 0, 0, 0.2),
+          inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.1s ease;
+      }
+
+      /* 波浪光晕效果 */
+      .text-wrapper_3::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+        background: radial-gradient(circle, rgba(61, 124, 74, 0.4) 0%, rgba(61, 124, 74, 0.2) 40%, rgba(61, 124, 74, 0.1) 70%, transparent 100%);
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .text-wrapper_3:hover::before {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      /* 第二层波浪效果 */
+      .text-wrapper_3::after {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        right: -15px;
+        bottom: -15px;
+        background: radial-gradient(circle, rgba(61, 124, 74, 0.2) 0%, rgba(61, 124, 74, 0.1) 50%, transparent 80%);
+        border-radius: 50%;
+        z-index: -2;
+        opacity: 0;
+        transform: scale(0.6);
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .text-wrapper_3:hover::after {
+        opacity: 1;
+        transform: scale(1.4);
+      }
+
+      /* 响应式设计 */
+      @media (max-width: 1440px) {
+        .page {
+          width: 100%;
+          height: auto;
+        }
+        
+        .box_1, .box_3, .box_5, .box_7 {
+          width: 100%;
+        }
+        
+        .text_18 {
+          font-size: 48px;
+          margin: 200px 0 0 50px;
+          width: auto;
+        }
+        
+        .text_19 {
+          font-size: 18px;
+          margin-left: 50px;
+          width: auto;
+        }
+      }
+
+      /* Ensure page fills screen */
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Hide scrollbar but keep scrolling functionality */
+      body::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background: transparent;
+      }
+
+      body::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      /* For Firefox */
+      body {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      /* Center content on larger screens */
+      @media (min-width: 1440px) {
+        .page {
+          max-width: 100%;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="page flex-col">
+      <div class="box_7 flex-col">
+        <!--
+        <video class="video-background" autoplay muted loop>
+          <source src="video/a0099d0177eb312e353339e7a32ee3c5.mp4" type="video/mp4">
+        </video>
+        -->
+        <img
+          class="video-background"
+          src="img/Image_20250903162053.jpg"
+          alt="Background">
+        <span class="text_18">Climate action starts now!</span>
+        <span class="text_19"
+          >TAKE URGENT ACTION TO COMBAT CLIMATE CHANGE AND ITS IMPACTS.</span
+        >
+        <div class="text-wrapper_3 flex-col">
+          <span class="text_20">Projects</span>
+        </div>
+      </div>
+      <div class="box_3 flex-col">
+        <span class="text_5">What Are Our Tools?</span>
+        <div class="block_1">
+          <div class="box_4 flex-row">
+            <div class="text-group_1 flex-col justify-between">
+              <span class="text_6">Tools</span>
+            </div>
+          </div>
+          <a href="calculator.html">
+            <div class="text-wrapper_1-2 flex-col">
+              <span class="text_8-2">Calculators</span>
+            </div>
+          </a>
+          <a href="coming-soon.html">
+            <div class="text-wrapper_1-0 flex-col">
+              <span class="text_8-0">Challenge</span>
+            </div>
+          </a>
+          <a href="coming-soon.html">
+            <div class="text-wrapper_1-1 flex-col">
+              <span class="text_8-1">Map</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="box_5 flex-col">
+        <div class="block_2 flex-col">
+          <div class="text-group_2 flex-col justify-between">
+            <span class="text_9">GreenPulse Goals</span>
+            <span class="text_10"
+              >GreenPulse's mission is to promote carbon reduction knowledge at scale</span
+            >
+          </div>
+          <span class="text_11"
+            >Climate change is an urgent global crisis, driven by human activities such as burning fossil fuels. It leads to rising temperatures, extreme weather events, and sea-level rise, threatening ecosystems and communities worldwide. Aligned with SDG 13: Climate Action, GreenPulse empowers Malaysia's urban youth to take immediate action through simple daily challenges, personalised recommendations, and gamified tools. By turning awareness into action, GreenPulse helps reduce carbon emissions and build sustainable habits—ensuring a livable future for all.</span
+          >
+        </div>
+        <div id="footer"></div>
+      </div>
+    </div>
+
+    <script src="scripts/loadLayout.js"></script>
+    <script>
+      // JavaScript functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add click event listeners for navigation
+        const navItems = document.querySelectorAll('.text_2, .text_3, .text_4');
+        navItems.forEach(item => {
+          item.addEventListener('click', function() {
+            console.log('Navigation clicked:', this.textContent);
+            // Simple navigation mapping
+            if (this.classList.contains('text_3')) {
+              window.location.href = 'tools.html';
+            }
+          });
+        });
+
+        // Add click event listener for Projects button
+        const projectsBtn = document.querySelector('.text-wrapper_3');
+        projectsBtn.addEventListener('click', function() {
+          console.log('Projects button clicked');
+          // Smooth scroll to the projects module below the hero section
+          smoothScroll('.box_3');
+        });
+
+        // 动态悬停效果控制
+        const projectCards = document.querySelectorAll('.text-wrapper_1-0, .text-wrapper_1-1, .text-wrapper_1-2');
+        const firstCard = document.querySelector('.box_4');
+        
+        // 初始化默认状态：第一张545px，其他220px
+        console.log('Project cards initialized');
+        
+        // 悬停效果：鼠标悬停时展开到545px，其他收缩到220px
+        function expandCard(hoveredCard) {
+          // 重置所有卡片到220px
+          firstCard.style.width = '220px';
+          projectCards.forEach(card => {
+            card.style.width = '220px';
+          });
+          
+          // 展开悬停的卡片到545px
+          hoveredCard.style.width = '545px';
+        }
+        
+        // 鼠标离开时恢复默认状态
+        function resetToDefault() {
+          firstCard.style.width = '545px';
+          projectCards.forEach(card => {
+            card.style.width = '220px';
+          });
+        }
+        
+        // 为第一张卡片添加悬停事件
+        firstCard.addEventListener('mouseenter', function() {
+          expandCard(this);
+        });
+        
+        firstCard.addEventListener('mouseleave', function() {
+          resetToDefault();
+        });
+        
+        // 点击第一张卡片（Green Calculator）跳转到 tools.html
+        firstCard.addEventListener('click', function() {
+          window.location.href = 'tools.html';
+        });
+        
+        // 为其他卡片添加悬停事件
+        projectCards.forEach((card) => {
+          card.addEventListener('mouseenter', function() {
+            expandCard(this);
+          });
+          
+          card.addEventListener('mouseleave', function() {
+            resetToDefault();
+          });
+        });
+
+        // 添加点击波纹效果
+        function createRipple(event) {
+          const button = event.currentTarget;
+          const ripple = document.createElement('span');
+          const rect = button.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = event.clientX - rect.left - size / 2;
+          const y = event.clientY - rect.top - size / 2;
+          
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = x + 'px';
+          ripple.style.top = y + 'px';
+          ripple.classList.add('ripple');
+          
+          button.appendChild(ripple);
+          
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        }
+
+        // 为所有可点击元素添加波纹效果
+        const clickableElements = document.querySelectorAll('.text-wrapper_1-0, .text-wrapper_1-1, .text-wrapper_1-2, .box_4, .text-wrapper_3, .text_2, .text_3, .text_4');
+        clickableElements.forEach(element => {
+          element.addEventListener('click', createRipple);
+        });
+
+
+
+        // 页面滚动视差效果
+        window.addEventListener('scroll', function() {
+          const scrolled = window.pageYOffset;
+          const parallaxElements = document.querySelectorAll('.text_18, .text_19, .text-wrapper_3');
+          
+          parallaxElements.forEach((element, index) => {
+            const speed = 0.5 + (index * 0.1);
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+          });
+        });
+        
+        // Add click event listeners for project cards
+        projectCards.forEach(card => {
+          card.addEventListener('click', function() {
+            console.log('Project card clicked:', this.querySelector('span').textContent);
+            // Add project card navigation logic here
+          });
+        });
+
+        // Smooth scrolling for better user experience
+        function smoothScroll(target) {
+          const element = document.querySelector(target);
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+
+        // Video loading check
+        const video = document.querySelector('.video-background');
+        if (video) {
+          video.addEventListener('loadeddata', function() {
+            console.log('Video loaded successfully');
+          });
+          
+          video.addEventListener('error', function() {
+            console.error('Video failed to load');
+          });
+          
+          // Ensure video plays
+          video.play().catch(function(error) {
+            console.log('Video autoplay failed:', error);
+          });
+        }
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+          document.body.style.opacity = '0';
+          document.body.style.transition = 'opacity 0.5s ease-in';
+          setTimeout(() => {
+            document.body.style.opacity = '1';
+          }, 100);
+        });
+      });
+    </script>
+  </body>
+</html>
