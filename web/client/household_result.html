@@ -643,7 +643,7 @@
         </div>
       
         <div class="text-wrapper_5 flex-row">
-          <span class="text_13">Your total carbon footprint for this category is</span>
+          <span class="text_13">Your total weekly carbon footprint for this category is</span>
         </div>
         <div class="group_10 flex-row">
           <div class="section_3 flex-col" id="footprint-value">
@@ -737,7 +737,6 @@
         // 总碳足迹 (kg CO2e)
         const totalCO2 = peopleFactor + waterFactor + electricityFactor + wasteFactor;
         
-        // 假设一棵树每年可以吸收约21.77 kg CO2e
         const treesNeeded = totalCO2 / 60.5;
         
         // 至少显示1棵树
@@ -824,9 +823,9 @@
       function displayFootprintDetails(peopleCount, waterUsage, electricityUsage, wasteAmount, totalCO2) {
         // 计算各部分排放量
         const actualPeopleCount = peopleCount > 0 ? peopleCount : 1;
-        const peopleCO2 = 32.2466 / actualPeopleCount;
-        const waterCO2 = waterUsage * 0.344;
-        const electricityCO2 = electricityUsage * 0.774;
+        const peopleCO2 = (32.2466 * 7) / actualPeopleCount; // Multiply to get weekly
+        const waterCO2 = waterUsage * 0.344 / 4; // Divide to get weekly
+        const electricityCO2 = electricityUsage * 0.774 / 4; // Divide to get weekly
         const wasteCO2 = wasteAmount * 0.497242;
         
         // 计算各部分占比
