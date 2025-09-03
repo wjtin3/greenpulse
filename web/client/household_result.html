@@ -414,7 +414,7 @@
         margin: 9px 0 0 470px;
       }
 
-      .text_13 {
+      .text_13, .text_trees_needed, .text_saplings {
         width: 499px;
         height: 36px;
         overflow-wrap: break-word;
@@ -425,6 +425,7 @@
         text-align: left;
         white-space: nowrap;
         line-height: 24px;
+        padding-top: 10px;
       }
 
       .group_10 {
@@ -437,6 +438,9 @@
         background-color: rgba(255, 255, 255, 1);
         width: 125px;
         height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .image-wrapper_5 {
@@ -539,9 +543,8 @@
       }
 
       .image_5 {
-        /* width: 92px;
+        width: 92px;
         height: 92px;
-        margin: 99px 0 0 734px; */
       }
 
       /* 通用样式 */
@@ -640,29 +643,26 @@
         </div>
       
         <div class="text-wrapper_5 flex-row">
-          <span class="text_13"
-            >If&nbsp;everyone&nbsp;lived&nbsp;like&nbsp;you,&nbsp;we&nbsp;would&nbsp;need</span
-          >
+          <span class="text_13">Your total carbon footprint for this category is</span>
         </div>
         <div class="group_10 flex-row">
-          <div class="section_3 flex-col"></div>
+          <div class="section_3 flex-col" id="footprint-value">
+          </div>
+        </div>
+        <div class="text-wrapper_5 flex-row">
+          <span class="text_trees_needed">You would need to plant approximately</span>
+        </div> 
+        <div class="group_10 flex-row">
+          <div class="section_3 flex-col" id="trees-value">
+          </div>
+        </div>      
+        <div class="text-wrapper_5 flex-row">
+          <span class="text_saplings">
+            tree saplings for 10 years to absorb this amount of CO₂.
+          </span>
         </div>
         <div class="image-wrapper_5 flex-row">
-           <img
-            class="image_5"
-            referrerpolicy="no-referrer"
-            src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGdaf978382374dc7320e036e93b35bb9d.png"
-          />
-          <img
-            class="image_3"
-            referrerpolicy="no-referrer"
-            src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGdaf978382374dc7320e036e93b35bb9d.png"
-          />
-          <img
-            class="image_4"
-            referrerpolicy="no-referrer"
-            src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGdaf978382374dc7320e036e93b35bb9d.png"
-          />
+          <!-- 树木图标将通过JavaScript动态添加 -->
         </div>
         <div class="text-wrapper_6 flex-row">
           <span class="text_14"
@@ -699,6 +699,168 @@
       function goTodetails() {
         // 点击details按钮跳转到详情页面
         window.location.href = 'coming-soon.html';
+      }
+      
+      // 从URL获取参数
+      function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+      
+      // 页面加载后计算碳足迹并显示结果
+      window.onload = function() {
+        // 获取各个页面的滑块值
+        const peopleCount = parseInt(getParameterByName('people') || 0);
+        const waterUsage = parseInt(getParameterByName('water') || 0);
+        const electricityUsage = parseInt(getParameterByName('electricity') || 0);
+        const wasteAmount = parseInt(getParameterByName('waste') || 0);
+        
+        // 计算碳足迹 - 使用CSV文件中的排放因子
+        // 人口因子：每人每天32.2466 kg CO2e (来自CSV文件)
+        // 水使用因子：每立方米0.344 kg CO2e (来自CSV文件)
+        // 电力因子：每千瓦时0.774 kg CO2e (来自CSV文件，使用马来西亚半岛的值)
+        // 垃圾因子：每公斤0.497242 kg CO2e (来自CSV文件，家庭垃圾)
+        
+        // 如果家庭人数为0，则默认为1人
+        const actualPeopleCount = peopleCount > 0 ? peopleCount : 1;
+        
+        // 计算每个人的碳足迹
+        const peopleFactor = 32.2466 / actualPeopleCount; // 平均每人每天的排放量
+        const waterFactor = waterUsage * 0.344;
+        const electricityFactor = electricityUsage * 0.774;
+        const wasteFactor = wasteAmount * 0.497242;
+        
+        // 总碳足迹 (kg CO2e)
+        const totalCO2 = peopleFactor + waterFactor + electricityFactor + wasteFactor;
+        
+        // 假设一棵树每年可以吸收约21.77 kg CO2e
+        const treesNeeded = totalCO2 / 60.5;
+        
+        // 至少显示1棵树
+        const finalTreesCount = Math.max(1, Math.round(treesNeeded));
+        
+        // 更新碳足迹值显示
+        updateFootprintDisplay(totalCO2.toFixed(2), treesNeeded.toFixed(2));
+        
+        // 更新树木图标显示
+        updateTreesDisplay(finalTreesCount);
+        
+        // 显示详细的碳足迹组成
+        displayFootprintDetails(peopleCount, waterUsage, electricityUsage, wasteAmount, totalCO2);
+      };
+      
+      // 更新碳足迹值显示
+      function updateFootprintDisplay(footprintValue, treesValue) {
+        // 更新footprint-value显示碳足迹数值
+        const footprintElement = document.getElementById('footprint-value');
+        if (footprintElement) {
+          // 清空之前的内容
+          footprintElement.innerHTML = '';
+          
+          // 创建显示元素
+          const valueDisplay = document.createElement('div');
+          valueDisplay.style.fontSize = '24px';
+          valueDisplay.style.fontWeight = 'bold';
+          valueDisplay.style.color = '#3D7C4A';
+          valueDisplay.style.textAlign = 'center';
+          valueDisplay.style.padding = '10px';
+          valueDisplay.style.fontFamily = 'Poppins-Bold';
+          
+          // 显示碳足迹值
+          valueDisplay.textContent = `${footprintValue} kg CO₂`;
+          
+          footprintElement.appendChild(valueDisplay);
+        }
+        
+        // 更新trees-value显示需要的树木数量
+        const treesElement = document.getElementById('trees-value');
+        if (treesElement) {
+          // 清空之前的内容
+          treesElement.innerHTML = '';
+          
+          // 创建显示元素
+          const valueDisplay = document.createElement('div');
+          valueDisplay.style.fontSize = '24px';
+          valueDisplay.style.fontWeight = 'bold';
+          valueDisplay.style.color = '#3D7C4A';
+          valueDisplay.style.textAlign = 'center';
+          valueDisplay.style.padding = '10px';
+          valueDisplay.style.fontFamily = 'Poppins-Bold';
+          
+          // 显示树木数量
+          valueDisplay.textContent = treesValue;
+          
+          treesElement.appendChild(valueDisplay);
+        }
+      }
+      
+      // 更新树木图标显示
+      function updateTreesDisplay(count) {
+        // 获取树木图标容器
+        const container = document.querySelector('.image-wrapper_5');
+        if (!container) return;
+        
+        // 清空容器
+        container.innerHTML = '';
+        
+        // 限制最大显示数量为5个树
+        const displayCount = Math.min(count, 5);
+        
+        // 添加树木图标
+        for (let i = 0; i < displayCount; i++) {
+          const img = document.createElement('img');
+          img.className = 'image_3';
+          img.setAttribute('referrerpolicy', 'no-referrer');
+          img.src = 'https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNGdaf978382374dc7320e036e93b35bb9d.png';
+          container.appendChild(img);
+        }
+      }
+      
+      // 显示详细的碳足迹组成
+      function displayFootprintDetails(peopleCount, waterUsage, electricityUsage, wasteAmount, totalCO2) {
+        // 计算各部分排放量
+        const actualPeopleCount = peopleCount > 0 ? peopleCount : 1;
+        const peopleCO2 = 32.2466 / actualPeopleCount;
+        const waterCO2 = waterUsage * 0.344;
+        const electricityCO2 = electricityUsage * 0.774;
+        const wasteCO2 = wasteAmount * 0.497242;
+        
+        // 计算各部分占比
+        const peoplePercentage = totalCO2 > 0 ? (peopleCO2 / totalCO2 * 100).toFixed(1) : 0;
+        const waterPercentage = totalCO2 > 0 ? (waterCO2 / totalCO2 * 100).toFixed(1) : 0;
+        const electricityPercentage = totalCO2 > 0 ? (electricityCO2 / totalCO2 * 100).toFixed(1) : 0;
+        const wastePercentage = totalCO2 > 0 ? (wasteCO2 / totalCO2 * 100).toFixed(1) : 0;
+        
+        // 更新文本显示
+        const detailsElement = document.querySelector('.text_14');
+        if (detailsElement) {
+          let detailsText = `Your carbon footprint breakdown: `;
+          
+          if (peopleCount > 0) {
+            detailsText += `Household (${peoplePercentage}%), `;
+          }
+          
+          if (waterUsage > 0) {
+            detailsText += `Water (${waterPercentage}%), `;
+          }
+          
+          if (electricityUsage > 0) {
+            detailsText += `Electricity (${electricityPercentage}%), `;
+          }
+          
+          if (wasteAmount > 0) {
+            detailsText += `Waste (${wastePercentage}%)`;
+          }
+          
+          // 移除末尾多余的逗号和空格
+          detailsText = detailsText.replace(/, $/, '');
+          
+          detailsElement.textContent = detailsText;
+        }
       }
     </script>
   </body>
