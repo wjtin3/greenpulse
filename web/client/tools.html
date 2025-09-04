@@ -120,7 +120,7 @@
       .block_2 {
         width: 199px;
         height: 107px;
-        margin: 15px 0 0 1111px;
+        margin: 15px 0 0 80vw;
       }
 
       .text-wrapper_1 {
@@ -143,7 +143,7 @@
         text-align: left;
         white-space: nowrap;
         line-height: 12px;
-        margin: 13px 0 0 8px;
+        margin: 13px 0 0 3px;
       }
 
       .image_2 {
@@ -181,7 +181,7 @@
       }
 
       .box_2 {
-        width: 164px;
+        width: auto;
         height: 169px;
         margin: 61px 0 0 -5px;
       }
@@ -190,7 +190,7 @@
         width: 78px;
         height: 15px;
         overflow-wrap: break-word;
-        color: rgba(255, 255, 255, 1);
+        color: rgb(0, 0, 0);
         font-size: 12px;
         font-family: Inter-Regular;
         font-weight: normal;
@@ -220,14 +220,14 @@
         text-align: left;
         white-space: nowrap;
         line-height: 12px;
-        margin: 77px 0 0 69px;
+        margin: 77px 0 0 10vw;
       }
 
       .box_3 {
         position: relative;
-        width: 102px;
+        width: 1002px;
         height: 32px;
-        margin: 50px 0 0 704px;
+        margin: 50px 0 0 65vw;
       }
 
       .text_8 {
@@ -241,12 +241,12 @@
         text-align: left;
         white-space: nowrap;
         line-height: 12px;
-        margin: 12px 0 0 10px;
+        margin: 12px 0 0 -10px;
       }
 
       .box_4 {
         position: absolute;
-        left: 0;
+        left: -53px;
         top: 0;
         width: 102px;
         height: 32px;
@@ -732,7 +732,7 @@
       <div class="group_2 flex-col">
         <div class="block_2 flex-row">
           <div class="text-wrapper_1 flex-col">
-            <span class="text_5">Animation</span>
+            <span class="text_5">Knowledge Graphs</span>
           </div>
           <img tabindex="0"
             class="image_2"
@@ -754,12 +754,12 @@
           <div class="box_3 flex-row">
             <span class="text_8">Calculator</span>
             <div class="box_4 flex-col"></div>
+            <img tabindex="0"
+              class="image_4"
+              referrerpolicy="no-referrer"
+              src="img2/2.3.png"
+            />
           </div>
-          <img tabindex="0"
-            class="image_4"
-            referrerpolicy="no-referrer"
-            src="img2/2.3.png"
-          />
         </div>
         <div class="block_5 flex-row justify-between">
           <img tabindex="0"
@@ -816,11 +816,11 @@
         </div>
         <div class="mc-block_1">
           <div class="mc-block_2">
-            <span class="mc-text_1">Malasia&nbsp;per&nbsp;capita&nbsp;carbon&nbsp;footprint:&nbsp;8220kg/year</span>
+            <span class="mc-text_1">Malaysia&nbsp;per&nbsp;capita&nbsp;carbon&nbsp;footprint:&nbsp;11.2 tons/year</span>
             <img class="mc-label_1" id="mcClose" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG90fa3b2492d15c58e80e8b0d9fb2b820.png" />
           </div>
           <div class="mc-block_3">
-            <span class="mc-paragraph_1">In Malaysia, each person produces an average of approximately 8 tons of carbon dioxide emissions annually. This figure is significantly higher than the global average of 4.7 tons. Malaysia's per capita emissions are also relatively high compared to neighboring countries.<br />Key factors include reliance on fossil fuel-based power generation, high car usage, and emissions from industrial activities.</span>
+            <span class="mc-paragraph_1">In Malaysia, each person produces an average of approximately 11.2 tons of carbon dioxide emissions annually. This figure is significantly higher than the global average of 4.7 tons. Malaysia's per capita emissions are also relatively high compared to neighboring countries.<br />Key factors include reliance on fossil fuel-based power generation, high car usage, and emissions from industrial activities.</span>
             <img class="mc-image_3" referrerpolicy="no-referrer" src="https://lanhu-oss-2537-2.lanhuapp.com/FigmaDDSSlicePNG82e3ae98ac60d0a59ad9abbd1664787b.png" />
           </div>
         </div>
@@ -892,6 +892,24 @@
             window.location.href = 'calculator.html';
           });
         }
+
+        // 添加Calculator文本和图片的点击事件，跳转到Calculator.html
+        const knowledgeText = document.querySelector('.text_5');
+        const knowledgeImage = document.querySelector('.image_2');
+
+        if (knowledgeText) {
+          knowledgeText.style.cursor = 'pointer';
+          knowledgeText.addEventListener('click', function() {
+            window.location.href = 'coming-soon.html';
+          });
+        }
+
+        if (knowledgeImage) {
+          knowledgeImage.style.cursor = 'pointer';
+          knowledgeImage.addEventListener('click', function() {
+            window.location.href = 'coming-soon.html';
+          });
+        }        
 
         // World Carbon 弹窗逻辑
         const wcModal = document.getElementById('wcModal');
